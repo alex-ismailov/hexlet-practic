@@ -1,19 +1,19 @@
 const sumSquareDifference = (n) => {
-  const sumOfSquares = (n) => {
+  const sumOfSquares = () => {
     let res = 0;
     for (let i = 1; i <= n; i += 1) {
-      res += (i ** 2);      
+      res += (i ** 2);
     }
     return res;
   };
-  const squareOfSum = (n) => {
+  const squareOfSum = () => {
     let res = 0;
     for (let i = 1; i <= n; i += 1) {
-      res += i;      
+      res += i;
     }
     return (res ** 2);
   };
-  return squareOfSum(n) - sumOfSquares(n);
+  return squareOfSum() - sumOfSquares();
 };
 
 // sumSquareDifference testing
