@@ -1,9 +1,6 @@
 const dnaToRna = (dna) => {
   let rna = '';
   const dnaStrLength = dna.length;
-  if (dnaStrLength === 0) {
-    return rna;
-  }
   for (let i = 0; i < dnaStrLength; i += 1) {
     switch (dna[i].toUpperCase()) {
       case 'A':
