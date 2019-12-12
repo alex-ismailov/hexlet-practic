@@ -1,0 +1,18 @@
+{
+  "name": "hexlet-practical-tasks",
+  "version": "1.0.0",
+  "description": "Hexlet tasks",
+  "main": "index.js",
+  "repository": "git@github.com:alex-ismailov/hexlet-practical-tasks.git",
+  "author": "alex-ismailov <alexander.is.dev@gmail.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
