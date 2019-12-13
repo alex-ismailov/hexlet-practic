@@ -38,14 +38,11 @@ buildHtml();
 import { table, tr, td } from './tags';
 
 // BEGIN (write your solution here)
-const buildHtml = () => {
-  const res = table(
-    tr(td('lang'), td('comment')),
-    tr(td('php'), td('statements')),
-    tr(td('clojure'), td('expressions')),
-  );
-  return res;
-};
+const buildHtml = () => table(
+  tr(td('lang'), td('comment')),
+  tr(td('php'), td('statements')),
+  tr(td('clojure'), td('expressions')),
+);
 
 export default buildHtml;
 // END
