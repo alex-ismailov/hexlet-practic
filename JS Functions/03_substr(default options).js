@@ -1,21 +1,27 @@
-export default (str, begin = 0, len = str.length) => {
+const substr = (str, begin = 0, len = str.length) => {
   let res = '';
+  let normLen = null;
+  let normBegin = null;
   if (len === 0 || begin >= str.length) {
     return res;
   }
   if (len < 0) {
-    len = 1;
+    normLen = 1;
   } else if (len > str.length) {
-    len = str.length;
+    normLen = str.length;
+  } else {
+    normLen = len;
   }
   if (begin < 0) {
-    begin = 0;
+    normBegin = 0;
+  } else {
+    normBegin = begin;
   }
-  if ((begin + len) > str.length) {
-    len = str.length - begin;
+  if ((normBegin + normLen) > str.length) {
+    normLen = str.length - normBegin;
   }
-  for (let i = 0; i < len; i += 1) {
-    res += str[begin + i];
+  for (let i = 0; i < normLen; i += 1) {
+    res += str[normBegin + i];
   }
   return res;
 };
