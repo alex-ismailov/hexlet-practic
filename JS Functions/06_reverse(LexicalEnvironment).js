@@ -18,7 +18,7 @@ const reverse = (str) => {
     }
     return iter(
       currentIndex + 1,
-      acc += str[(str.length - 1) - currentIndex]
+      `${str[currentIndex]}${acc}`
     );
   };
   return iter(0, '');
