@@ -6,12 +6,9 @@
   3. Аргумент для применения 
 */
 
-const apply = (count, term, arg) => {
-  if (count === 0) {
-    return arg;
-  }
-  return apply((count - 1), term, term(arg));
-};
+const apply = (count, term, arg) => (
+  count === 0 ? arg : apply((count - 1), term, term(arg))
+);
 
 // apply testing
 const args = [
