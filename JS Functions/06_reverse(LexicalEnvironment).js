@@ -12,13 +12,14 @@
 внутри которой к содержимому аккумулятора добавляется символ, взятый по текущему индексу.
 */
 const reverse = (str) => {
+  const lastIndex = str.length - 1;
   const iter = (currentIndex, acc) => {
-    if (currentIndex > str.length - 1) {
+    if (currentIndex > lastIndex) {
       return acc;
     }
     return iter(
       currentIndex + 1,
-      `${str[currentIndex]}${acc}`
+      `${str[currentIndex]}${acc}`,
     );
   };
   return iter(0, '');
