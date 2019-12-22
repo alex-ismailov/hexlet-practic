@@ -54,3 +54,13 @@ const midpointSegment = (segment) => {
 
   return makePoint((X1 + X2) / 2, (Y1 + Y2) / 2);
 };
+
+// Teacher solution:
+const midpointSegment = (segment) => {
+  const startPoint = startSegment(segment);
+  const endPoint = endSegment(segment);
+  const midX = (getX(startPoint) + getX(endPoint)) / 2;
+  const midY = (getY(startPoint) + getY(endPoint)) / 2;
+
+  return makePoint(midX, midY);
+};
