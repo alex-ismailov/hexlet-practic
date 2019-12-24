@@ -20,11 +20,12 @@ cdr(pair); // 'science'
  */
 
 const length = (str) => str.length;
-const cons = (str1, str2) => `${str1}\t${str2}`;
+const separator = '\t';
+const cons = (str1, str2) => `${str1}${separator}${str2}`;
 const getSeparatorIndex = (pair) => {
   let sepIndex = null;
   for (let i = 0; i < length(pair); i += 1) {
-    if (pair[i] === '\t') {
+    if (pair[i] === separator) {
       sepIndex = i;
       break;
     }
