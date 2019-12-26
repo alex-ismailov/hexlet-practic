@@ -1,10 +1,17 @@
 const cons = (a, b) => (2 ** a) * (3 ** b);
 
+const improve = (n, div) => {
+  if (n % (div ** div) !== 0) {
+    return n / div;
+  }
+  return n / (div ** div);
+};
+
 const minIntQuotient = (n, divisor) => {
   if (n % divisor !== 0) {
     return n;
   }
-  return minIntQuotient(n / divisor, divisor);
+  return minIntQuotient(improve(n, divisor), divisor);
 };
 
 const getValue = (dividend, divisor, pow) => {
@@ -29,9 +36,17 @@ const args = [
   ['cons(1, 1)', cons(1, 1)],
   ['cons(5, 8)', cons(5, 8)],
   ['cons(27, 31)', cons(27, 31)],
+  ['cons(13, 11)', cons(13, 11)],
+  ['cons(9, 10)', cons(9, 10)],
+  ['cons(113, 5)', cons(113, 5)],
   ['cons(5, 0)', cons(5, 0)],
   ['cons(2, 0)', cons(2, 0)],
-  ['cons(1000, 0)', cons(32, 0)],
+  ['cons(32, 0)', cons(32, 0)],
+  ['cons(32, 1)', cons(32, 1)],
+  ['cons(32, 2)', cons(32, 2)],
+  ['cons(32, 7)', cons(32, 7)],
+  ['cons(32, 33)', cons(32, 33)],
+  //['cons(32, 34)', cons(32, 34)], // Maximum call stack size exceeded
 ];
 
 args.forEach((param) => {
@@ -39,3 +54,4 @@ args.forEach((param) => {
   console.log(`car(${param[0]}) = ${car(param[1])}`);
   console.log(`cdr(${param[0]}) = ${cdr(param[1])}`);
 });
+
