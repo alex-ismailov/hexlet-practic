@@ -1,13 +1,11 @@
 const cons = (a, b) => (2 ** a) * (3 ** b);
-
 const improve = (n, div) => {
   if (n % (div ** div) !== 0) {
     return n / div;
   }
   return n / (div ** div);
 };
-
-const getValue = (pair, fDiv, sDiv, pow) => {
+const getValue = (pair, fDiv, sDiv) => {
   const iter = (n, div, pow) => {
     if (n % div !== 0 && div !== sDiv) {
       return n;
@@ -18,21 +16,12 @@ const getValue = (pair, fDiv, sDiv, pow) => {
     return iter(n / div, div, pow + 1);
   };
   if (pair % fDiv !== 0) {
-    return iter(pair, sDiv, pow);
+    return iter(pair, sDiv, 0);
   }
-  return iter(iter(improve(pair, fDiv), fDiv), sDiv, pow);
+  return iter(iter(improve(pair, fDiv), fDiv), sDiv, 0);
 };
-
-const car = (pair) => {
-  return getValue(pair, 3, 2, 0);
-};
-
-const cdr = (pair) => {
-  return getValue(pair, 2, 3, 0);
-};
-
-
-
+const car = (pair) => getValue(pair, 3, 2);
+const cdr = (pair) => getValue(pair, 2, 3);
 
 //Testing
 const args = [
