@@ -29,6 +29,9 @@ const args = [
   ['cons(1, 1)', cons(1, 1)],
   ['cons(5, 8)', cons(5, 8)],
   ['cons(27, 31)', cons(27, 31)],
+  ['cons(5, 0)', cons(5, 0)],
+  ['cons(2, 0)', cons(2, 0)],
+  ['cons(1000, 0)', cons(32, 0)],
 ];
 
 args.forEach((param) => {
