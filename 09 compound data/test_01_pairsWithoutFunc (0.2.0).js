@@ -5,23 +5,20 @@ const improve = (n, div) => {
   }
   return n / (div ** div);
 };
-const getValue = (pair, fDiv, sDiv) => {
-  const iter = (n, div, pow) => {
-    if (n % div !== 0 && div !== sDiv) {
-      return n;
-    }
-    if (n % div !== 0 && div === sDiv) {
-      return pow;
-    }
-    return iter(n / div, div, pow + 1);
-  };
-  if (pair % fDiv !== 0) {
-    return iter(pair, sDiv, 0);
+const minIntQuotient = (n, divisor) => {
+  if (n % divisor !== 0) {
+    return n;
   }
-  return iter(iter(improve(pair, fDiv), fDiv), sDiv, 0);
+  return minIntQuotient(improve(n, divisor), divisor);
 };
-const car = (pair) => getValue(pair, 3, 2);
-const cdr = (pair) => getValue(pair, 2, 3);
+const getValue = (dividend, divisor, pow) => {
+  if (dividend === 1) {
+    return pow;
+  }
+  return getValue(dividend / divisor, divisor, pow + 1);
+};
+const car = (pair) => getValue(minIntQuotient(pair, 3), 2, 0);
+const cdr = (pair) => getValue(minIntQuotient(pair, 2), 3, 0);
 
 //Testing
 const args = [
