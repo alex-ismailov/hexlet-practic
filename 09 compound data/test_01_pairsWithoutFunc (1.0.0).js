@@ -35,10 +35,6 @@ const cdr = (pair) => {
 
 
 //Testing
-// console.log(cons(5, 8));
-// console.log(cons(27, 10));
-console.log(cons(5, 0));
-
 const args = [
   ['cons(0, 0)', cons(0, 0)],
   ['cons(1, 0)', cons(1, 0)],
