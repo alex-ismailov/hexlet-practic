@@ -25,6 +25,12 @@ const reverse = (list) => {
   return iter(tail(list), cons(head(list), l()));
 };
 
+// teacher solution
+const reverse2 = (items) => {
+  const iter = (items, acc) => isEmpty(items) ? acc : iter(tail(items), cons(head(items), acc));
+  return iter(items, l());
+};
+
 const copy = (oldList) => cons(head(oldList), tail(oldList));
 
 const length = (list) => {
@@ -73,3 +79,5 @@ console.log(getElement(listStr, 1));
 console.log(getElement(listStr, 5));
 
 console.log(listRef(list1, 3));
+
+console.log(listToString(reverse2(list1)));
