@@ -14,3 +14,15 @@ console.log(getName(tag));
 console.log(getValue(tag));
 console.log('-----\n');
 // ***
+
+// append — добавляет элемент (тег), созданный с помощью node, в html-список. 
+// Возвращает новый html-список. Новый элемент должен добавляться в начало ("голову") списка.
+const append = (dom, node) => consList(node, dom);
+// *** append test ***
+const dom1 = make();
+const div = node('div', 'Baby don`t hurt me');
+const dom2 = append(dom1, div);
+console.log(listToString(dom2));
+console.log(pairToString(dom2));
+console.log('-----\n');
+// ***
