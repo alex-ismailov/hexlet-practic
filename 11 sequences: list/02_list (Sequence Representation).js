@@ -51,6 +51,13 @@ const concat = (list1, list2) => {
   return cons(head(list1), concat(tail(list1), list2));
 };
 
+const listRef = (items, num) => {
+  if (num === 0) {
+    return head(items);
+  }
+  return listRef(tail(items), num - 1);
+}
+
 const list1 = l(1, 2, 3, 4, 5);
 const list2 = l(1, 2, 3);
 const list3 = l();
@@ -64,3 +71,5 @@ console.log(getElement(listStr, 0));
 console.log(getElement(listStr, 4));
 console.log(getElement(listStr, 1));
 console.log(getElement(listStr, 5));
+
+console.log(listRef(list1, 3));
