@@ -28,28 +28,29 @@ console.log('-----\n');
 // ***
 
 // toString — возвращает текстовое представление html на основании html-списка.
-// const toString = (currentDom) => {
-//   const iter = (dom, acc) => {
-//     if (isEmpty(dom)) {
-//       return acc;
-//     }
-//     return iter(
-//       tail(dom),
-//       `<${car(head(dom))}>${cdr(head(dom))}</${car(head(dom))}>${acc}`,
-//     );
-//   };
-//   return iter(currentDom, '');
-// };
+const toString = (currentDom) => {
+  const iter = (dom, acc) => {
+    if (isEmpty(dom)) {
+      return acc;
+    }
+    const element = head(dom);
+    const tag = getName(element);
+    const tagContent = getValue(element);
+    return iter(tail(dom), `<${tag}>${tagContent}</${tag}>${acc}`);
+  };
+  return iter(currentDom, '');
+};
 
-// const toString = (currentDom) => {
-//   const iter = (dom, acc) => (
-//     isEmpty(dom) ? acc : iter(
-//       tail(dom),
-//       `<${getName(head(dom))}>${getValue(head(dom))}</${getName(head(dom))}>${acc}`,
-//     )
-//   );
-//   return iter(currentDom, '');
-// };
+// ver 2
+const toString = (currentDom) => {
+  const iter = (dom, acc) => (
+    isEmpty(dom) ? acc : iter(
+      tail(dom),
+      `<${getName(head(dom))}>${getValue(head(dom))}</${getName(head(dom))}>${acc}`,
+    )
+  );
+  return iter(currentDom, '');
+};
 
 // Teacher solution
 const toString = (dom) => {
