@@ -41,14 +41,26 @@ console.log('-----\n');
 //   return iter(currentDom, '');
 // };
 
-const toString = (currentDom) => {
-  const iter = (dom, acc) => (
-    isEmpty(dom) ? acc : iter(
-      tail(dom),
-      `<${car(head(dom))}>${cdr(head(dom))}</${car(head(dom))}>${acc}`,
-    )
-  );
-  return iter(currentDom, '');
+// const toString = (currentDom) => {
+//   const iter = (dom, acc) => (
+//     isEmpty(dom) ? acc : iter(
+//       tail(dom),
+//       `<${getName(head(dom))}>${getValue(head(dom))}</${getName(head(dom))}>${acc}`,
+//     )
+//   );
+//   return iter(currentDom, '');
+// };
+
+// Teacher solution
+const toString = (dom) => {
+  if (isEmpty(dom)) {
+    return '';
+  }
+  const element = head(dom);
+  const tag = getName(element);
+  const tagContent = getValue(element);
+  const restOfHtml = toString(tail(dom));
+  return `${restOfHtml}<${tag}>${tagContent}</${tag}>`;
 };
 
 // *** toString test ***
