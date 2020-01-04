@@ -674,7 +674,15 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@hexlet/pairs-data@^1.0.9":
+"@hexlet/html-tags@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@hexlet/html-tags/-/html-tags-0.5.0.tgz#4cb234ebf19b0e5e6c5fd48c87581e8ee7bac29e"
+  integrity sha512-r+QVZ80RiKvDyPou2c1goJdl2adNzuuFnK5UpMvRJi2KzI7REVuHvR6YXKL66RuXt9/PBG4yIYQsWNo8+8ZfyQ==
+  dependencies:
+    "@hexlet/pairs" "^1.0.8"
+    "@hexlet/pairs-data" "^1.0.8"
+
+"@hexlet/pairs-data@^1.0.8", "@hexlet/pairs-data@^1.0.9":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@hexlet/pairs-data/-/pairs-data-1.0.9.tgz#a135679015580f6c640a06348d2403d98d7359f6"
   integrity sha512-/WM/x+GCd/gDZT3K0mMTti5loNz4KOpp37UgkrM3TR9TokxbQNosqoEU02/Wne8cZEHcjYDTQ2QxzNXRmVdLgg==
@@ -684,7 +692,7 @@
     babel-preset-flow "*"
     babel-preset-stage-0 "*"
 
-"@hexlet/pairs@^1.0.9":
+"@hexlet/pairs@^1.0.8", "@hexlet/pairs@^1.0.9":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@hexlet/pairs/-/pairs-1.0.10.tgz#6e0921dd96091c821afcd9e224a1cf0b50e56697"
   integrity sha512-5pZH4qrzlZg0Ukn4M+kQl1N3IWuNQhNUmQSq3IvVII7miY69E2ddBXHTEkRFVfE6fJKKSNcvcjklLxhMvsxlaQ==
