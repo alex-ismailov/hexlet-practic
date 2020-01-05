@@ -19,22 +19,31 @@ const b2p = (elements) => {
 };
 
 // BEGIN (write your solution here)
-const map = (proc, dom) => {
-  const iter = (currDom, newDom) => {
-    if (isEmpty(currDom)) {
-      return newDom;
+// linear recursive procces
+// const map = (proc, items) => {
+//   if (isEmpty(items)) {
+//     return l();
+//   }
+//   return cons(proc(head(items)), map(proc, tail(items)));
+// };
+
+// linear iterative procces
+const map = (proc, items) => {
+  const iter = (currItems, acc) => {
+    if (isEmpty(currItems)) {
+      return acc;
     }
     return iter(
-      tail(currDom),
-      cons(proc(head(currDom)), newDom),
+      tail(currItems),
+      cons(proc(head(currItems)), acc),
     );
   };
-  return reverse(iter(dom, l()));
+  return reverse(iter(items, l()));
 };
 
 const mirror = (items) => {
-  const reverseCont = (elems) => node(getName(elems), reverseStr(getValue(elems)));
-  return map(reverseCont, items);
+  const reverseContent = (elems) => node(getName(elems), reverseStr(getValue(elems)));
+  return map(reverseContent, items);
 };
 // END
 
@@ -43,12 +52,12 @@ const dom1 = l();
 const dom2 = append(dom1, node('h1', 'scheme'));
 const dom3 = append(dom2, node('blockquote', 'is a lisp'));
 
+console.log(listToString(dom3));
 console.log(listToString(map((element) => {
   if (is('blockquote', element)) {
     return node('p', getValue(element));
   }
   return element;
 }, dom3)));
-
 console.log(listToString(mirror(dom3)));
 
