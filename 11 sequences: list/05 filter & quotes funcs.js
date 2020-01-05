@@ -34,10 +34,11 @@ export const filter = (fn, elems) => {
   return iter(elems, l());
 };
 
-// export const quotes = (dom) => {
-//   const isQuote = (elem) => is('blockquote', elem);
-//   return map(getValue, filter(isQuote, dom));
-// };
+export const quotes = (dom) => {
+  const isQuote = (elem) => is('blockquote', elem);
+  const filtered = filter(isQuote, dom);
+  return map(getValue, filtered);
+};
 
 
 // quotes testing
