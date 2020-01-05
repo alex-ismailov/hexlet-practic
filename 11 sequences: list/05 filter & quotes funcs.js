@@ -6,24 +6,39 @@ import {
 import { make, append, node, getValue, is, map} from '@hexlet/html-tags';
 
 // BEGIN (write your solution here)
+// export const filter = (fn, elems) => {
+//   const iter = (currElems, acc) => {
+//     if (isEmpty(currElems)) {
+//       return reverse(acc);
+//     }
+//     const elem = head(currElems);
+//     const tailElems = tail(currElems);
+//     if (fn(elem)) {
+//       return iter(tailElems, cons(elem, acc));
+//     }
+//     return iter(tailElems, acc);
+//   };
+//   return iter(elems, l());
+// };
+
+// teacher solution
 export const filter = (fn, elems) => {
   const iter = (currElems, acc) => {
     if (isEmpty(currElems)) {
       return reverse(acc);
     }
     const elem = head(currElems);
-    const tailElems = tail(currElems);
-    if (fn(elem)) {
-      return iter(tailElems, cons(elem, acc));
-    }
-    return iter(tailElems, acc);
+    const newAcc = fn(elem) ? cons(elem, acc) : acc;
+    return iter(tail(currElems), newAcc);
   };
   return iter(elems, l());
 };
-export const quotes = (dom) => {
-  const isQuote = (elem) => is('blockquote', elem);
-  return map(getValue, filter(isQuote, dom));
-};
+
+// export const quotes = (dom) => {
+//   const isQuote = (elem) => is('blockquote', elem);
+//   return map(getValue, filter(isQuote, dom));
+// };
+
 
 // quotes testing
 const dom0 = make();
