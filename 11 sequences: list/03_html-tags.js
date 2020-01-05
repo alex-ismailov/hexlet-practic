@@ -42,27 +42,27 @@ const toString = (currentDom) => {
 };
 
 // ver 2
-const toString = (currentDom) => {
-  const iter = (dom, acc) => (
-    isEmpty(dom) ? acc : iter(
-      tail(dom),
-      `<${getName(head(dom))}>${getValue(head(dom))}</${getName(head(dom))}>${acc}`,
-    )
-  );
-  return iter(currentDom, '');
-};
+// const toString = (currentDom) => {
+//   const iter = (dom, acc) => (
+//     isEmpty(dom) ? acc : iter(
+//       tail(dom),
+//       `<${getName(head(dom))}>${getValue(head(dom))}</${getName(head(dom))}>${acc}`,
+//     )
+//   );
+//   return iter(currentDom, '');
+// };
 
 // Teacher solution
-const toString = (dom) => {
-  if (isEmpty(dom)) {
-    return '';
-  }
-  const element = head(dom);
-  const tag = getName(element);
-  const tagContent = getValue(element);
-  const restOfHtml = toString(tail(dom));
-  return `${restOfHtml}<${tag}>${tagContent}</${tag}>`;
-};
+// const toString = (dom) => {
+//   if (isEmpty(dom)) {
+//     return '';
+//   }
+//   const element = head(dom);
+//   const tag = getName(element);
+//   const tagContent = getValue(element);
+//   const restOfHtml = toString(tail(dom));
+//   return `${restOfHtml}<${tag}>${tagContent}</${tag}>`;
+// };
 
 // *** toString test ***
 const p = node('p', 'Don`t hurt me no more');
@@ -78,3 +78,7 @@ console.log(toString(dom3));
 
 // console.log(car(head(tail(dom3))));
 // console.log(cdr(head(tail(dom3))));
+
+console.log('*********************');
+console.log(getName(head(dom3)));
+
