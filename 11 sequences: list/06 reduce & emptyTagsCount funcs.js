@@ -1,24 +1,40 @@
 import { isEmpty, head, tail } from '@hexlet/pairs-data';
 import { node, append, make, getValue, is } from '@hexlet/html-tags';
 
-export const reduce = (fn, firstAcc, items) => {
-  const iter = (currItems, acc) => {
-    if (isEmpty(currItems)) {
-      return acc;
-    }
-    const elem = head(currItems);
-    const newAcc = fn(elem, acc);
-    return iter(tail(currItems), newAcc);
-  };
-  return iter(items, firstAcc);
+// linear iterative procces
+// export const reduce = (fn, firstAcc, items) => {
+//   const iter = (currItems, acc) => {
+//     if (isEmpty(currItems)) {
+//       return acc;
+//     }
+//     const elem = head(currItems);
+//     const newAcc = fn(elem, acc);
+//     return iter(tail(currItems), newAcc);
+//   };
+//   return iter(items, firstAcc);
+// };
+
+//linear recursive process, teacher solution
+export const reduce = (fn, acc, items) => {
+  if (isEmpty(items)) {
+    return acc;
+  }
+  return reduce(fn, fn(head(items), acc), tail(items));
 };
 
 export const emptyTagsCount = (tag, dom) => {
-  const isEmptyTag = (elem, acc) => (
+  const counter = (elem, acc) => (
     is(tag, elem) && !getValue(elem) ? acc + 1 : acc
   );
-  return reduce(isEmptyTag, 0, dom);
+  return reduce(counter, 0, dom);
 };
+
+// teacher solution
+// export const emptyTagsCount = (tag, items) => {
+//   const predicate = (elem) => is(tag, elem) && getValue(elem) === '';
+//   const func = (item, acc) => predicate(item) ? acc + 1 : acc;
+//   return reduce(func, 0, items);
+// };
 
 // reduce testing:
 const dom1 = append(make(), node('h1', 'header1'));
