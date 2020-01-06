@@ -14,7 +14,7 @@ import { node, append, make, getValue, is } from '@hexlet/html-tags';
 //   return iter(items, firstAcc);
 // };
 
-//linear recursive process, teacher solution
+//linear iterative process, teacher solution
 export const reduce = (fn, acc, items) => {
   if (isEmpty(items)) {
     return acc;
