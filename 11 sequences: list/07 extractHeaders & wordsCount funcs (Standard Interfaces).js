@@ -21,6 +21,13 @@ export const wordsCount = (tag, word, html) => (
     is(tag, item) ? acc + wc(word, getValue(item)) : acc
   ), 0, html)
 );
+
+// Teacher solution
+// export const wordsCount = (tagName, word, elements) => {
+//   const filtered = filter((element) => is(tagName, element), elements);
+//   const values = map(getValue, filtered);
+//   return reduce((text, acc) => wc(word, text) + acc, 0, values);
+// };
 // END
 
 // *** extractHeaders testing ***
