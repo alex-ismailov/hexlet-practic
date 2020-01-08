@@ -17,12 +17,16 @@ export const select = (tag, list) => {
       return consList(elem, acc);
     }
     return concat(select(tag, children(elem)), consList(elem, acc));
-  }
+  };
   const linearList = reduce(isLeaf, l(), list);
-  const filtered = filter((elem) => is(tag, elem), linearList);
+  return filter((elem) => is(tag, elem), linearList);
+};
 
-  return filtered;
-}
+
+// const select = (tagName, html) => reduce((element, acc) => {
+//   const acc2 = hasChildren(element) ? concat(select(tagName, children(element)), acc) : acc;
+//   return is(tagName, element) ? consList(element, acc2) : acc2;
+// }, l(), html);
 // END
 
     const dom1 = make();
@@ -41,10 +45,14 @@ export const select = (tag, list) => {
 const dom10 = append(dom9, node('h1', 'prolog'));
 const dom = append(dom10, node('p', 'is about logic'));
 
+// console.log(htmlToString(dom) + '\n*****\n');
 console.log(length(select('span', dom))) // toBe(2);
     console.log(length(select('section', dom))) // toBe(0);
     console.log(length(select('li', dom))) // toBe(5);
     console.log(length(select('p', dom))) // toBe(5);
+    console.log(htmlToString(select('p', dom))) // toBe(5);
     console.log(length(select('h1', dom))) // toBe(2);
     console.log(length(select('div', dom))) // toBe(3);
+
+
     console.log(htmlToString(select('div', dom))) // toBe(3);
