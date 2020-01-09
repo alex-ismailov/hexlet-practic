@@ -17,9 +17,6 @@ import { l, isEmpty, head, tail, cons, reverse, toString as listToString } from 
 
 // With inner iter function (linear iterative process)
 const zip = (list1, list2) => {
-  if (isEmpty(list1) || isEmpty(list2)) {
-    return l();
-  }
   const iter = (currList1, currList2, acc) => {
     if (isEmpty(currList1) || isEmpty(currList2)) {
       return reverse(acc);
