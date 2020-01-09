@@ -3,9 +3,9 @@ import { getX, getY, makePoint } from '@hexlet/points';
 import { l, isEmpty, head, tail, toString, cons, car, cdr } from '@hexlet/pairs-data';
 
 // BEGIN (write your solution here)
-const length = (list) => isEmpty(list) ? 0 : 1 + length(tail(list));
+const length = (list) => (isEmpty(list) ? 0 : 1 + length(tail(list)));
 const getDistance = (p1, p2) => Math.sqrt(
-  (getX(p2) - getX(p1)) ** 2 + (getY(p2) - getY(p1)) ** 2
+  (getX(p2) - getX(p1)) ** 2 + (getY(p2) - getY(p1)) ** 2,
 );
 
 const calculatePolygonPerimeter = (list) => {
@@ -13,11 +13,15 @@ const calculatePolygonPerimeter = (list) => {
     return null;
   }
   const firstPoint = head(list);
-  const iter = (p1, p2, acc) => {
-    if (isEmpty(p2)) {
-      return acc + getDistance(firstPoint, p1);
+  const iter = (currPoint, restOfPoints, acc) => {
+    if (isEmpty(restOfPoints)) {
+      return acc + getDistance(firstPoint, currPoint);
     }
-    return iter( head(p2), tail(p2), acc + getDistance(p1, head(p2)) );
+    return iter(
+      head(restOfPoints),
+      tail(restOfPoints),
+      acc + getDistance(currPoint, head(restOfPoints)),
+    );
   };
   return iter(head(list), tail(list), 0);
 };
