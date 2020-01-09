@@ -21,11 +21,8 @@ const zip = (list1, list2) => {
     if (isEmpty(currList1) || isEmpty(currList2)) {
       return reverse(acc);
     }
-    return iter(
-      tail(currList1),
-      tail(currList2),
-      cons(l(head(currList1), head(currList2)), acc),
-    );
+    const current = l(head(currList1), head(currList2));
+    return iter(tail(currList1), tail(currList2), cons(current, acc));
   };
   return iter(list1, list2, l());
 };
