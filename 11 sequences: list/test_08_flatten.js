@@ -18,6 +18,17 @@ const flatten = (list) => {
   return reduce(isLeaf, l(), reverse(list));
 };
 
+// teacher solution
+// const flatten = (list) => (
+//   reduce(
+//     (elem, acc) => (
+//       isList(elem) ? concat(flatten(elem), acc) : cons(elem, acc)
+//     ),
+//     l(),
+//     reverse(list),
+//   )
+// );
+
 // testing
 const list2 = l();
 console.log('() = ' + listToString(flatten(list2)));
