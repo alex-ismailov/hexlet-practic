@@ -16,12 +16,7 @@ import { l, isEmpty, cons, reduce, has, reverse, toString as listToString, conca
 
 const union = (list1, list2) => {
   const newList = concat(list1, list2);
-  const isUnique = (item, acc) => {
-    if (has(acc, item)) {
-      return acc;
-    }
-    return cons(item, acc);
-  };
+  const isUnique = (item, acc) => (has(acc, item)) ? acc : cons(item, acc);;
   return reverse(reduce(isUnique, l(), newList));
 };
 
