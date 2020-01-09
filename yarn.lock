@@ -692,10 +692,20 @@
     babel-preset-flow "*"
     babel-preset-stage-0 "*"
 
-"@hexlet/pairs@^1.0.8", "@hexlet/pairs@^1.0.9":
+"@hexlet/pairs@*", "@hexlet/pairs@^1.0.8", "@hexlet/pairs@^1.0.9":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@hexlet/pairs/-/pairs-1.0.10.tgz#6e0921dd96091c821afcd9e224a1cf0b50e56697"
   integrity sha512-5pZH4qrzlZg0Ukn4M+kQl1N3IWuNQhNUmQSq3IvVII7miY69E2ddBXHTEkRFVfE6fJKKSNcvcjklLxhMvsxlaQ==
+
+"@hexlet/points@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@hexlet/points/-/points-1.0.9.tgz#6915b7a885908de06f728abb1c8c900348caaeb3"
+  integrity sha512-uaNa/l1C9dUcs0HAnoLeXH8VcVdDg36vtH4p8xds7+p0zHhemhOtglRF3rBgoA5BCHgYvjvUVoPp0Ris+HrOWw==
+  dependencies:
+    "@hexlet/pairs" "*"
+    babel-preset-env "*"
+    babel-preset-flow "*"
+    babel-preset-stage-0 "*"
 
 acorn-jsx@^5.1.0:
   version "5.1.0"

@@ -12,6 +12,7 @@
     "@babel/preset-env": "^7.7.4",
     "@hexlet/html-tags": "^0.5.0",
     "@hexlet/pairs-data": "^1.0.9",
+    "@hexlet/points": "^1.0.9",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.0",
     "eslint-config-airbnb-base": "^14.0.0",
