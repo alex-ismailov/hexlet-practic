@@ -8,13 +8,20 @@ import { l, reverse, toString as listToString, isList, cons, reduce, concat, hea
   flatten(list); // (1, 2, 3, 5, 4, 3, 2) 
 */
 
+// const flatten = (list) => {
+//   const isLeaf = (elem, acc) => {
+//     if (isList(elem)) {
+//       return concat(flatten(elem), acc);
+//     }
+//     return cons(elem, acc);
+//   };
+//   return reduce(isLeaf, l(), reverse(list));
+// };
+
 const flatten = (list) => {
-  const isLeaf = (elem, acc) => {
-    if (isList(elem)) {
-      return concat(flatten(elem), acc);
-    }
-    return cons(elem, acc);
-  };
+  const isLeaf = (elem, acc) => (
+    isList(elem) ? concat(flatten(elem), acc) : cons(elem, acc)
+  );
   return reduce(isLeaf, l(), reverse(list));
 };
 
