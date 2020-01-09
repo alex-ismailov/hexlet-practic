@@ -7,42 +7,28 @@ sameParity(l(2, 0, 1, -3, 10, -2)); // (2, 0, 10, -2)
 sameParity(l()); // () */
 
 import { /* eslint-disable */
-  l, cons as consList, isEmpty, head, tail, toString as listToString, filter
+  l, cons as consList, isEmpty, head, tail, toString as listToString
 } from '@hexlet/pairs-data';
 
 // BEGIN
-// ver 1
 const sameParity = (list) => {
   if (isEmpty(list)) {
     return l();
   }
   const firstValue = head(list);
-  const isRightValue = (currValue) => {
-    const isEven = (value) => value % 2 === 0;
-    return isEven(firstValue) === isEven(currValue);
+  const isEven = (value) => value % 2 === 0;
+  const isRightValue = (currValue) => isEven(firstValue) === isEven(currValue);
+  const filterList = (currList) => {
+    if (isEmpty(currList)) {
+      return l();
+    }
+    if (isRightValue(head(currList))) {
+      return consList(head(currList), filterList(tail(currList)));
+    }
+    return filterList(tail(currList));
   };
-  return filter(isRightValue, list);
+  return consList(firstValue, filterList(tail(list)));
 };
-
-// ver 2
-// const sameParity = (list) => {
-//   if (isEmpty(list)) {
-//     return l();
-//   }
-//   const firstValue = head(list);
-//   const isEven = (value) => value % 2 === 0;
-//   const isRightValue = (currValue) => isEven(firstValue) === isEven(currValue);
-//   const filterList = (currList) => {
-//     if (isEmpty(currList)) {
-//       return l();
-//     }
-//     if (isRightValue(head(currList))) {
-//       return consList(head(currList), filterList(tail(currList)));
-//     }
-//     return filterList(tail(currList));
-//   };
-//   return consList(firstValue, filterList(tail(list)));
-// };
 // END
 
 // testing
