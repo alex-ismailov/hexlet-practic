@@ -30,6 +30,15 @@ const zip = (list1, list2) => {
   return iter(list1, list2, l());
 };
 
+// linear recursive process
+// const zip = (list1, list2) => {
+//   if (isEmpty(list1) || isEmpty(list2)) {
+//     return l();
+//   }
+//   const current = l(head(list1), head(list2));
+//   return cons(current, zip(tail(list1), tail(list2)));
+// };
+
 // testing
 const list1 = l(1, 5, 3, 8, 9);
 const list2 = l(2, 3, 2, 1);
