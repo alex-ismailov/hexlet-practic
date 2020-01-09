@@ -17,8 +17,10 @@ const sameParity = (list) => {
     return l();
   }
   const firstValue = head(list);
-  const isEven = (value) => value % 2 === 0;
-  const isRightValue = (currValue) => isEven(firstValue) === isEven(currValue);
+  const isRightValue = (currValue) => {
+    const isEven = (value) => value % 2 === 0;
+    return isEven(firstValue) === isEven(currValue);
+  };
   return filter(isRightValue, list);
 };
 
