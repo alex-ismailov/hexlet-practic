@@ -8,8 +8,8 @@ import {
 } from '@hexlet/html-tags'; /* eslint-enable */
 
 // BEGIN (write your solution here)
-export const select = (tag, list) => {
-  if (isEmpty(list)) {
+const flat = (tag, treeList) => {
+  if (isEmpty(treeList)) {
     return l();
   }
   const isLeaf = (elem, acc) => {
@@ -18,7 +18,11 @@ export const select = (tag, list) => {
     }
     return concat(select(tag, children(elem)), consList(elem, acc));
   };
-  const linearList = reduce(isLeaf, l(), list);
+  return reduce(isLeaf, l(), treeList);
+};
+
+export const select = (tag, list) => {
+  const linearList = flat(tag, list);
   return filter((elem) => is(tag, elem), linearList);
 };
 
