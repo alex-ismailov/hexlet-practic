@@ -9,7 +9,7 @@ const getDistance = (p1, p2) => Math.sqrt(
 );
 
 const calculatePolygonPerimeter = (list) => {
-  if (isEmpty(list) || length(list) < 3) {
+  if (length(list) < 3) {
     return null;
   }
   const firstPoint = head(list);
