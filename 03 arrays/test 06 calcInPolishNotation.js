@@ -31,13 +31,13 @@
 const infixCalculator = (fOperand, sOperand, operator) => {
   switch (operator) {
     case '+':
-      return Number(fOperand) + Number(sOperand);
+      return fOperand + sOperand;
     case '-':
-      return Number(fOperand) - Number(sOperand);
+      return fOperand - sOperand;
     case '*':
-      return Number(fOperand) * Number(sOperand);
+      return fOperand * sOperand;
     case '/':
-      return Number(fOperand) / Number(sOperand);
+      return fOperand / sOperand;
     default:
       return null;
   }
