@@ -25,7 +25,7 @@ const findLongestStringInColl = (coll) => {
 
 // откатываем индекс на нам необходимое место в указанном диапозоне str
 const indexRollBack = (toChar, fromIndex, str) => {
-  for (let i = fromIndex; i > 0; i -= 1) {
+  for (let i = fromIndex; i >= 0; i -= 1) {
     if (str[i] === toChar) {
       /* если не указать i + 1, то мы захватим 1й символ из предыдущей подстроки */
       return i + 1;
@@ -57,14 +57,14 @@ const longestLength = (str) => {
 };
 
 // // testing
-// console.log(longestLength('')); // toBe(0);
-// console.log(longestLength('one')); // toBe(3);
-// console.log(longestLength('jabjcdel')); // toBe(7);
+console.log(longestLength('')); // toBe(0);
+console.log(longestLength('one')); // toBe(3);
+console.log(longestLength('jabjcdel')); // toBe(7);
 console.log(longestLength('abcddef')); // toBe(4);
 console.log(longestLength('abbccddeffg')); // toBe(3);
 console.log(longestLength('abcd')); // toBe(4);
 console.log(longestLength('1234561qweqwer')); // toBe(9);
-// console.log(longestLength('1234561qweqwerqer')); // toBe(9);
+console.log(longestLength('1234561qweqwerqer')); // toBe(9);
 
 // teacher solution
 // const unique = (str) => {
