@@ -65,3 +65,35 @@ console.log(longestLength('abbccddeffg')); // toBe(3);
 console.log(longestLength('abcd')); // toBe(4);
 console.log(longestLength('1234561qweqwer')); // toBe(9);
 // console.log(longestLength('1234561qweqwerqer')); // toBe(9);
+
+// teacher solution
+// const unique = (str) => {
+//   const arr = str.split('');
+//   const result = [];
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     const char = arr[i];
+//     if (!result.includes(char)) {
+//       result.push(char);
+//     }
+//   }
+
+//   return result;
+// };
+
+// const isUniqueString = (string) => unique(string).length === string.length;
+
+// const longestLength = (str) => {
+//   const len = str.length;
+
+//   for (let i = len - 1; i >= 0; i -= 1) {
+//     for (let j = 0; j < len - i; j += 1) {
+//       const sub = str.substr(j, i + 1);
+//       if (isUniqueString(sub)) {
+//         return i + 1;
+//       }
+//     }
+//   }
+
+//   return 0;
+// };
