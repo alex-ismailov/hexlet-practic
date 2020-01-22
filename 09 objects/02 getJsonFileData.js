@@ -7,19 +7,31 @@
   и руками сформировать объект аналогичной структуры.
 */
 
-const getJsonFileData = () => {
-  const obj = {
-    common: {
-      files: [
-        'src/objects.js',
-      ],
-    },
-    config: {
-      outdir: '/dist',
-    },
-  };
-  return obj;
-};
+// const getJsonFileData = () => {
+//   const obj = {
+//     common: {
+//       files: [
+//         'src/objects.js',
+//       ],
+//     },
+//     config: {
+//       outdir: '/dist',
+//     },
+//   };
+//   return obj;
+// };
+
+/* teacher solution */
+const getJsonFileData = () => ({
+  common: {
+    files: [
+      'src/objects.js',
+    ],
+  },
+  config: {
+    outdir: '/dist',
+  },
+});
 
 /* testing */
 console.log(getJsonFileData());
