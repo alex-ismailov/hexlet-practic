@@ -55,7 +55,7 @@ const getIn = (obj, keys) => {
   return acc;
 };
 
-// https://qna.habr.com/q/701487
+// Рещение Куратора 0xD34F, с Хабр Q&A, link: https://qna.habr.com/q/701487
 // const getIn = (obj, keys) => keys.reduce((p, c) => p && p.hasOwnProperty(c) ? p[c] : null, obj);
 // тоже самое, но в развернутой форме:
 // const getIn = (obj, keys) => {
