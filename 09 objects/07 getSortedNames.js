@@ -4,10 +4,19 @@
   сортирует и возвращает отсортированный список имен.
 */
 
+// const getSortedNames = (users) => {
+//   const names = [];
+//   for (const user of users) {
+//     const { name } = user;
+//     names.push(name);
+//   }
+//   return names.sort();
+// };
+
+/* teacher solution */
 const getSortedNames = (users) => {
   const names = [];
-  for (const user of users) {
-    const { name } = user;
+  for (const { name } of users) {
     names.push(name);
   }
   return names.sort();
