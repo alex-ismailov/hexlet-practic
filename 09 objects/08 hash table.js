@@ -25,24 +25,26 @@ import crc32 from 'crc-32';
 /* Создаем АТД - Ассоциативный массив, в виде обычного массива в который будем помещять подмассивы
 в которых будут храниться пары ключ-значение. */
 const make = () => [];
+const getIndex = (key) => Math.abs(crc32.str(key)) % 1000;
 
 const set = (map, key, value) => {
-  const hashedKey = crc32.str(key); // хэшируем ключ
-  const index = Math.abs(hashedKey) % 1000; // форматируем hashedKey в индекс
+  const index = getIndex(key); // форматируем key в индекс
   /* Коллизия возникает, когда вычисленный индекс существует,
   но записанный в него ключ не соответствует переданному ключу. */
-  if (map[index] === undefined || map[index].includes(key)) {
-    map[index] = [key, value];
-    return true;
+  if (map[index]) {
+    const [currentKey] = map[index];
+    /* При возникновении коллизии, функция никак не меняет словарь и возвращает false. */
+    if (currentKey !== key) {
+      return false;
+    }
   }
-  /* При возникновении коллизии, функция никак не меняет словарь и возвращает false. */
-  return false;
+  map[index] = [key, value];
+  return true;
 };
 
 const get = (map, key, defaultValue = null) => {
-  const hashedKey = crc32.str(key);
-  const index = Math.abs(hashedKey) % 1000;
-  if (map[index] === undefined) {
+  const index = getIndex(key);
+  if (!map[index]) {
     return defaultValue;
   }
   const [, value] = map[index];
