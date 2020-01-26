@@ -30,14 +30,25 @@
 //   return resStr;
 // };
 
-const bqs = (queryObj) => {
-  let res = [];
-  const queryObjKeys = Object.keys(queryObj);
-  for (const key of queryObjKeys) {
-    res.push(`${key}=${queryObj[key]}`); 
+/* my new solution */
+const bqs = (params) => {
+  const res = [];
+  const entries = Object.entries(params);
+  for (const [key, value] of entries) {
+    res.push(`${key}=${value}`);
   }
   return res.sort().join('&');
-};
+}
+
+/* teacher solution */
+// const bqs = (queryObj) => {
+//   let res = [];
+//   const queryObjKeys = Object.keys(queryObj);
+//   for (const key of queryObjKeys) {
+//     res.push(`${key}=${queryObj[key]}`); 
+//   }
+//   return res.sort().join('&');
+// };
 
 
 /* testing */
