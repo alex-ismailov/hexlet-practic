@@ -15,18 +15,18 @@
 */
 
 /* solution using for cicle*/
-// const isPrime = (num) => {
-//   if (num < 2) {
-//     return false;
-//   }
-//   const size = Math.sqrt(num);
-//   for (let div = 2; div <= size; div += 1) {
-//     if (num % div === 0) {
-//       return false;
-//     }
-//   }
-//   return true;
-// };
+const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
+  const size = Math.floor(Math.sqrt(num));
+  for (let div = 2; div <= size; div += 1) {
+    if (num % div === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 
 /* linear recursive solution */
 const isPrime = (num) => {
@@ -34,8 +34,8 @@ const isPrime = (num) => {
     return false;
   }
   const iter = (testDiv) => {
-    if (testDiv === Math.sqrt(num)) {
-      return testDiv;
+    if (testDiv > Math.floor(Math.sqrt(num))) {
+      return num;
     }
     if (num % testDiv === 0) {
       return testDiv;
@@ -44,6 +44,10 @@ const isPrime = (num) => {
   };
   return num === iter(2);
 };
+
+/* Явл-ся ли данная реализация функции isPrime детерминированной? Она всегда возвращает один и тот же ответ
+для одних и тех же входных данных, но для этого она вынужденна обращаться к другой вложенной функции findSmallestDiv.
+Явл-ся ли findSmallestDiv для isPrime источником внешних данных?*/
 
 const sayPrimeOrNot = (num) => {
   const answer = isPrime(num) ? 'yes' : 'no';
