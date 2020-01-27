@@ -41,7 +41,7 @@ import { uniq } from 'lodash';
 
 /* version 3 */
 const union = (...arrays) => {
-  let res1 = []; 
+  const res1 = []; 
   return uniq(res1.concat(...arrays));
 };
 
