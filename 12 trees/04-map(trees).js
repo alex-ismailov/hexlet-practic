@@ -5,17 +5,6 @@
 
 import { mkdir, mkfile, isDirectory } from '@hexlet/immutable-fs-trees';
 
-/* data */
-const tree = mkdir('/', [
-  mkdir('eTc', [
-    mkdir('NgiNx'),
-    mkdir('CONSUL', [
-      mkfile('config.json'),
-    ]),
-  ]),
-  mkfile('hOsts'),
-]);
-/* *********** */
 
 const map = (fn, tree) => {
   const updatedNode = fn(tree);
@@ -26,7 +15,17 @@ const map = (fn, tree) => {
 };
 
 /* testing */
-const mappedTree = map(n => ({ ...n, name: n.name.toUpperCase() }), tree);
+const tree = mkdir('/', [
+  mkdir('eTc', [
+    mkdir('NgiNx'),
+    mkdir('CONSUL', [
+      mkfile('config.json'),
+    ]),
+  ]),
+  mkfile('hOsts'),
+]);
+
+const mappedTree = map((n) => ({ ...n, name: n.name.toUpperCase() }), tree);
 console.log(mappedTree);
 // {
 //   name: '/',
