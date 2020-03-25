@@ -25,15 +25,11 @@ const tree = mkdir('/', [
   mkfile('hosts'),
 ]);
 
-const res = reduce((acc, n) => acc + 1, tree, 0); // 6
-console.log(res);
+const res = reduce((acc, n) => acc + 1, tree, 0);
+console.log(res); // 6
 
 const actual2 = reduce((acc, n) => (n.type === 'file' ? acc + 1 : acc), tree, 0);
-console.log(actual2);
+console.log(actual2); // 2
 
 const actual3 = reduce((acc, n) => (n.type === 'directory' ? acc + 1 : acc), tree, 0);
-console.log(actual3);
-
-// const newChidren = [ ...tree.children ]
-// console.log(newChidren);
-
+console.log(actual3); // 4
