@@ -1,2 +1,2 @@
-# hexlet-practical-tasks
+# hexlet-practic
 Hexlet test tasks
