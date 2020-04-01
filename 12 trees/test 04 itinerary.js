@@ -1,26 +1,49 @@
 import _ from 'lodash';
 
-// const obj = {
-//   Moscow: [null, ['Smolensk', 'Yaroslavl', 'Voronezh', 'Ivanovo', 'Vladimir', 'Tver']],
-//   Smolensk: ['Mscow', []],
-//   Yaroslavl: ['Moscow', []],
-//   Voronezh: ['Moscow', ['Liski', 'Boguchar', 'Kursk']],
-//   Liski: ['Voronezh', []],
-//   Boguchar: ['Voronezh', []],
-//   Kursk: ['Voronezh', ['Belgorod', 'Kurchatov']],
-//   Belgorod: ['Kursk', ['Borisovka']],
-//   Borisovka: ['Belgorod', []],
-//   Kurchatov: ['Kursk', []],
-//   Ivanovo: ['Moscow', ['Kostroma', 'Kineshma']],
-//   Kostroma: ['Ivanovo', []],
-//   Kineshma: ['Ivanovo', []],
-//   Vladimir: ['Moscow', []],
-//   Tver: ['Moscow', ['Klin', 'Dubna', 'Rzhev']],
-//   Klin: ['Tver', []],
-//   Dubna: ['Tver', []],
-//   Rzhev: ['Tver', []],
-// };
+// adjacency list structure: { city: [parent, [children]] }
+const getAdjacencyList = (tree, parent = null) => {
+  const [leaf, children] = tree;
 
+  if (!children) {
+    return { [leaf]: [parent] };
+  }
+
+  const flatChildren = _.flatten(children);
+  const neighbors = flatChildren.filter((n) => n && !_.isArray(n));
+
+  return {
+    [leaf]: [parent, [...neighbors]],
+    ...children.reduce((acc, c) => ({ ...acc, ...getAdjacencyList(c, leaf) }), {}),
+  };
+};
+
+const getRoute = (start, finish, dict) => {
+  const iter = (currNode, route) => {
+    if (currNode === finish) {
+      return [...route, currNode];
+    }
+    const [parentNodeName] = dict[currNode];
+    if (!parentNodeName) {
+      return _.concat(route, getRoute(finish, currNode, dict).reverse());
+    }
+    const parentNode = dict[parentNodeName];
+    const [, parentChildren] = parentNode;
+
+    if (parentChildren.includes(finish)) {
+      return _.concat([...route, currNode], getRoute(finish, parentNodeName, dict).reverse());
+    }
+    return iter(parentNodeName, [...route, currNode]);
+  };
+
+  return iter(start, []);
+};
+
+const itinerary = (tree, start, finish) => {
+  const adjacencyList = getAdjacencyList(tree);
+  return getRoute(start, finish, adjacencyList);
+};
+
+/* testing */
 const tree = ['Moscow', [
   ['Smolensk'],
   ['Yaroslavl'],
@@ -43,60 +66,6 @@ const tree = ['Moscow', [
   ]],
 ]];
 
-/* teacher */
-const getAdjacencyList = (tree, parent = null) => {
-  const [leaf, children] = tree;
-
-  if (!children) {
-    return { [leaf]: [parent] };
-  }
-  
-  const flatChildren = _.flatten(children);
-  const neighbors = flatChildren // не понимаю зачем вот это - [...flatChildren]?
-    .filter((n) => n && !_.isArray(n));
-
-  return {
-    [leaf]: [parent, [...neighbors]],
-    ...children.reduce((acc, c) => ({ ...acc, ...getAdjacencyList(c, leaf) }), {}),
-  };
-};
-
-const getCommonParent = (first, second, dict) => {
-  const [parentName] = dict[first];
-  if (parentName === null) {
-    return first;
-  }
-  const parent = dict[parentName];
-  const [, parentChildren] = parent;
-  if (parentChildren.includes(second)) {
-    return parentName;
-  }
-  return getCommonParent(parentName, second, dict);
-};
-
-const getRoute = (from, to, dict) => {
-  const iter = (curr, route) => {
-    if (curr === to) {
-      route.push(curr);
-      return route;
-    }
-    route.push(curr);
-    const [parent] = dict[curr];
-    return iter(parent, route);
-  };
-  return iter(from, []);
-};
-
-const itinerary = (tree, from, to) => {
-  const adjacencyList = getAdjacencyList(tree);
-  const commonParent = getCommonParent(from, to, adjacencyList);
-  const upRoute = getRoute(from, commonParent, adjacencyList);
-  const downRoute = getRoute(to, commonParent, adjacencyList).reverse();
-
-  return _.uniq([...upRoute, ...downRoute]);
-};
-
-/* testing */
 console.log(itinerary(tree, 'Dubna', 'Kostroma'));
 // ['Dubna', 'Tver', 'Moscow', 'Ivanovo', 'Kostroma']
 
