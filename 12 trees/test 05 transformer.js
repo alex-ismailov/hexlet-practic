@@ -29,20 +29,39 @@ const getAdjacencyList = (tree, parent = null) => {
   };
 };
 
-const transform = (tree, root) => {
-  const dict = getAdjacencyList(tree);
-  const checkedNodes = [];
-  const iter = (currentNode) => {
-    checkedNodes.push(currentNode);
-    const neighbors = dict[currentNode];
-    const filtered = neighbors.filter((c) => !checkedNodes.includes(c));
-    return filtered.length === 0
+/* first solution */
+// const transform = (tree, root) => {
+//   const dict = getAdjacencyList(tree);
+//   const checkedNodes = [];
+//   const iter = (currentNode) => {
+//     checkedNodes.push(currentNode);
+//     const children = dict[currentNode].filter((c) => !checkedNodes.includes(c));
+//     return _.isEmpty(children)
+//       ? [currentNode]
+//       : [currentNode, children.reduce((acc, current) => [...acc, iter(current)], [])];
+//   };
+
+//   return iter(root);
+// };
+/* ******************************* */
+
+const buildTree = (adjacencyList, node) => {
+  const iter = (currentNode, acc) => {
+    const checkedNodes = [...acc, currentNode];
+    const children = adjacencyList[currentNode].filter((c) => !checkedNodes.includes(c));
+    return _.isEmpty(children)
       ? [currentNode]
-      : [currentNode, filtered.reduce((acc, current) => [...acc, iter(current)], [])];
+      : [currentNode, children.reduce((iAcc, current) => [...iAcc, iter(current, checkedNodes)], [])];
   };
 
-  return iter(root);
+  return iter(node, []);
 };
+
+const transform = (tree, root) => {
+  const adjacencyList = getAdjacencyList(tree);
+  return buildTree(adjacencyList, root);
+};
+
 // END
 /* testing */
 /* eslint no-multi-spaces: 0 */
