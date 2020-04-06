@@ -8,16 +8,16 @@
 Больше примеров в тестах.
 
 removeFirstLevel.js
-Реализуйте и экспортируйте по умолчанию функцию, которая убирает детей первого уровня и объединяет детей второго уровня в одно дерево.
+Реализуйте и экспортируйте по умолчанию функцию, которая убирает детей первого уровня и
+объединяет детей второго уровня в одно дерево.
 
 Подсказки
 Array.prototype.flat() - проверяет является ли элемент массивом.
 Array.isArray() - проверяет является ли элемент массивом. */
+import _ from 'lodash';
 
-const removeFirstLevel = (tree) => {
-  
-};
+const removeFirstLevel = (tree) => tree.filter((c) => Array.isArray(c)).flat();
 
 /* testing */
 const tree = [1, 2, [3, 5], [[4, 3], 2]];
-removeFirstLevel(tree); // [3, 5, [4, 3], 2]
+console.log(removeFirstLevel(tree)); // [3, 5, [4, 3], 2]
