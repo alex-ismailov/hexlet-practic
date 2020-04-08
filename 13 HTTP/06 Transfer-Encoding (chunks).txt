@@ -1,0 +1,13 @@
+Это задание демонстрирует работу в режиме chunked.
+
+solution
+Используя telnet выполните запрос к hexlet.local (расположен на localhost) на порт 8080. Параметры запроса: глагол get, страница /stream, протокол http 1.1;
+Запишите ваш request в файл solution;
+
+// BEGIN
+telnet localhost 8080
+
+GET /stream HTTP/1.1
+Host: hexlet.local
+Connection: close
+// END
