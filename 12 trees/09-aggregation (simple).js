@@ -9,18 +9,33 @@ import { mkdir, mkfile, isFile, getName, getChildren, isDirectory } from '@hexle
 const getHiddenFilesCount = (tree) => {
   const iter = (node, acc) => {
     if (isFile(node)) {
-      if (getName(node).startsWith('.')) {
-        return acc + 1;
-      }
-      return acc;
+      return getName(node).startsWith('.')
+        ? 1
+        : 0;
     }
     const children = getChildren(node);
-    const descendandtsCount = children.map((child) => iter(child, 0));
+    const hiddenFilesCounts = children.map((child) => iter(child, 0));
 
-    return _.sum(descendandtsCount);
+    return _.sum(hiddenFilesCounts);
   };
   return iter(tree, 0);
 };
+
+// const getHiddenFilesCount = (tree) => {
+//   const iter = (node, acc) => {
+//     if (isFile(node)) {
+//       if (getName(node).startsWith('.')) {
+//         return acc + 1;
+//       }
+//       return acc;
+//     }
+//     const children = getChildren(node);
+    
+//     return acc + children.reduce((iAcc, node) => iter(node, iAcc), 0);
+//   };
+
+//   return iter(tree, 0);
+// };
 
 /* data */
 const tree = mkdir('/', [
