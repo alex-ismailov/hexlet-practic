@@ -47,8 +47,14 @@ Number.prototype.toLocaleString() – умеет форматировать вы
 Если передать undefined первым параметром, то установится текущая локаль.
 Пример реализации денег на js */
 
-const EUR_RATIO = 0.7;
-const USD_RATIO = 1.2;
+const ratios = {
+  usd: {
+    eur: 0.7,
+  },
+  eur: {
+    usd: 1.2,
+  },
+};
 
 function Money(value, currency = 'usd') {
   this.value = value;
@@ -59,32 +65,34 @@ Money.prototype.getValue = function getValue() {
   return this.value;
 };
 
-Money.prototype.exchangeTo = function exchangeTo(currency) {
-  if (this.currency === currency) {
-    return new Money(this.getValue(), currency);
+Money.prototype.getCurrency = function getCurrency() {
+  return this.currency;
+};
+
+Money.prototype.exchangeTo = function exchangeTo(newCurrency) {
+  const currentCurrency = this.getCurrency();
+  if (currentCurrency === newCurrency) {
+    return new Money(this.getValue(), currentCurrency);
   }
-  return currency === 'usd'
-    ? new Money(this.getValue() * USD_RATIO, currency)
-    : new Money(this.getValue() * EUR_RATIO, currency);
+  return new Money(this.getValue() * ratios[currentCurrency][newCurrency]);
 };
 
 Money.prototype.add = function add(money) {
-  const currentCurrency = this.currency;
+  const currentCurrency = this.getCurrency();
+  const moneyCurrency = money.getCurrency();
 
-  if (this.currency === money.currency) {
+  if (currentCurrency === moneyCurrency) {
     const newValue = this.getValue() + money.getValue();
     return new Money(newValue, currentCurrency);
   }
 
-  const newValue = this.getValue() + money.exchangeTo(currentCurrency).getValue();
+  const convertedValue = money.exchangeTo(currentCurrency).getValue();
+  const newValue = this.getValue() + convertedValue;
   return new Money(newValue, currentCurrency);
 };
 
 Money.prototype.format = function format() {
-  const currentCurrency = this.currency;
-  return currentCurrency === 'usd'
-    ? this.getValue().toLocaleString('en-US', { style: 'currency', currency: this.currency })
-    : this.getValue().toLocaleString('en-US', { style: 'currency', currency: this.currency });
+  return this.getValue().toLocaleString(undefined, { style: 'currency', currency: this.currency });
 };
 
 /* testing */
