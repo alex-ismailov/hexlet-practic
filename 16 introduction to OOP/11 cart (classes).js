@@ -6,7 +6,7 @@
 -> getCount – возвращает количество товаров в корзине
 */
 
-// import _ from 'lodash';
+import _ from 'lodash';
 
 class Cart {
   constructor() {
@@ -23,7 +23,7 @@ class Cart {
 
   getCost() {
     const items = this.getItems();
-    return items.reduce((acc, item) => {
+    return _.reduce(items, (acc, item) => {
       const { good: { price }, count } = item;
       return acc + price * count;
     }, 0);
@@ -31,7 +31,7 @@ class Cart {
 
   getCount() {
     const items = this.getItems();
-    return items.reduce((acc, item) => {
+    return _.reduce(items, (acc, item) => {
       const { count } = item;
       return acc + count;
     }, 0);
