@@ -22,19 +22,11 @@ class Cart {
   }
 
   getCost() {
-    const items = this.getItems();
-    return _.reduce(items, (acc, item) => {
-      const { good: { price }, count } = item;
-      return acc + price * count;
-    }, 0);
+    return _.sumBy(this.items, (item) => item.good.price * item.count);
   }
 
   getCount() {
-    const items = this.getItems();
-    return _.reduce(items, (acc, item) => {
-      const { count } = item;
-      return acc + count;
-    }, 0);
+    return _.sumBy(this.items, (item) => item.count);
   }
 }
 
