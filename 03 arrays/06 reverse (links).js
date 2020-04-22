@@ -1,3 +1,19 @@
+/* Реализуйте и экспортируйте функцию reverse(), которая принимает на вход массив и
+располагает элементы внутри него в обратном порядке.
+
+import { reverse } from './arrays';
+
+const names = ['john', 'smith', 'karl'];
+
+reverse(names);
+console.log(names); // => ['karl', 'smith', 'john']
+
+reverse(names);
+console.log(names); // => ['john', 'smith', 'karl']
+Подсказки
+Для решения этой задачи, проще всего брать и менять местами элементы стоящие на зеркальных местах: первый и последний,
+второй и предпоследний и так дак далее до середины.
+ */
 const reverse = (srcArray) => {
   const array = srcArray.slice();
   const pivot = Math.floor(array.length / 2);
