@@ -6,6 +6,7 @@
   "repository": "git@github.com:alex-ismailov/hexlet-practical-tasks.git",
   "author": "alex-ismailov <alexander.is.dev@gmail.com>",
   "license": "UNLICENSED",
+  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/node": "^7.7.4",
