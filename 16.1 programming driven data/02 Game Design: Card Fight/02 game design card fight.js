@@ -34,39 +34,32 @@ import { cons as consList, l, random, head, reverse, toString as listToString } 
 const run = (player1, player2, cards) => {
   const iter = (health1, name1, health2, name2, order, log) => {
     // BEGIN (write your solution here)
-    if (health1 <= 0) {
-      const msg = `${name1} был убит`;
-      const logItem = cons(cons(health1, health2), msg);
-      return consList(logItem , log);
+    if (health1 <= 0 || health2 <= 0) {
+      const name = (health1 <= 0) ? name1 : name2;
+      return consList(cons(cons(health1, health2), `${name} был убит`), log);
     }
-    if (health2 <= 0) {
-      const msg = `${name1} был убит`;
-      const logItem = cons(cons(health1, health2), msg);
-      return consList(logItem , log);
-    }
-    
-    const currentCard = random(cards);
-    const currentCardText = car(currentCard);
-    const currentCardDamage = cdr(currentCard)();
+
+    const card = random(cards);
+    const cardText = car(card);
+    const cardDamage = cdr(card)();
 
     if (order === 1) {
-      const newHealth2 = health2 - currentCardDamage;
-      const msg = `Игрок ${name1} применил ${currentCardText} против ${name2} и нанес урон ${currentCardDamage}`;
+      const newHealth2 = health2 - cardDamage;
+      const msg = `Игрок ${name1} применил ${cardText} против ${name2} и нанес урон ${cardDamage}`;
       const logItem = cons(cons(health1, newHealth2), msg);
-      return iter(health1, name1, health2 - currentCardDamage, name2, 2, consList(logItem, log));
+      return iter(health1, name1, health2 - cardDamage, name2, 2, consList(logItem, log));
     }
-    
-    const newHealth1 = health1 - currentCardDamage
-    const msg = `Игрок ${name2} применил ${currentCardText} против ${name1} и нанес урон ${currentCardDamage}`;
+
+    const newHealth1 = health1 - cardDamage;
+    const msg = `Игрок ${name2} применил ${cardText} против ${name1} и нанес урон ${cardDamage}`;
     const logItem = cons(cons(newHealth1, health2), msg);
-    return iter(health1 - currentCardDamage, name1, health2, name2, 1, consList(logItem, log));
+    return iter(health1 - cardDamage, name1, health2, name2, 1, consList(logItem, log));
     // END
   };
 
   const startHealth = 10;
   const logItem = cons(cons(startHealth, startHealth), 'Начинаем бой!');
   return reverse(iter(startHealth, player1, startHealth, player2, 1, l(logItem)));
-  // return iter(startHealth, player1, startHealth, player2, 1, l(logItem));
 };
 
 export default (cards) => (name1, name2) => run(name1, name2, cards);
