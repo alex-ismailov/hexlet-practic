@@ -26,6 +26,7 @@
     "suppressor": "^1.0.0"
   },
   "dependencies": {
+    "@hexlet/pairs": "^1.0.14",
     "lodash": "^4.17.15"
   }
 }
