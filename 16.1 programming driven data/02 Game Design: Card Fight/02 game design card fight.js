@@ -22,38 +22,38 @@ const message = `Игрок '${name1}' применил '${cardName}'
 import { cons, car, cdr, toString as pairToString } from '@hexlet/pairs'; // eslint-disable-line
 import { cons as consList, l, random, head, reverse, toString as listToString } from '@hexlet/pairs-data'; // eslint-disable-line
 
+/* here is imports for vscode debugger */
 // import hexletPairs from '@hexlet/pairs'; // eslint-disable-line
 // const { cons, car, cdr } = hexletPairs;
-
-
 // import hexletPairsData from '@hexlet/pairs-data'; // eslint-disable-line
 // const { l, random, head, reverse, toString } = hexletPairsData;
 // const listToString = toString;
 // const consList = cons;
+/* ******************* */
 
 const run = (player1, player2, cards) => {
   const iter = (health1, name1, health2, name2, order, log) => {
     // BEGIN (write your solution here)
-    if (health1 <= 0 || health2 <= 0) {
-      const name = (health1 <= 0) ? name1 : name2;
-      return consList(cons(cons(health1, health2), `${name} был убит`), log);
+    if (health1 <= 0) {
+      return consList(cons(car(head(log)), `${name1} был убит`), log);
     }
 
     const card = random(cards);
     const cardText = car(card);
     const cardDamage = cdr(card)();
+    const newHealth = health2 - cardDamage;
 
+    const msg = `Игрок ${name1} применил ${cardText} против ${name2} и нанес урон ${cardDamage}`;
+
+    let stats;
     if (order === 1) {
-      const newHealth2 = health2 - cardDamage;
-      const msg = `Игрок ${name1} применил ${cardText} против ${name2} и нанес урон ${cardDamage}`;
-      const logItem = cons(cons(health1, newHealth2), msg);
-      return iter(health1, name1, health2 - cardDamage, name2, 2, consList(logItem, log));
+      stats = cons(cons(health1, newHealth), msg);
+    } else if (order === 2) {
+      stats = cons(cons(newHealth, health1), msg);
     }
+    const newLog = consList(stats, log);
 
-    const newHealth1 = health1 - cardDamage;
-    const msg = `Игрок ${name2} применил ${cardText} против ${name1} и нанес урон ${cardDamage}`;
-    const logItem = cons(cons(newHealth1, health2), msg);
-    return iter(health1 - cardDamage, name1, health2, name2, 1, consList(logItem, log));
+    return iter(newHealth, name2, health1, name1, (order === 1) ? 2 : 1, newLog);
     // END
   };
 
