@@ -34,7 +34,7 @@ const run = (player1, player2, cards, customRandom) => {
     if (isSimpleCard(card)) {
       cardName = getSimpleCardName(card);
       damage = simpleCardDamage(card);
-    } else if(isPercentCard(card)) {
+    } else if (isPercentCard(card)) {
       cardName = getPercentCardName(card);
       damage = percentCardDamage(card, health2);
     }
