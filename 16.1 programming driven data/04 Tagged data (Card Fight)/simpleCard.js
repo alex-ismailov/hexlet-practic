@@ -2,5 +2,7 @@ import { cons, car, cdr, toString as pairToString } from '@hexlet/pairs'; // esl
 import { attach, contents } from '@hexlet/tagged-types';
 
 // BEGIN (write your solution here)
-const make = (name) => 
+export const make = (name, damage) => attach('SimpleCard', cons(name, damage));
+export const getName = (self) => car(contents(self));
+export const damage = (self) => car(cdr(contents(self)));
 // END

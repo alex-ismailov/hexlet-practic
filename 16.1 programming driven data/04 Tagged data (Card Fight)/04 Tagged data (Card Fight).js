@@ -1,3 +1,14 @@
+/* Реализуйте интерфейс работы карты с типом SimpleCard по аналогии с
+типом PercentCard. Второй параметр у конструктора урон.
+simpleCard.make('Жесткий ломатель мироздания', 6);
+
+solution.js
+Реализуйте логику работы функции run.
+
+Подсказки
+Для определения типа карты воспользуйтесь функциями
+isSimpleCard и/или isPercentCard. */
+
 import { cons, car, toString as pairToString } from '@hexlet/pairs'; // eslint-disable-line
 import { cons as consList, l, random, head, reverse, toString as listToString } from '@hexlet/pairs-data'; // eslint-disable-line
 import { typeTag } from '@hexlet/tagged-types';
@@ -20,7 +31,13 @@ const run = (player1, player2, cards, customRandom) => {
     // Populate cardName and damage using suitable card
     // use imports from  percentCard.js and simpleCard.js
     // BEGIN (write your solution here)
-    
+    if (isSimpleCard(card)) {
+      cardName = getSimpleCardName(card);
+      damage = simpleCardDamage(card);
+    } else if(isPercentCard(card)) {
+      cardName = getPercentCardName(card);
+      damage = percentCardDamage(card, health2);
+    }
     // END
 
     const newHealth = health2 - damage;
