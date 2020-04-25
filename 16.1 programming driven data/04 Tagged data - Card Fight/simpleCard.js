@@ -4,5 +4,5 @@ import { attach, contents } from '@hexlet/tagged-types';
 // BEGIN (write your solution here)
 export const make = (name, damage) => attach('SimpleCard', cons(name, damage));
 export const getName = (self) => car(contents(self));
-export const damage = (self) => car(cdr(contents(self)));
+export const damage = (self) => cdr(contents(self));
 // END

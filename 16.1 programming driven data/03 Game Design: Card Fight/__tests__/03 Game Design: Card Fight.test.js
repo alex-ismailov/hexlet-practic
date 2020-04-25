@@ -1,7 +1,7 @@
 import { car, cons, toString as pairToString } from '@hexlet/pairs';
 // function get: `get(index, list)`
 import { l, length, get } from '@hexlet/pairs-data';
-import make from '../03 game design card fight';
+import make from '../03 Game Design: Card Fight';
 
 const cards = l(
   cons('Костяная кочерга гробницы', () => 7),
