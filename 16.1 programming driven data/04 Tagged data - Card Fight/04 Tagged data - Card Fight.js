@@ -44,6 +44,8 @@ const run = (player1, player2, cards, customRandom) => {
 
     const message = `Игрок '${name1}' применил '${cardName}'
       против '${name2}' и нанес урон '${damage}'`;
+
+    /* dispatching on type (manualy) */
     let stats;
     if (order === 1) {
       stats = cons(cons(health1, newHealth), message);
