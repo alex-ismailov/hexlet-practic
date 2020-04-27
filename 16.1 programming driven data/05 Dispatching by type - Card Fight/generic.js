@@ -8,18 +8,18 @@ let methods = l();
 
 export const getMethod = (obj, methodName) => {
   // BEGIN (write your solution here)
-  const objType = typeTag(obj);
-  const iter = (list) => {
-    if (isEmpty(list)) {
+  const searchedObjType = typeTag(obj);
+  const iter = (methodsList) => {
+    if (isEmpty(methodsList)) {
       return null;
     }
-    if (objType === car(head(list))) {
-      if (methodName === car(cdr(head(list)))) {
-        return contents(cdr(head(list)));
+    const methodsListItem = head(methodsList);
+    if (searchedObjType === typeTag(methodsListItem)) {
+      if (methodName === car(contents(methodsListItem))) {
+        return cdr(contents(methodsListItem));
       }
-      return iter(tail(list));
     }
-    return iter(tail(list));
+    return iter(tail(methodsList));
   };
   return iter(methods);
   // END
