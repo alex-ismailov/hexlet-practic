@@ -2,7 +2,7 @@ import { car, cdr, toString as pairToString } from '@hexlet/pairs';
 import { l, length, get } from '@hexlet/pairs-data';
 import SimpleCard from '../simpleCard';
 import PercentCard from '../percentCard';
-import make from '../solution';
+import make from '../05 Dispatching by type - Card Fight';
 
 describe('CardGame', () => {
   it('#flow 1', () => {
