@@ -15,8 +15,9 @@ const run = (player1, player2, cards, customRandom) => {
   const iter = (health1, name1, health2, name2, order, log) => {
     if (health1 <= 0) {
       const message = `${name1} был убит`;
+      const previouslog = head(log);
       const resLog = {
-        ...head(log),
+        ...previouslog,
         message,
       };
       return consList(resLog, log);
@@ -28,19 +29,13 @@ const run = (player1, player2, cards, customRandom) => {
     const newHealth = health2 - damage;
 
     const message = `Игрок '${name1}' применил '${cardName}' против '${name2}' и нанес урон '${damage}'`;
-    let stats;
+    const stats = { message };
     if (order === 1) {
-      stats = {
-        health1,
-        health2: newHealth,
-        message,
-      };
+      stats.health1 = health1;
+      stats.health2 = newHealth;
     } else if (order === 2) {
-      stats = {
-        health1: newHealth,
-        health2: health1,
-        message,
-      };
+      stats.health1 = newHealth;
+      stats.health2 = health1;
     }
     const newLog = consList(stats, log);
     return iter(newHealth, name2, health1, name1, order === 1 ? 2 : 1, newLog);
