@@ -39,8 +39,11 @@ import { map } from '@hexlet/pairs-data';
 import { getAttribute, getName } from './tags';
 
 // BEGIN (write your solution here)
-export default (tags) => map((tag) => {
-  const attributeName = getName(tag) === 'img' ? 'src' : 'href';
-  return getAttribute(attributeName, tag);
-}, tags);
+const mapping = {
+  img: (tag) => getAttribute('src', tag),
+  a: (tag) => getAttribute('href', tag),
+  link: (tag) => getAttribute('href', tag),
+};
+
+export default (tags) => map((tag) => mapping[getName(tag)](tag), tags);
 // END
