@@ -66,22 +66,38 @@ class Enumerable {
   }
 
   // BEGIN (write your solution here)
+  // where(...args) {
+  //   const newOps = args.reduce((acc, predicate) => {
+  //     if (typeof predicate === 'function') {
+  //       acc.push((coll) => coll.filter(predicate));
+  //       return acc;
+  //     }
+
+  //     const predicateFunc = ((car) => {
+  //       const predicateObjKeys = Object.keys(predicate);
+  //       return predicateObjKeys.every((key) => predicate[key] === car[key]);
+  //     });
+
+  //     acc.push((coll) => coll.filter(predicateFunc));
+
+  //     return acc;
+  //   }, []);
+
+  //   return this.build(newOps);
+  // }
+
+  /* teacher solution */
   where(...args) {
-    const newOps = args.reduce((acc, predicate) => {
+    const newOps = args.map((predicate) => {
       if (typeof predicate === 'function') {
-        acc.push((coll) => coll.filter(predicate));
-        return acc;
+        return (coll) => coll.filter(predicate);
       }
+      const predicateObjKeys = Object.keys(predicate);
 
-      const predicateFunc = ((car) => {
-        const predicateObjKeys = Object.keys(predicate);
-        return predicateObjKeys.every((key) => predicate[key] === car[key]);
-      });
-
-      acc.push((coll) => coll.filter(predicateFunc));
-
-      return acc;
-    }, []);
+      return (coll) => coll.filter(
+        (car) => predicateObjKeys.every((key) => predicate[key] === car[key]),
+      );
+    });
 
     return this.build(newOps);
   }
