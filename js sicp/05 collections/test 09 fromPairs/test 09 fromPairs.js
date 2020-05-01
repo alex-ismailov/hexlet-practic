@@ -12,9 +12,10 @@ fromPairs([['fred', 30], ['barney', 40]]);
 
 const fromPairs = (pairs) => pairs.reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
 
+export default fromPairs;
 
-console.log(fromPairs([['cat', 5], ['dog', 6], ['cat', 11]]));
+// console.log(fromPairs([['cat', 5], ['dog', 6], ['cat', 11]]));
 // → { 'dog': 6, 'cat': 11 }
 
-console.log(fromPairs([['fred', 30], ['barney', 40]]));
+// console.log(fromPairs([['fred', 30], ['barney', 40]]));
 // → { 'fred': 30, 'barney': 40 } */
