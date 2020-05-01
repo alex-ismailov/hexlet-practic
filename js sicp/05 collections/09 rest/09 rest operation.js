@@ -82,7 +82,7 @@ class Enumerable {
 
       return acc;
     }, []);
-    
+
     return this.build(newOps);
   }
   // END
