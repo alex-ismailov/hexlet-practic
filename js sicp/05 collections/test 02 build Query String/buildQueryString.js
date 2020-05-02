@@ -18,14 +18,20 @@ bqs({ per: 10, page: 1 });
 // page=1&per=10
 Имена параметров в выходной строке должны располагаться в алфавитном порядке (то есть их нужно отсортировать) */
 
+// const bqs = (data) => {
+//   const keys = Object.keys(data).sort();
+//   const strColl = keys.reduce((acc, key) => {
+//     acc.push(`${key}=${data[key]}`);
+//     return acc;
+//   }, []);
+
+//   return strColl.join('&');
+// };
+
+/* teacher solution */
 const bqs = (data) => {
   const keys = Object.keys(data).sort();
-  const strColl = keys.reduce((acc, key) => {
-    acc.push(`${key}=${data[key]}`);
-    return acc;
-  }, []);
-
-  return strColl.join('&');
+  return keys.map((key) => `${key}=${data[key]}`).join('&');
 };
 
 export default bqs;
