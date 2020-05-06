@@ -33,31 +33,24 @@ const data = ['html', [
 // BEGIN (write your solution here)
 
 const mapping = {
-  Array: (node) => {},
-  Object: (node) => {},
-  String: (node) => {},
+  Array: (args) => args.map(buildHtml).join(''),
+  Object: (arg) => {
+        const entr = Object.entries(arg);
+        return entr.map(([prop, value]) => ` ${prop}="${value}"`).join('');
+      },
+  String: (arg) => arg,
 };
-const make = (node, ...rest) => {
-  
-};
-
 const buildHtml = (tree) => {
   const [nodeName, ...restArgs] = tree;
+
+  let content = '';
   let options = '';
-  const content = restArgs.map((arg) => {
-    if (typeof arg === 'string') {
-      return arg;
-    }
-    if (arg instanceof Array) {
-      return arg.map(buildHtml).join('');
-    }
-    if (arg instanceof Object) {
-      const entr = Object.entries(arg);
-      options = entr.map(([prop, value]) => ` ${prop}="${value}"`).join('');
-      return '';
-    }
+  restArgs.forEach((arg) => {
+    content = mapping[arg.constructor.name](arg);
+    // options = mapping[arg.constructor.name](arg);
   });
-  return `<${nodeName}${options}>${content.join('')}</${nodeName}>`;
+
+  return `<${nodeName}${options}>${content}</${nodeName}>`;
 };
 
 /* testing */
@@ -75,3 +68,33 @@ const data = ['html', [
 ]];
 
 console.log(buildHtml(data));
+
+
+
+
+
+
+
+
+
+
+
+
+// const buildHtml = (tree) => {
+//   const [nodeName, ...restArgs] = tree;
+//   let options = '';
+//   const content = restArgs.map((arg) => {
+//     if (typeof arg === 'string') {
+//       return arg;
+//     }
+//     if (arg instanceof Array) {
+//       return arg.map(buildHtml).join('');
+//     }
+//     if (arg instanceof Object) {
+//       const entr = Object.entries(arg);
+//       options = entr.map(([prop, value]) => ` ${prop}="${value}"`).join('');
+//       return '';
+//     }
+//   });
+//   return `<${nodeName}${options}>${content.join('')}</${nodeName}>`;
+// };
