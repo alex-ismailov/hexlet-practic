@@ -31,26 +31,33 @@ const data = ['html', [
 //</html>
 
 // BEGIN (write your solution here)
+const mapping2 = {
+  Object: (arg) => {
+    const keysValues = Object.keysValuesies(arg);
+    const res = keysValues.map(([prop, value]) => ` ${prop}="${value}"`).join('');
+    return res;
+  },
+};
 
 const mapping = {
   Array: (args) => args.map(buildHtml).join(''),
-  Object: (arg) => {
-        const entr = Object.entries(arg);
-        return entr.map(([prop, value]) => ` ${prop}="${value}"`).join('');
-      },
+  Object: (arg) => arg,
   String: (arg) => arg,
 };
+
 const buildHtml = (tree) => {
   const [nodeName, ...restArgs] = tree;
 
-  let content = '';
-  let options = '';
-  restArgs.forEach((arg) => {
-    content = mapping[arg.constructor.name](arg);
-    // options = mapping[arg.constructor.name](arg);
-  });
+  const processdArgs = restArgs.map((arg) => mapping[arg.constructor.name](arg));
+  const content = processdArgs.filter((el) => !(el instanceof Object));
+  const props = processdArgs
+    .filter((el) => el instanceof Object)
+    .map((propObj) => {
+      const keysValues = Object.entries(propObj);
+      return keysValues.map(([key, value]) => ` ${key}="${value}"`).join('');
+    });
 
-  return `<${nodeName}${options}>${content}</${nodeName}>`;
+  return `<${nodeName}${props}>${content}</${nodeName}>`;
 };
 
 /* testing */
@@ -76,13 +83,27 @@ console.log(buildHtml(data));
 
 
 
+// const buildHtml = (tree) => {
+//   const [nodeName, ...restArgs] = tree;
 
+//   let content = '';
+//   let props = '';
+//   restArgs.forEach((arg) => {
+//     // console.log(arg);
+//     // console.log(`arg.constructor.name: ${arg.constructor.name}`);
+//     content += mapping[arg.constructor.name](arg);
+//     // props = mapping.Object(arg);
+//   });
+  
+//   // console.log(content);
+//   return `<${nodeName}${props}>${content}</${nodeName}>`;
+// };
 
 
 
 // const buildHtml = (tree) => {
 //   const [nodeName, ...restArgs] = tree;
-//   let options = '';
+//   let props = '';
 //   const content = restArgs.map((arg) => {
 //     if (typeof arg === 'string') {
 //       return arg;
@@ -91,10 +112,10 @@ console.log(buildHtml(data));
 //       return arg.map(buildHtml).join('');
 //     }
 //     if (arg instanceof Object) {
-//       const entr = Object.entries(arg);
-//       options = entr.map(([prop, value]) => ` ${prop}="${value}"`).join('');
+//       const keysValues = Object.keysValuesies(arg);
+//       props = keysValues.map(([prop, value]) => ` ${prop}="${value}"`).join('');
 //       return '';
 //     }
 //   });
-//   return `<${nodeName}${options}>${content.join('')}</${nodeName}>`;
+//   return `<${nodeName}${props}>${content.join('')}</${nodeName}>`;
 // };
