@@ -36,8 +36,16 @@ const ast = parse(data);
 
 */
 
-const parseDsl = (dsl) => {
-  console.log(dsl);
+import _ from 'lodash';
+
+const singleTagsList = new Set(['hr', 'img', 'br']);
+const subtypeHandler = {
+  Array: (args) => ({ children: args.map(parse) }),
+  Object: (arg) => ({ attributes: arg }),
+  String: (arg) => ({ body: arg }),
+};
+
+const parse = (dsl) => {
   const [nodeName, ...restArgs] = dsl;
 
   const template = {
@@ -46,32 +54,22 @@ const parseDsl = (dsl) => {
     body: '',
     children: [],
   };
-
   return restArgs.reduce((acc, arg) => {
-    if (arg instanceof Array) {
-      const res = arg.map(parseDsl);
-      return { ...acc, children: res };
-    }
-    if (arg instanceof Object) {
-      return { ...acc, attributes: arg }
-    }
-    return { ...acc, body: arg }
+    const type = arg.constructor.name;
+    return { ...acc, ...subtypeHandler[type](arg) };
   }, template);
 };
 
-const renderAST = (ast) => {
+const render = (ast) => {
   const attrs = Object.keys(ast.attributes)
     .map((key) => ` ${key}="${ast.attributes[key]}"`).join('');
-  const children = ast.children.map(renderAST).join('');
+  const children = ast.children.map(render).join('');
 
-  return `<${ast.name}${attrs}>${ast.body}${children}</${ast.name}>`;
+  return singleTagsList.has(ast.name)
+    ? `<${ast.name}${attrs}>`
+    : `<${ast.name}${attrs}>${ast.body}${children}</${ast.name}>`;
 };
 
-export default {
-  parse(data) {
-    return parseDsl(data);
-  },
-  render(ast) {
-    return renderAST(ast);
-  },
+export {
+  parse, render,
 };
