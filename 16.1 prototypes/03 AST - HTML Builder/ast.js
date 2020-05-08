@@ -36,40 +36,56 @@ const ast = parse(data);
 
 */
 
-import _ from 'lodash';
+import { identity } from 'lodash';
 
 const singleTagsList = new Set(['hr', 'img', 'br']);
-const subtypeHandler = {
-  Array: (args) => ({ children: args.map(parse) }),
-  Object: (arg) => ({ attributes: arg }),
-  String: (arg) => ({ body: arg }),
+
+export const render = (ast) => {
+  const {
+    name,
+    attributes,
+    body,
+    children,
+  } = ast;
+
+  const attrs = Object.keys(attributes).map((key) => ` ${key}="${attributes[key]}"`).join('');
+  const content = children.length > 0 ? children.map(render).join('') : body;
+
+  return singleTagsList.has(name)
+    ? `<${name}${attrs}>`
+    : `<${name}${attrs}>${content}</${name}>`;
 };
 
-const parse = (dsl) => {
-  const [nodeName, ...restArgs] = dsl;
+const propertyActions = [
+  {
+    name: 'body',
+    check: (arg) => typeof arg === 'string',
+    process: identity,
+  },
+  {
+    name: 'children',
+    check: (arg) => arg instanceof Array,
+    process: (children, f) => children.map(f),
+  },
+  {
+    name: 'attributes',
+    check: (arg) => arg instanceof Object,
+    process: identity,
+  },
+];
 
-  const template = {
-    name: nodeName,
+const getPropertyAction = (arg) => propertyActions.find(({ check }) => check(arg));
+
+export const parse = (data) => {
+  const [first, ...rest] = data;
+  const root = {
+    name: first,
     attributes: {},
     body: '',
     children: [],
   };
-  return restArgs.reduce((acc, arg) => {
-    const type = arg.constructor.name;
-    return { ...acc, ...subtypeHandler[type](arg) };
-  }, template);
-};
-
-const render = (ast) => {
-  const attrs = Object.keys(ast.attributes)
-    .map((key) => ` ${key}="${ast.attributes[key]}"`).join('');
-  const children = ast.children.map(render).join('');
-
-  return singleTagsList.has(ast.name)
-    ? `<${ast.name}${attrs}>`
-    : `<${ast.name}${attrs}>${ast.body}${children}</${ast.name}>`;
-};
-
-export {
-  parse, render,
+  return rest.reduce((acc, arg) => {
+    const { name, process } = getPropertyAction(arg);
+    return { ...acc, [name]: process(arg, parse) };
+  }, root);
 };
