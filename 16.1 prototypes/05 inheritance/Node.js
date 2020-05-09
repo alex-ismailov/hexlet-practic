@@ -1,16 +1,12 @@
 // BEGIN (write your solution here)
-export default class Node {
+export default class {
   constructor(name, attributes = {}) {
     this.name = name;
     this.attributes = attributes;
   }
 
-  getName() {
-    return this.name;
-  }
-
-  getAttributes() {
-    return this.attributes;
+  getAttrsStrLine() {
+    return Object.keys(this.attributes).map((key) => ` ${key}="${this.attributes[key]}"`).join('');
   }
 }
 // END
