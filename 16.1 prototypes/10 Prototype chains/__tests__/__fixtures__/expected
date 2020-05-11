@@ -1,0 +1,52 @@
+{
+    "name": "html",
+    "attributes": {},
+    "body": "",
+    "children": [
+      {
+        "name": "head",
+        "attributes": {},
+        "body": "",
+        "children": [
+          {
+            "name": "title",
+            "attributes": {},
+            "body": "hello, hexlet!",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "body",
+        "attributes": {},
+        "body": "",
+        "children": [
+          {
+            "name": "h1",
+            "attributes": {
+              "class": "header"
+            },
+            "body": "html builder example",
+            "children": []
+          },
+          {
+            "name": "div",
+            "attributes": {},
+            "body": "",
+            "children": [
+              {
+                "name": "span",
+                "attributes": {},
+                "body": "span text",
+                "children": []
+              },
+              {
+                "name": "hr",
+                "attributes": {}
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
