@@ -6,7 +6,7 @@ function toString() {
     ? this.children.join('')
     : this.body;
 
-  return `<${this.getName()}${this.getAttrsLine()}>${content}</${this.getName()}>`;
+  return `<${this.name}${this.getAttrsLine()}>${content}</${this.name}>`;
 }
 
 export default function (name, attributes, body = '', children = []) {

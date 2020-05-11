@@ -2,7 +2,7 @@
 import Node from './Node';
 
 function toString() {
-  return `<${this.getName()}${this.getAttrsLine()}>`;
+  return `<${this.name}${this.getAttrsLine()}>`;
 }
 
 export default function (name, attributes = {}) {
