@@ -22,14 +22,9 @@ obj.hash('person.animal.pet.needNoseAntEater'); // undefined */
 // BEGIN (write your solution here)
 Object.prototype.hash = function hash(keysStr) {
   const keys = keysStr.split('.');
-  return keys.reduce((acc, key) => {
-    if (acc === undefined) {
-      return undefined;
-    }
-    if (!Object.hasOwnProperty.call(acc, key)) {
-      return undefined;
-    }
-    return acc[key];
-  }, this);
+  return keys.reduce((acc, key) => (acc === undefined
+    ? undefined
+    : acc[key]
+  ), this);
 };
 // END
