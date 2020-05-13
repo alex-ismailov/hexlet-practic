@@ -42,13 +42,3 @@ export const getDirectorySize = (dirPath, cb) => {
     });
   });
 };
-
-// getDirectorySize('17 Asynchronous programming/07 Parallel operations/__fixtures__',(err, size) => {
-//   console.log(size);
-// });
-// getDirectorySize('./',(err, size) => {
-//   console.log(size);
-// });
-// getDirectorySize('./undefined',(err, size) => {
-//   console.log(size);
-// });
