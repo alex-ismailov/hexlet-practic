@@ -28,4 +28,19 @@ export const getTypes = (paths) => paths.reduce((acc, path) => {
     .catch(() => [...data1, null]));
   return newAcc;
 }, Promise.resolve([]));
+
+/* teacher solution */
+// const getTypeName = (stat) => (stat.isDirectory() ? 'directory' : 'file');
+
+// export const getTypes = (filesPath) => {
+//   const processPath = (filepath, result) => fs.stat(filepath)
+//     .then((data) => [...result, getTypeName(data)])
+//     .catch(() => [...result, null]);
+
+//   const resultPromise = filesPath.reduce(
+//     (promise, filepath) => promise.then((result) => processPath(filepath, result)),
+//     Promise.resolve([]),
+//   );
+//   return resultPromise;
+// };
 // END
