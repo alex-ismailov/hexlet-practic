@@ -23,9 +23,9 @@ export const getTypes = (paths) => paths.reduce((acc, path) => {
   const newAcc = acc.then((data1) => fs.stat(path)
     .then((data2) => {
       const elementType = data2.isDirectory() ? 'directory' : 'file';
-      return data1.concat(elementType);
+      return [...data1, elementType];
     })
-    .catch(() => data1.concat(null)));
+    .catch(() => [...data1, null]));
   return newAcc;
 }, Promise.resolve([]));
 // END
