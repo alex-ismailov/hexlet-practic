@@ -1,7 +1,6 @@
 import os from 'os';
 import { promises as fs } from 'fs';
 import { exchange } from '../exchange';
-// import async from "regenerator-runtime";
 
 test('exchange 1', async () => {
   const firstPath = `${os.tmpdir()}/first`;
