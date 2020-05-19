@@ -10,6 +10,7 @@
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/node": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.7.4",
     "@hexlet/html-tags": "^0.5.0",
     "@hexlet/immutable-fs-trees": "^0.5.0",
