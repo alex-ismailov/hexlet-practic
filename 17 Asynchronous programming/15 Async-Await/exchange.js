@@ -9,17 +9,12 @@ exchange('/myfile1', '/myfile2'); */
 import { promises as fs } from 'fs';
 
 // BEGIN (write your solution here)
-export const exchange = async (path1, path2) => {
-  const promise1 = fs.readFile(path1, 'utf-8');
-  const promise2 = fs.readFile(path2, 'utf-8');
-  const [data1, data2] = await Promise.all([promise1, promise2]);
-
-  await fs.writeFile(path1, data2);
-  await fs.writeFile(path2, data1);
+export const exchange = async (filePath1, filePath2) => {
+  const reading1 = fs.readFile(filePath1, 'utf-8');
+  const reading2 = fs.readFile(filePath2, 'utf-8');
+  const [data1, data2] = await Promise.all([reading1, reading2]);
+  const writing1 = fs.writeFile(filePath1, data2);
+  const writing2 = fs.writeFile(filePath2, data1);
+  await Promise.all([writing1, writing2]);
 };
 // END
-
-const file1 = '17 Asynchronous programming/15 Async-Await/__tests__/file1.txt';
-const file2 = '17 Asynchronous programming/15 Async-Await/__tests__/file2.txt';
-
-exchange(file1, file2);
