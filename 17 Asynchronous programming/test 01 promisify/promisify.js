@@ -15,14 +15,22 @@ writeFile(filepath, 'content')
 Подсказка
 Вам понадобятся rest и spread операторы */
 
-const promisify = (func) => (...args) => new Promise((resolve, reject) => {
-  func(...args, (err, data) => {
-    if (err) {
-      reject(err);
-      return;
-    }
-    resolve(data);
+// const promisify = (func) => (...args) => new Promise((resolve, reject) => {
+//   func(...args, (err, data) => {
+//     if (err) {
+//       reject(err);
+//       return;
+//     }
+//     resolve(data);
+//   });
+// });
+
+/* teacher solution */
+const promisify = (func) => (...args) => {
+  const promise = new Promise((resolve, reject) => {
+    func(...args, (err, data) => (err ? reject(err) : resolve(data)));
   });
-});
+  return promise;
+};
 
 export default promisify;
