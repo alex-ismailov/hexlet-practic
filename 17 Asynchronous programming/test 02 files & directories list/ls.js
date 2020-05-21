@@ -32,21 +32,34 @@ import path from 'path';
 import { promises as fs } from 'fs';
 
 // BEGIN (write your solution here)
-export default async (filepath) => {
-  const filepathStat = await fs.stat(filepath);
-  if (filepathStat.isFile()) {
-    return [{ filepath: path.resolve(filepath), mode: filepathStat.mode }];
+// export default async (filepath) => {
+//   const filepathStat = await fs.stat(filepath);
+//   if (filepathStat.isFile()) {
+//     return [{ filepath: path.resolve(filepath), mode: filepathStat.mode }];
+//   }
+
+//   const elements = await fs.readdir(filepath);
+//   const paths = elements.map((e) => path.join(filepath, e));
+//   const statPromises = paths.map(fs.stat);
+//   const stats = await Promise.all(statPromises);
+
+//   const fileInfos = stats.map((stat, index) => (
+//     { filepath: path.resolve(paths[index]), mode: stat.mode }
+//   ));
+
+//   return _.sortBy(fileInfos, 'path');
+// };
+
+/* teacher solution */
+export default async (pathForInspect) => {
+  const absolutePath = path.resolve(__dirname, pathForInspect);
+  const stat = await fs.stat(absolutePath);
+  if (stat.isFile()) { // guard expression
+    return [{ filepath: absolutePath, mode: stat.mode }];
   }
 
-  const elements = await fs.readdir(filepath);
-  const paths = elements.map((e) => path.join(filepath, e));
-  const statPromises = paths.map(fs.stat);
-  const stats = await Promise.all(statPromises);
-
-  const fileInfos = stats.map((stat, index) => (
-    { filepath: path.resolve(paths[index]), mode: stat.mode }
-  ));
-
-  return _.sortBy(fileInfos, 'path');
+  const filenames = await fs.readdir(absolutePath);
+  const filepaths = filenames.sort().map((n) => path.join(absolutePath, n));
+  const stats = await Promise.all(filepaths.map(fs.stat));
+  return _.zipWith(filepaths, stats, (filepath, { mode }) => ({ filepath, mode }));
 };
-// END
