@@ -29,10 +29,30 @@ rotateRight(matrix);
 */
 
 // BEGIN (write your solution here)
-export const rotateLeft = (matrix) => matrix[0].map((col, i) => matrix.map((row) => row[i])).reverse();
-export const rotateRight = (matrix) => matrix[0].map((col, i) => matrix.map((row) => row[i]).reverse());
+// export const rotateLeft = (matrix) => matrix[0].map((col, i) => matrix.map((row) => row[i])).reverse();
+// export const rotateRight = (matrix) => matrix[0].map((col, i) => matrix.map((row) => row[i]).reverse());
 // END
 
+/* teacher solution */
+// const rotate = (matrix, direction) => {
+//   const rowsCount = matrix.length;
+//   const [firstRow] = matrix;
+//   const columnsCount = matrix[0].length;
+//   const rotated = [];
+
+//   for (let row = 0; row < columnsCount; row += 1) {
+//     rotated[row] = [];
+//     for (let column = 0; column < rowsCount; column += 1) {
+//       rotated[row][column] = direction === 'left'
+//         ? matrix[column][columnsCount - row - 1]
+//         : matrix[rowsCount - column - 1][row];     
+//     }
+//   }
+
+//   return rotated;
+// };
+// export const rotateLeft = (matrix) => rotate(matrix, 'left');
+// export const rotateRight = (matrix) => rotate(matrix, 'right');
 
 /* testing */
 const matrix = [
