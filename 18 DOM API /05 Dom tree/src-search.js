@@ -42,4 +42,11 @@ const search = (doc, tag) => {
   return flattenElements.filter((e) => e.tagName === tag.toUpperCase());
 };
 
+/* ****** teacher solution ****** */
+// const search = (doc, tag) => {
+//   const elements = [...doc.children];
+//   const initAcc = elements.filter((el) => el.tagName === tag.toUpperCase());
+//   return elements.reduce((acc, el) => [...acc, ...search(el, tag)], initAcc);
+// };
+
 export default search;
