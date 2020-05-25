@@ -20,78 +20,26 @@ console.log(elements.length); // 2
 Более подробно варианты использования смотрите в тестах */
 
 // const search = (doc, tag) => {
-//   console.log();
-//   const elems = doc.documentElement.children;
-//   const arr = [...elems];
-
-//   return arr.reduce((acc, elem) => {
-//     console.log(`elem.tagName: ${elem.tagName}`);
-//     console.log(`tag: ${tag}`);
-//     if (elem.tagName === tag.toUpperCase()) {
-//       console.log('MATCH!!!');
-//       return [...acc, elem];
-//     }
-//     console.log('NO MATCH!!!!');
-//     return acc;
-//   }, []);
-// };
-
-// const search = (doc, tag) => {
-//   console.log(doc);
-//   const res = [];
-//   const root = doc.documentElement;
-//   console.log(root);
-  
-//   if (root.tagName === tag.toUpperCase()) {
-//     res.push(root);
-//   }
-
-//   const rootChildren = [...root.children];
-//   // console.log(rootChildren); // [ HTMLHeadElement {}, HTMLBodyElement {} ]
-//   if (rootChildren.length > 0) {
-//     return [...res, ...rootChildren.reduce((acc, el) => [...acc, ...search(el, tag)], [])];
-//   }
-
-//   return res;
-// };
-// console.log 18 DOM API /05 Dom tree/src-search.js:40
-// Document { location: [Getter/Setter] }
-
-// console.log 18 DOM API /05 Dom tree/src-search.js:43
-// HTMLHtmlElement {}
-
-// console.log 18 DOM API /05 Dom tree/src-search.js:40
-// HTMLHeadElement {}
-
-// console.log 18 DOM API /05 Dom tree/src-search.js:43
-// undefined
-
-// const search = (doc, tag) => {
 //   const elements = [...doc.children];
-//   return elements.reduce((acc, el) => {
-//     if (el.tagName === tag.toUpperCase()) {
-//       return [...acc, el];
+//   const flattenElements = elements.reduce((acc, e) => {
+//     if (e.children.length > 0) {
+//       return [...acc, e, ...search(e, tag)];
 //     }
-//     return acc
+//     return [...acc, e];
 //   }, []);
+
+//   return flattenElements.filter((e) => e.tagName === tag.toUpperCase());
 // };
 
 const search = (doc, tag) => {
-  console.log(doc);
   const elements = [...doc.children];
-  return elements.reduce((acc, el) => {
-    console.log(el.tagName);
-    if (el.tagName === tag.toUpperCase()) {
-      if (el.children.length > 0) {
-        console.log('HAVE CHILDREN!!!');
-        console.log(el.tagName);
-        return [...acc, el, ...search(el, tag)];
-      }
-      return [...acc, el];
-    }
-    return acc
-  }, []);
+  const flattenElements = elements.reduce((acc, e) => (
+    e.children.length > 0
+      ? [...acc, e, ...search(e, tag)]
+      : [...acc, e]
+  ), []);
+
+  return flattenElements.filter((e) => e.tagName === tag.toUpperCase());
 };
 
 export default search;
-
