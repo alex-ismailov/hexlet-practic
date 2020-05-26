@@ -20,40 +20,20 @@ console.log(document.body.innerHTML);
 Подсказки
 Очистка строки от пробельных символов: trim */
 
-// const prettify = (doc) => {
-//   const divs = doc.getElementsByTagName('div');
-//   [...divs].forEach((div) => {
-//     [...div.childNodes].forEach((child) => {
-//       if (child.nodeType === 3) {
-//         const pEl = document.createElement('p');
-//         const pElText = document.createTextNode(child.textContent);
-//         pEl.append(pElText);
-//         child.replaceWith(pEl);
-//       }
-//     });
-//   });
-// };
-
 const prettify = (doc) => {
   const divs = doc.getElementsByTagName('div');
   [...divs].forEach((div) => {
     [...div.childNodes].forEach((child) => {
-      if (child.nodeType === 3) {
-        const pEl = document.createElement('p');
-        const pElText = document.createTextNode(child.textContent.trim());
-        pEl.append(pElText);
-        child.replaceWith(pEl);
+      if (child instanceof Text) {
+        if(child.textContent.trim()) {
+          const pEl = document.createElement('p');
+          const pElText = document.createTextNode(child.textContent);
+          pEl.append(pElText);
+          child.replaceWith(pEl);
+        }
       }
     });
   });
 };
 
-// Text
-// <div>
-//   <div>Text</div>
-//   <p>Op</p>
-// </div>
-// <div>My</div>
-
-// 'Text<div><div>Text</div><p>Op</p></div><div>My</div>';
 export default prettify;
