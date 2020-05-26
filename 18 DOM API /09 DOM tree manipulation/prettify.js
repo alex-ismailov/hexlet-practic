@@ -20,18 +20,33 @@ console.log(document.body.innerHTML);
 Подсказки
 Очистка строки от пробельных символов: trim */
 
+// const prettify = (doc) => {
+//   const divs = doc.getElementsByTagName('div');
+//   [...divs].forEach((div) => {
+//     [...div.childNodes].forEach((child) => {
+//       if (child instanceof Text) {
+//         if(child.textContent.trim()) {
+//           const pEl = document.createElement('p');
+//           const pElText = document.createTextNode(child.textContent);
+//           pEl.append(pElText);
+//           child.replaceWith(pEl);
+//         }
+//       }
+//     });
+//   });
+// };
+
+/* teacher solution */
 const prettify = (doc) => {
   const divs = doc.getElementsByTagName('div');
   [...divs].forEach((div) => {
-    [...div.childNodes].forEach((child) => {
-      if (child instanceof Text) {
-        if(child.textContent.trim()) {
-          const pEl = document.createElement('p');
-          const pElText = document.createTextNode(child.textContent);
-          pEl.append(pElText);
-          child.replaceWith(pEl);
-        }
-      }
+    const filtered = [...div.childNodes]
+      .filter((child) => child instanceof Text)
+      .filter((child) => child.textContent.trim() !== '');
+    filtered.forEach((node) => {
+      const pEl = document.createElement('p');
+      pEl.textContent = node.textContent;
+      node.replaceWith(pEl);
     });
   });
 };
