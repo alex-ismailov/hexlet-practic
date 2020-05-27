@@ -23,5 +23,14 @@ import 'regenerator-runtime/runtime';
 import { camelCase } from 'lodash';
 
 // BEGIN (write your solution here)
+// const normalize = (doc) => {
+//   const elements = doc.getElementsByTagName('*');
+//   [...elements].forEach((el) => {
+//     [...el.classList].forEach((className) => {
+//       el.classList.replace(className, camelCase(className));
+//     });
+//   });
+// };
 
+export default normalize;
 // END
