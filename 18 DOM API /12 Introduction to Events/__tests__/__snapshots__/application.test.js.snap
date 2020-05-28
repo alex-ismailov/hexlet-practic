@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`application 1`] = `
+"<div class=\\"container m-3\\">
+
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home3\\" role=\\"tab\\">Home 2</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile3\\" role=\\"tab\\">Profile 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane active\\" id=\\"home3\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane\\" id=\\"profile3\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+    </div>
+
+    <!-- Nav tabs -->
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#home\\" role=\\"tab\\">Home</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#profile\\" role=\\"tab\\">Profile</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#messages\\" role=\\"tab\\">Messages</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#settings\\" role=\\"tab\\">Settings</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane\\" id=\\"home\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane active\\" id=\\"profile\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+        <div class=\\"tab-pane\\" id=\\"messages\\" role=\\"tabpanel\\">
+            Messages
+        </div>
+        <div class=\\"tab-pane\\" id=\\"settings\\" role=\\"tabpanel\\">
+            Settings
+        </div>
+    </div>
+
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home2\\" role=\\"tab\\">Home 2</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile2\\" role=\\"tab\\">Profile 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane active\\" id=\\"home2\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane\\" id=\\"profile2\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+    </div>
+
+</div>"
+`;
+
+exports[`application 2`] = `
+"<div class=\\"container m-3\\">
+
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home3\\" role=\\"tab\\">Home 2</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile3\\" role=\\"tab\\">Profile 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane active\\" id=\\"home3\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane\\" id=\\"profile3\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+    </div>
+
+    <!-- Nav tabs -->
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#home\\" role=\\"tab\\">Home</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile\\" role=\\"tab\\">Profile</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#messages\\" role=\\"tab\\">Messages</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#settings\\" role=\\"tab\\">Settings</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane\\" id=\\"home\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane\\" id=\\"profile\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+        <div class=\\"tab-pane\\" id=\\"messages\\" role=\\"tabpanel\\">
+            Messages
+        </div>
+        <div class=\\"tab-pane active\\" id=\\"settings\\" role=\\"tabpanel\\">
+            Settings
+        </div>
+    </div>
+
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home2\\" role=\\"tab\\">Home 2</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile2\\" role=\\"tab\\">Profile 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane active\\" id=\\"home2\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane\\" id=\\"profile2\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+    </div>
+
+</div>"
+`;
+
+exports[`application 3`] = `
+"<div class=\\"container m-3\\">
+
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home3\\" role=\\"tab\\">Home 2</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile3\\" role=\\"tab\\">Profile 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane active\\" id=\\"home3\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane\\" id=\\"profile3\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+    </div>
+
+    <!-- Nav tabs -->
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#home\\" role=\\"tab\\">Home</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#profile\\" role=\\"tab\\">Profile</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#messages\\" role=\\"tab\\">Messages</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#settings\\" role=\\"tab\\">Settings</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane\\" id=\\"home\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane active\\" id=\\"profile\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+        <div class=\\"tab-pane\\" id=\\"messages\\" role=\\"tabpanel\\">
+            Messages
+        </div>
+        <div class=\\"tab-pane\\" id=\\"settings\\" role=\\"tabpanel\\">
+            Settings
+        </div>
+    </div>
+
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home2\\" role=\\"tab\\">Home 2</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile2\\" role=\\"tab\\">Profile 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane active\\" id=\\"home2\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane\\" id=\\"profile2\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+    </div>
+
+</div>"
+`;
+
+exports[`application 4`] = `
+"<div class=\\"container m-3\\">
+
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home3\\" role=\\"tab\\">Home 2</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile3\\" role=\\"tab\\">Profile 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane active\\" id=\\"home3\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane\\" id=\\"profile3\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+    </div>
+
+    <!-- Nav tabs -->
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#home\\" role=\\"tab\\">Home</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#profile\\" role=\\"tab\\">Profile</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#messages\\" role=\\"tab\\">Messages</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#settings\\" role=\\"tab\\">Settings</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane\\" id=\\"home\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane active\\" id=\\"profile\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+        <div class=\\"tab-pane\\" id=\\"messages\\" role=\\"tabpanel\\">
+            Messages
+        </div>
+        <div class=\\"tab-pane\\" id=\\"settings\\" role=\\"tabpanel\\">
+            Settings
+        </div>
+    </div>
+
+    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#home2\\" role=\\"tab\\">Home 2</a>
+        </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#profile2\\" role=\\"tab\\">Profile 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class=\\"tab-content m-3\\">
+        <div class=\\"tab-pane\\" id=\\"home2\\" role=\\"tabpanel\\">
+            Home
+        </div>
+        <div class=\\"tab-pane active\\" id=\\"profile2\\" role=\\"tabpanel\\">
+            Profile
+        </div>
+    </div>
+
+</div>"
+`;
