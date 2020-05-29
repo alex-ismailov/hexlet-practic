@@ -2,26 +2,6 @@
 
 exports[`application 1`] = `
 "<div class=\\"container m-3\\">
-
-    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
-        <li class=\\"nav-item\\">
-            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home3\\" role=\\"tab\\">Home 2</a>
-        </li>
-        <li class=\\"nav-item\\">
-            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile3\\" role=\\"tab\\">Profile 2</a>
-        </li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class=\\"tab-content m-3\\">
-        <div class=\\"tab-pane active\\" id=\\"home3\\" role=\\"tabpanel\\">
-            Home
-        </div>
-        <div class=\\"tab-pane\\" id=\\"profile3\\" role=\\"tabpanel\\">
-            Profile
-        </div>
-    </div>
-
     <!-- Nav tabs -->
     <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
         <li class=\\"nav-item\\">
@@ -54,6 +34,8 @@ exports[`application 1`] = `
         </div>
     </div>
 
+
+    <!-- Nav tabs -->
     <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
         <li class=\\"nav-item\\">
             <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home2\\" role=\\"tab\\">Home 2</a>
@@ -61,43 +43,30 @@ exports[`application 1`] = `
         <li class=\\"nav-item\\">
             <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile2\\" role=\\"tab\\">Profile 2</a>
         </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#messages2\\" role=\\"tab\\">Messages 2</a>
+        </li>
     </ul>
 
     <!-- Tab panes -->
     <div class=\\"tab-content m-3\\">
         <div class=\\"tab-pane active\\" id=\\"home2\\" role=\\"tabpanel\\">
-            Home
+            Home 2
         </div>
         <div class=\\"tab-pane\\" id=\\"profile2\\" role=\\"tabpanel\\">
-            Profile
+            Profile 2
+        </div>
+        <div class=\\"tab-pane\\" id=\\"messages2\\" role=\\"tabpanel\\">
+            Messages 2
         </div>
     </div>
-
-</div>"
+</div>
+<script src=\\"/vendors~main.js\\"></script>
+<script src=\\"/main.js\\"></script>"
 `;
 
 exports[`application 2`] = `
 "<div class=\\"container m-3\\">
-
-    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
-        <li class=\\"nav-item\\">
-            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home3\\" role=\\"tab\\">Home 2</a>
-        </li>
-        <li class=\\"nav-item\\">
-            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile3\\" role=\\"tab\\">Profile 2</a>
-        </li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class=\\"tab-content m-3\\">
-        <div class=\\"tab-pane active\\" id=\\"home3\\" role=\\"tabpanel\\">
-            Home
-        </div>
-        <div class=\\"tab-pane\\" id=\\"profile3\\" role=\\"tabpanel\\">
-            Profile
-        </div>
-    </div>
-
     <!-- Nav tabs -->
     <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
         <li class=\\"nav-item\\">
@@ -130,6 +99,8 @@ exports[`application 2`] = `
         </div>
     </div>
 
+
+    <!-- Nav tabs -->
     <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
         <li class=\\"nav-item\\">
             <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home2\\" role=\\"tab\\">Home 2</a>
@@ -137,43 +108,30 @@ exports[`application 2`] = `
         <li class=\\"nav-item\\">
             <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile2\\" role=\\"tab\\">Profile 2</a>
         </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#messages2\\" role=\\"tab\\">Messages 2</a>
+        </li>
     </ul>
 
     <!-- Tab panes -->
     <div class=\\"tab-content m-3\\">
         <div class=\\"tab-pane active\\" id=\\"home2\\" role=\\"tabpanel\\">
-            Home
+            Home 2
         </div>
         <div class=\\"tab-pane\\" id=\\"profile2\\" role=\\"tabpanel\\">
-            Profile
+            Profile 2
+        </div>
+        <div class=\\"tab-pane\\" id=\\"messages2\\" role=\\"tabpanel\\">
+            Messages 2
         </div>
     </div>
-
-</div>"
+</div>
+<script src=\\"/vendors~main.js\\"></script>
+<script src=\\"/main.js\\"></script>"
 `;
 
 exports[`application 3`] = `
 "<div class=\\"container m-3\\">
-
-    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
-        <li class=\\"nav-item\\">
-            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home3\\" role=\\"tab\\">Home 2</a>
-        </li>
-        <li class=\\"nav-item\\">
-            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile3\\" role=\\"tab\\">Profile 2</a>
-        </li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class=\\"tab-content m-3\\">
-        <div class=\\"tab-pane active\\" id=\\"home3\\" role=\\"tabpanel\\">
-            Home
-        </div>
-        <div class=\\"tab-pane\\" id=\\"profile3\\" role=\\"tabpanel\\">
-            Profile
-        </div>
-    </div>
-
     <!-- Nav tabs -->
     <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
         <li class=\\"nav-item\\">
@@ -206,6 +164,8 @@ exports[`application 3`] = `
         </div>
     </div>
 
+
+    <!-- Nav tabs -->
     <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
         <li class=\\"nav-item\\">
             <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home2\\" role=\\"tab\\">Home 2</a>
@@ -213,43 +173,30 @@ exports[`application 3`] = `
         <li class=\\"nav-item\\">
             <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile2\\" role=\\"tab\\">Profile 2</a>
         </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#messages2\\" role=\\"tab\\">Messages 2</a>
+        </li>
     </ul>
 
     <!-- Tab panes -->
     <div class=\\"tab-content m-3\\">
         <div class=\\"tab-pane active\\" id=\\"home2\\" role=\\"tabpanel\\">
-            Home
+            Home 2
         </div>
         <div class=\\"tab-pane\\" id=\\"profile2\\" role=\\"tabpanel\\">
-            Profile
+            Profile 2
+        </div>
+        <div class=\\"tab-pane\\" id=\\"messages2\\" role=\\"tabpanel\\">
+            Messages 2
         </div>
     </div>
-
-</div>"
+</div>
+<script src=\\"/vendors~main.js\\"></script>
+<script src=\\"/main.js\\"></script>"
 `;
 
 exports[`application 4`] = `
 "<div class=\\"container m-3\\">
-
-    <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
-        <li class=\\"nav-item\\">
-            <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#home3\\" role=\\"tab\\">Home 2</a>
-        </li>
-        <li class=\\"nav-item\\">
-            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#profile3\\" role=\\"tab\\">Profile 2</a>
-        </li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class=\\"tab-content m-3\\">
-        <div class=\\"tab-pane active\\" id=\\"home3\\" role=\\"tabpanel\\">
-            Home
-        </div>
-        <div class=\\"tab-pane\\" id=\\"profile3\\" role=\\"tabpanel\\">
-            Profile
-        </div>
-    </div>
-
     <!-- Nav tabs -->
     <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
         <li class=\\"nav-item\\">
@@ -282,6 +229,8 @@ exports[`application 4`] = `
         </div>
     </div>
 
+
+    <!-- Nav tabs -->
     <ul class=\\"nav nav-tabs\\" role=\\"tablist\\">
         <li class=\\"nav-item\\">
             <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#home2\\" role=\\"tab\\">Home 2</a>
@@ -289,17 +238,24 @@ exports[`application 4`] = `
         <li class=\\"nav-item\\">
             <a class=\\"nav-link active\\" data-toggle=\\"tab\\" href=\\"#profile2\\" role=\\"tab\\">Profile 2</a>
         </li>
+        <li class=\\"nav-item\\">
+            <a class=\\"nav-link\\" data-toggle=\\"tab\\" href=\\"#messages2\\" role=\\"tab\\">Messages 2</a>
+        </li>
     </ul>
 
     <!-- Tab panes -->
     <div class=\\"tab-content m-3\\">
         <div class=\\"tab-pane\\" id=\\"home2\\" role=\\"tabpanel\\">
-            Home
+            Home 2
         </div>
         <div class=\\"tab-pane active\\" id=\\"profile2\\" role=\\"tabpanel\\">
-            Profile
+            Profile 2
+        </div>
+        <div class=\\"tab-pane\\" id=\\"messages2\\" role=\\"tabpanel\\">
+            Messages 2
         </div>
     </div>
-
-</div>"
+</div>
+<script src=\\"/vendors~main.js\\"></script>
+<script src=\\"/main.js\\"></script>"
 `;
