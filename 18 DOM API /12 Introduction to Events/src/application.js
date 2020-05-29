@@ -63,3 +63,34 @@ export default () => {
   navLinks.forEach((e) => e.addEventListener('click', handler));
   // END
 };
+
+/* teacher solution */
+// export default () => {
+//   // BEGIN
+//   const handle = (e) => {
+//     e.preventDefault();
+
+//     const { target } = e;
+//     if (target.classList.contains('active')) {
+//       return;
+//     }
+
+//     const nav = target.closest('.nav');
+//     const current = nav.querySelector('a.active');
+//     current.classList.remove('active');
+
+//     const currentTabContent = document.querySelector(current.hash);
+//     currentTabContent.classList.remove('active');
+
+//     target.classList.add('active');
+
+//     const nextTabContent = document.querySelector(target.hash);
+//     nextTabContent.classList.add('active');
+//   };
+
+//   const links = document.querySelectorAll('a[data-toggle]');
+//   links.forEach((element) => {
+//     element.addEventListener('click', handle);
+//   });
+//   // END
+// };
