@@ -41,23 +41,25 @@ hash */
 
 export default () => {
   // BEGIN (write your solution here)
-  const navTabs = document.querySelectorAll('a[data-toggle="tab"]');
+  const navLinks = document.querySelectorAll('a[data-toggle="tab"]');
 
   const handler = (e) => {
     e.preventDefault();
     const currentNavTabs = e.target.closest('.nav.nav-tabs');
     const currentActiveNavTab = currentNavTabs.querySelector('.active');
-    currentActiveNavTab.classList.remove('active');
-    e.target.classList.add('active');
 
     const tabPanetId = e.target.hash.slice(1);
     const tabPane = document.getElementById(tabPanetId);
     const currentTabContent = tabPane.closest('.tab-content');
     const currentActiveTabPane = currentTabContent.querySelector('.active');
+
+    currentActiveNavTab.classList.remove('active');
+    e.target.classList.add('active');
+
     currentActiveTabPane.classList.remove('active');
     tabPane.classList.add('active');
   };
 
-  navTabs.forEach((e) => e.addEventListener('click', handler));
+  navLinks.forEach((e) => e.addEventListener('click', handler));
   // END
 };
