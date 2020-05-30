@@ -13,25 +13,49 @@ src/application.js
 Напишите и экспортируйте функцию по умолчанию, которая реализует необходимую логику. */
 
 // BEGIN (write your solution here)
-export default () => {
-  const fbForm = document.querySelector('form.feedback-form');
+// export default () => {
+//   const fbForm = document.querySelector('form.feedback-form');
 
+//   const handle = (e) => {
+//     e.preventDefault();
+
+//     const formData = new FormData(e.target);
+//     const { email, name, comment } = Object.fromEntries(formData);
+
+//     const div = document.createElement('div');
+//     div.innerHTML = `
+//       <p>Feedback has been sent</p>
+//       <div>Email: ${email}</div>
+//       <div>Name: ${name}</div>
+//       <div>Comment: ${comment}</div>`;
+
+//     fbForm.replaceWith(div);
+//   };
+
+//   fbForm.addEventListener('submit', handle);
+// };
+
+/* *** teacher solution *** */
+const render = (element, data) => {
+  const div = document.createElement('div');
+  const { email, name, comment } = data;
+  div.innerHTML = `
+    <p>Feedback has been sent</p>
+    <div>Email: ${email}</div>
+    <div>Name: ${name}</div>
+    <div>Comment: ${comment}</div>
+  `;
+  element.replaceWith(div);
+};
+
+export default () => {
+  const formElement = document.querySelector('.feedback-form');
   const handle = (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
-    const { email, name, comment } = Object.fromEntries(formData);
 
-    const div = document.createElement('div');
-    div.innerHTML = `
-      <p>Feedback has been sent</p>
-      <div>Email: ${email}</div>
-      <div>Name: ${name}</div>
-      <div>Comment: ${comment}</div>`;
-
-    fbForm.replaceWith(div);
+    render(formElement, Object.fromEntries(formData));
   };
-
-  fbForm.addEventListener('submit', handle);
+  formElement.addEventListener('submit', handle);
 };
 // END
