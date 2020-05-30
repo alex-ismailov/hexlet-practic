@@ -20,14 +20,14 @@ export default () => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const formDataObj = Object.fromEntries(formData);
+    const { email, name, comment } = Object.fromEntries(formData);
 
     const div = document.createElement('div');
     div.innerHTML = `
-  <p>Feedback has been sent</p>
-  <div>Email: ${formDataObj.email}</div>
-  <div>Name: ${formDataObj.name}</div>
-  <div>Comment: ${formDataObj.comment}</div>`;
+      <p>Feedback has been sent</p>
+      <div>Email: ${email}</div>
+      <div>Name: ${name}</div>
+      <div>Comment: ${comment}</div>`;
 
     fbForm.replaceWith(div);
   };
