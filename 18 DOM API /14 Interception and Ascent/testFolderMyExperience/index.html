@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container m-3">
+      <div class="gem-puzzle"></div>
+    </div>
+    <script src="/vendors~main.js" ></script>
+    <script src="/main.js" ></script>
+    <script>
+      /* game field */
+      const values = [9, 6, 13, 11, 2, 15, 14, 8, 12, 10, 5, 4, 7, 1, 3];
+
+      const tableEl = document.createElement('table');
+
+      tableEl.className = 'table-bordered';
+      for (let i = 0; i < 4; i += 1) {
+        const row = tableEl.insertRow();
+        for (let j = 0; j < 4; j += 1) {
+          const cell = row.insertCell();
+          cell.className = 'p-3';
+          if (i === 3 && j === 3) {
+            cell.classList.add('table-active');
+          } else {
+            cell.textContent = values[i + (j * 4)];
+          }
+        }
+      }
+
+      const gameField = document.querySelector('.gem-puzzle');
+      gameField.append(tableEl);
+      /* ******************************* */
+           
+      const calculateDistance = (a, b) => (
+        Math.abs(a.x - b.x) + Math.abs(a.y - b.y)
+      );
+
+      const tableBordered = document.querySelector('.table-bordered');
+
+      tableBordered.addEventListener('click',(e) => {
+        const { target } = e;
+        const activeTable = document.querySelector('.table-active');
+        const currentPoint = { x: target.parentNode.rowIndex, y: target.cellIndex };
+        const currentActivePoint = { x: activeTable.parentNode.rowIndex, y: activeTable.cellIndex };
+
+        const distance = calculateDistance(currentPoint, currentActivePoint);
+
+        if (distance === 1) {
+          activeTable.classList.remove('table-active');
+          activeTable.textContent = target.textContent;
+          target.classList.add('table-active');
+          target.textContent = '';
+        }
+      });
+
+
+    </script>
+  </body>
+</html>

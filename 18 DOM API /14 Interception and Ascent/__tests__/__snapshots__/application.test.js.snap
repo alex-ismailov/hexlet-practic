@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gem puzzle 1`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"gem-puzzle\\">
+        <table class=\\"table-bordered\\">
+            <tbody>
+                <tr>
+                    <td class=\\"p-3\\">9</td>
+                    <td class=\\"p-3\\">2</td>
+                    <td class=\\"p-3\\">12</td>
+                    <td class=\\"p-3\\">7</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">6</td>
+                    <td class=\\"p-3\\">15</td>
+                    <td class=\\"p-3\\">10</td>
+                    <td class=\\"p-3\\">1</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">13</td>
+                    <td class=\\"p-3\\">14</td>
+                    <td class=\\"p-3\\">5</td>
+                    <td class=\\"p-3\\">3</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">11</td>
+                    <td class=\\"p-3\\">8</td>
+                    <td class=\\"p-3\\">4</td>
+                    <td class=\\"p-3 table-active\\"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>"
+`;
+
+exports[`gem puzzle 2`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"gem-puzzle\\">
+        <table class=\\"table-bordered\\">
+            <tbody>
+                <tr>
+                    <td class=\\"p-3\\">9</td>
+                    <td class=\\"p-3\\">2</td>
+                    <td class=\\"p-3\\">12</td>
+                    <td class=\\"p-3\\">7</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">6</td>
+                    <td class=\\"p-3\\">15</td>
+                    <td class=\\"p-3\\">10</td>
+                    <td class=\\"p-3\\">1</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">13</td>
+                    <td class=\\"p-3\\">14</td>
+                    <td class=\\"p-3\\">5</td>
+                    <td class=\\"p-3\\">3</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">11</td>
+                    <td class=\\"p-3\\">8</td>
+                    <td class=\\"p-3\\">4</td>
+                    <td class=\\"p-3 table-active\\"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>"
+`;
+
+exports[`gem puzzle 3`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"gem-puzzle\\">
+        <table class=\\"table-bordered\\">
+            <tbody>
+                <tr>
+                    <td class=\\"p-3\\">9</td>
+                    <td class=\\"p-3\\">2</td>
+                    <td class=\\"p-3\\">12</td>
+                    <td class=\\"p-3\\">7</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">6</td>
+                    <td class=\\"p-3\\">15</td>
+                    <td class=\\"p-3\\">10</td>
+                    <td class=\\"p-3\\">1</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">13</td>
+                    <td class=\\"p-3\\">14</td>
+                    <td class=\\"p-3\\">5</td>
+                    <td class=\\"p-3\\">3</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">11</td>
+                    <td class=\\"p-3\\">8</td>
+                    <td class=\\"p-3 table-active\\"></td>
+                    <td class=\\"p-3\\">4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>"
+`;
+
+exports[`gem puzzle 4`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"gem-puzzle\\">
+        <table class=\\"table-bordered\\">
+            <tbody>
+                <tr>
+                    <td class=\\"p-3\\">9</td>
+                    <td class=\\"p-3\\">2</td>
+                    <td class=\\"p-3\\">12</td>
+                    <td class=\\"p-3\\">7</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">6</td>
+                    <td class=\\"p-3\\">15</td>
+                    <td class=\\"p-3\\">10</td>
+                    <td class=\\"p-3\\">1</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">13</td>
+                    <td class=\\"p-3\\">14</td>
+                    <td class=\\"p-3 table-active\\"></td>
+                    <td class=\\"p-3\\">3</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">11</td>
+                    <td class=\\"p-3\\">8</td>
+                    <td class=\\"p-3\\">5</td>
+                    <td class=\\"p-3\\">4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>"
+`;
+
+exports[`gem puzzle 5`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"gem-puzzle\\">
+        <table class=\\"table-bordered\\">
+            <tbody>
+                <tr>
+                    <td class=\\"p-3\\">9</td>
+                    <td class=\\"p-3\\">2</td>
+                    <td class=\\"p-3\\">12</td>
+                    <td class=\\"p-3\\">7</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">6</td>
+                    <td class=\\"p-3\\">15</td>
+                    <td class=\\"p-3 table-active\\"></td>
+                    <td class=\\"p-3\\">1</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">13</td>
+                    <td class=\\"p-3\\">14</td>
+                    <td class=\\"p-3\\">10</td>
+                    <td class=\\"p-3\\">3</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">11</td>
+                    <td class=\\"p-3\\">8</td>
+                    <td class=\\"p-3\\">5</td>
+                    <td class=\\"p-3\\">4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>"
+`;
+
+exports[`gem puzzle 6`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"gem-puzzle\\">
+        <table class=\\"table-bordered\\">
+            <tbody>
+                <tr>
+                    <td class=\\"p-3\\">9</td>
+                    <td class=\\"p-3\\">2</td>
+                    <td class=\\"p-3\\">12</td>
+                    <td class=\\"p-3\\">7</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">6</td>
+                    <td class=\\"p-3 table-active\\"></td>
+                    <td class=\\"p-3\\">15</td>
+                    <td class=\\"p-3\\">1</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">13</td>
+                    <td class=\\"p-3\\">14</td>
+                    <td class=\\"p-3\\">10</td>
+                    <td class=\\"p-3\\">3</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">11</td>
+                    <td class=\\"p-3\\">8</td>
+                    <td class=\\"p-3\\">5</td>
+                    <td class=\\"p-3\\">4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>"
+`;
+
+exports[`gem puzzle 7`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"gem-puzzle\\">
+        <table class=\\"table-bordered\\">
+            <tbody>
+                <tr>
+                    <td class=\\"p-3\\">9</td>
+                    <td class=\\"p-3\\">2</td>
+                    <td class=\\"p-3\\">12</td>
+                    <td class=\\"p-3\\">7</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3 table-active\\"></td>
+                    <td class=\\"p-3\\">6</td>
+                    <td class=\\"p-3\\">15</td>
+                    <td class=\\"p-3\\">1</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">13</td>
+                    <td class=\\"p-3\\">14</td>
+                    <td class=\\"p-3\\">10</td>
+                    <td class=\\"p-3\\">3</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">11</td>
+                    <td class=\\"p-3\\">8</td>
+                    <td class=\\"p-3\\">5</td>
+                    <td class=\\"p-3\\">4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>"
+`;
+
+exports[`gem puzzle 8`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"gem-puzzle\\">
+        <table class=\\"table-bordered\\">
+            <tbody>
+                <tr>
+                    <td class=\\"p-3\\">9</td>
+                    <td class=\\"p-3\\">2</td>
+                    <td class=\\"p-3\\">12</td>
+                    <td class=\\"p-3\\">7</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">13</td>
+                    <td class=\\"p-3\\">6</td>
+                    <td class=\\"p-3\\">15</td>
+                    <td class=\\"p-3\\">1</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3 table-active\\"></td>
+                    <td class=\\"p-3\\">14</td>
+                    <td class=\\"p-3\\">10</td>
+                    <td class=\\"p-3\\">3</td>
+                </tr>
+                <tr>
+                    <td class=\\"p-3\\">11</td>
+                    <td class=\\"p-3\\">8</td>
+                    <td class=\\"p-3\\">5</td>
+                    <td class=\\"p-3\\">4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>"
+`;
