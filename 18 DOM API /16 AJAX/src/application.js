@@ -35,36 +35,70 @@ src/application.js
 Используйте событие input */
 
 
+// export default () => {
+//   // BEGIN (write your solution here)
+//   const inputField = document.querySelector('input[data-autocomplete-name]');
+
+//   inputField.addEventListener('input', async (e) => {
+//     const link = e.target.getAttribute('data-autocomplete');
+
+//     const url = new URL(link, window.location.origin);
+//     url.searchParams.append('term', e.target.value);
+
+//     const [...response] = await fetch(url).then((r) => r.json());
+
+//     const name = e.target.getAttribute('data-autocomplete-name');
+//     const ul = document.querySelector(`ul[data-autocomplete-name="${name}"]`);
+
+//     if (response.length === 0) {
+//       const li = document.createElement('li');
+//       li.textContent = 'Nothing';
+//       ul.innerHTML = li.outerHTML;
+//       return;
+//     }
+
+//     const countries = response.map((country) => {
+//       const li = document.createElement('li');
+//       li.innerHTML = country;
+//       return li.outerHTML;
+//     });
+
+//     ul.innerHTML = countries.join('');
+//   });
+//   // END
+// };
+
 export default () => {
   // BEGIN (write your solution here)
-  const inputField = document.querySelector('input[data-autocomplete-name]');
+  const inputFields = document.querySelectorAll('input[data-autocomplete-name]');
 
-  inputField.addEventListener('input', async (e) => {
-    const link = e.target.getAttribute('data-autocomplete');
+  inputFields.forEach((inputField) => {
+    inputField.addEventListener('input', async (e) => {
+      const link = e.target.getAttribute('data-autocomplete');
 
-    const url = new URL(link, window.location.origin);
-    url.searchParams.append('term', e.target.value);
+      const url = new URL(link, window.location.origin);
+      url.searchParams.append('term', e.target.value);
 
-    const [...response] = await fetch(url).then((r) => r.json());
+      const [...response] = await fetch(url).then((r) => r.json());
 
-    const name = e.target.getAttribute('data-autocomplete-name');
-    const ul = document.querySelector(`ul[data-autocomplete-name="${name}"]`);
+      const name = e.target.getAttribute('data-autocomplete-name');
+      const ul = document.querySelector(`ul[data-autocomplete-name="${name}"]`);
 
-    if (response.length === 0) {
-      const li = document.createElement('li');
-      li.textContent = 'Nothing';
-      ul.innerHTML = li.outerHTML;
-      return;
-    }
+      if (response.length === 0) {
+        const li = document.createElement('li');
+        li.textContent = 'Nothing';
+        ul.innerHTML = li.outerHTML;
+        return;
+      }
 
-    const countries = response.map((country) => {
-      const li = document.createElement('li');
-      li.innerHTML = country;
-      return li.outerHTML;
+      const countries = response.map((country) => {
+        const li = document.createElement('li');
+        li.innerHTML = country;
+        return li.outerHTML;
+      });
+
+      ul.innerHTML = countries.join('');
     });
-
-    ul.innerHTML = countries.join('');
   });
   // END
 };
-
