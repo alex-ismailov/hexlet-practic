@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <form class="form-inline">
+            <div class="form-group">
+              <label>City</label>
+              <input class="ml-2 form-control" type="text" data-autocomplete-name="city" data-autocomplete="/cities.json">
+            </div>
+          </form>
+        </div>
+        <div class="col-6">
+          <ul data-autocomplete-name="city"><li>Nothing</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <form class="form-inline">
+            <div class="form-group">
+              <label>Country</label>
+              <input class="ml-2 form-control countries" data-autocomplete-name="country" type="text" data-autocomplete="/countries.json">
+            </div>
+          </form>
+        </div>
+        <div class="col-6">
+          <ul data-autocomplete-name="country"><li>Nothing</li></ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
