@@ -102,3 +102,25 @@ export default () => {
   });
   // END
 };
+
+/* teacher solution */
+export default () => {
+  // BEGIN
+  const autocompleteElements = document.querySelectorAll('input[data-autocomplete]');
+  autocompleteElements.forEach((el) => {
+    const route = el.dataset.autocomplete;
+    const dataAutocompleteName = el.dataset.autocompleteName;
+    el.addEventListener('input', async (e) => {
+      const list = document.querySelector(`ul[data-autocomplete-name="${dataAutocompleteName}"]`);
+      const url = new URL(route, window.location.origin);
+      url.searchParams.append('term', e.target.value);
+      // const response = await fetch(url);
+      // const items = await response.json();
+      const [...items] = await fetch(url).then((r) => r.json());
+      const options = items.length === 0 ? ['Nothing'] : items;
+      const listHTML = options.map((item) => `<li>${item}</li>`).join('\n');
+      list.innerHTML = listHTML;
+    });
+  });
+  // END
+};
