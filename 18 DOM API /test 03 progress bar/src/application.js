@@ -16,14 +16,27 @@
 Элемент Progress: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress */
 
 // BEGIN (write your solution here) (write your solution here)
-const run = (v = 0) => {
-  const progressBar = document.querySelector('progress');
-  const currentValue = progressBar.value;
-  const maxValue = progressBar.max;
-  if (currentValue < maxValue) {
-    progressBar.setAttribute('value', currentValue + v);
-    setTimeout(() => run(1), 1000);
-  }
+// const run = (v = 0) => {
+//   const progressBar = document.querySelector('progress');
+//   const currentValue = progressBar.value;
+//   const maxValue = progressBar.max;
+//   if (currentValue < maxValue) {
+//     progressBar.setAttribute('value', currentValue + v);
+//     setTimeout(() => run(1), 1000);
+//   }
+// };
+
+/* teacher solution */
+const run = () => {
+  const element = document.querySelector('progress');
+  const handler = (counter = 0) => {
+    if (counter <= 100) {
+      element.setAttribute('value', counter);
+      setTimeout(() => handler(counter + 1), 1000);
+    }
+  };
+
+  handler();
 };
 
 export default run;
