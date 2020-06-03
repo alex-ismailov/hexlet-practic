@@ -27,24 +27,47 @@
 Нажатие на кнопку приводит к обратному эффекту, удаляется класс show, а display выставляется в none. */
 
 // BEGIN (write your solution here)
-export default () => {
-  const launchBtns = document.querySelectorAll('[data-toggle="modal"]');
-  launchBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      const { target } = e.target.dataset;
-      const window = document.querySelector(target);
-      window.classList.add('show');
-      window.style.display = 'block';
-    });
-  });
+// export default () => {
+//   const openBtns = document.querySelectorAll('[data-toggle="modal"]');
+//   openBtns.forEach((btn) => {
+//     btn.addEventListener('click', (e) => {
+//       const { target } = e.target.dataset;
+//       const window = document.querySelector(target);
+//       window.classList.add('show');
+//       window.style.display = 'block';
+//     });
+//   });
 
-  const xs = document.querySelectorAll('[data-dismiss="modal"]');
-  xs.forEach((x) => {
-    x.addEventListener('click', (e) => {
-      const window = e.target.closest('.modal');
-      window.classList.remove('show');
-      window.style.display = 'none';
-    });
+//   const closeBtns = document.querySelectorAll('[data-dismiss="modal"]');
+//   closeBtns.forEach((x) => {
+//     x.addEventListener('click', (e) => {
+//       const window = e.target.closest('.modal');
+//       window.classList.remove('show');
+//       window.style.display = 'none';
+//     });
+//   });
+// };
+// END
+
+/* teacher solution */
+const openHandler = (modal) => {
+  modal.classList.add('show');
+  modal.style.display = 'block'; // eslint-disable-line
+};
+
+const closeHandler = (modal) => {
+  modal.classList.remove('show');
+  modal.style.display = 'none'; // eslint-disable-line
+};
+
+export default () => {
+  const buttons = document.querySelectorAll('[data-toggle="modal"]');
+  buttons.forEach((element) => {
+    const id = element.dataset.target;
+    const modal = document.querySelector(id);
+    element.addEventListener('click', openHandler.bind(null, modal));
+
+    const closeButton = modal.querySelector('[data-dismiss="modal"]');
+    closeButton.addEventListener('click', closeHandler.bind(null, modal));
   });
 };
-// END
