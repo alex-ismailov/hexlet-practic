@@ -1,0 +1,455 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`application 1`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-6\\">
+            <form>
+                <div>
+                    <label>Processor</label>
+                    <select name=\\"processor_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"intel\\">Intel</option>
+                        <option value=\\"amd\\">AMD</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Memory</label>
+                    <select name=\\"memory_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"8\\">8</option>
+                        <option value=\\"16\\">16</option>
+                        <option value=\\"32\\">32</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Frequency Min</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_gte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+                <div>
+                    <label>Frequency Max</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_lte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+            </form>
+        </div>
+        <div class=\\"col-6\\">
+            <div class=\\"result\\">
+                <ul>
+                    <li>v1</li>
+                    <li>d3</li>
+                    <li>d2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 2`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-6\\">
+            <form>
+                <div>
+                    <label>Processor</label>
+                    <select name=\\"processor_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"intel\\">Intel</option>
+                        <option value=\\"amd\\">AMD</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Memory</label>
+                    <select name=\\"memory_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"8\\">8</option>
+                        <option value=\\"16\\">16</option>
+                        <option value=\\"32\\">32</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Frequency Min</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_gte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"3\\"
+                    />
+                </div>
+                <div>
+                    <label>Frequency Max</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_lte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+            </form>
+        </div>
+        <div class=\\"col-6\\">
+            <div class=\\"result\\">
+                <ul>
+                    <li>d3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 2 1`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-6\\">
+            <form>
+                <div>
+                    <label>Processor</label>
+                    <select name=\\"processor_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"intel\\">Intel</option>
+                        <option value=\\"amd\\">AMD</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Memory</label>
+                    <select name=\\"memory_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"8\\">8</option>
+                        <option value=\\"16\\">16</option>
+                        <option value=\\"32\\">32</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Frequency Min</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_gte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+                <div>
+                    <label>Frequency Max</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_lte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+            </form>
+        </div>
+        <div class=\\"col-6\\">
+            <div class=\\"result\\">
+                <ul>
+                    <li>v1</li>
+                    <li>d3</li>
+                    <li>d2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 3`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-6\\">
+            <form>
+                <div>
+                    <label>Processor</label>
+                    <select name=\\"processor_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"intel\\">Intel</option>
+                        <option value=\\"amd\\">AMD</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Memory</label>
+                    <select name=\\"memory_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"8\\">8</option>
+                        <option value=\\"16\\">16</option>
+                        <option value=\\"32\\">32</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Frequency Min</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_gte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+                <div>
+                    <label>Frequency Max</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_lte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+            </form>
+        </div>
+        <div class=\\"col-6\\">
+            <div class=\\"result\\">
+                <ul>
+                    <li>v1</li>
+                    <li>d3</li>
+                    <li>d2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 4`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-6\\">
+            <form>
+                <div>
+                    <label>Processor</label>
+                    <select name=\\"processor_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"intel\\">Intel</option>
+                        <option value=\\"amd\\">AMD</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Memory</label>
+                    <select name=\\"memory_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"8\\">8</option>
+                        <option value=\\"16\\">16</option>
+                        <option value=\\"32\\">32</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Frequency Min</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_gte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"4\\"
+                    />
+                </div>
+                <div>
+                    <label>Frequency Max</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_lte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+            </form>
+        </div>
+        <div class=\\"col-6\\">
+            <div class=\\"result\\"></div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 5`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-6\\">
+            <form>
+                <div>
+                    <label>Processor</label>
+                    <select name=\\"processor_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"intel\\">Intel</option>
+                        <option value=\\"amd\\">AMD</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Memory</label>
+                    <select name=\\"memory_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"8\\">8</option>
+                        <option value=\\"16\\">16</option>
+                        <option value=\\"32\\">32</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Frequency Min</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_gte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"1\\"
+                    />
+                </div>
+                <div>
+                    <label>Frequency Max</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_lte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+            </form>
+        </div>
+        <div class=\\"col-6\\">
+            <div class=\\"result\\">
+                <ul>
+                    <li>v1</li>
+                    <li>d3</li>
+                    <li>d2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 6`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-6\\">
+            <form>
+                <div>
+                    <label>Processor</label>
+                    <select name=\\"processor_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"intel\\">Intel</option>
+                        <option value=\\"amd\\">AMD</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Memory</label>
+                    <select name=\\"memory_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"8\\">8</option>
+                        <option value=\\"16\\">16</option>
+                        <option value=\\"32\\">32</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Frequency Min</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_gte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"1\\"
+                    />
+                </div>
+                <div>
+                    <label>Frequency Max</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_lte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"\\"
+                    />
+                </div>
+            </form>
+        </div>
+        <div class=\\"col-6\\">
+            <div class=\\"result\\">
+                <ul>
+                    <li>v1</li>
+                    <li>d3</li>
+                    <li>d2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 7`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-6\\">
+            <form>
+                <div>
+                    <label>Processor</label>
+                    <select name=\\"processor_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"intel\\">Intel</option>
+                        <option value=\\"amd\\">AMD</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Memory</label>
+                    <select name=\\"memory_eq\\">
+                        <option value=\\"\\">Select</option>
+                        <option value=\\"8\\">8</option>
+                        <option value=\\"16\\">16</option>
+                        <option value=\\"32\\">32</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Frequency Min</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_gte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"1\\"
+                    />
+                </div>
+                <div>
+                    <label>Frequency Max</label>
+                    <input
+                        type=\\"number\\"
+                        name=\\"frequency_lte\\"
+                        min=\\"1\\"
+                        max=\\"5\\"
+                        value=\\"2\\"
+                    />
+                </div>
+            </form>
+        </div>
+        <div class=\\"col-6\\">
+            <div class=\\"result\\">
+                <ul>
+                    <li>v1</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
