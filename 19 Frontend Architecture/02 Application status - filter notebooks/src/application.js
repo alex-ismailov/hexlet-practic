@@ -148,24 +148,25 @@ const app = () => {
       frequency_lte: null,
     },
   };
+
+  const items = [
+    { name: 'processor_eq', eventType: 'change' },
+    { name: 'memory_eq', eventType: 'change' },
+    { name: 'frequency_gte', eventType: 'input' },
+    { name: 'frequency_lte', eventType: 'input' },
+  ];
+
+  items.forEach(({ name, eventType }) => {
+    const element = document.querySelector(`[name="${name}"]`);
+    element.addEventListener(eventType, ({ target }) => {
+      state.filter[target.name] = target.value === '' ? null : target.value;
+      render(state);
+    });
+  });
+  
+  render(state);
 };
 
-const items = [
-  { name: 'processor_eq', eventType: 'change' },
-  { name: 'memory_eq', eventType: 'change' },
-  { name: 'frequency_gte', eventType: 'input' },
-  { name: 'frequency_lte', eventType: 'input' },
-];
-
-items.forEach(({ name, eventType }) => {
-  const element = document.querySelector(`[name="${name}"]`);
-  element.addEventListener(eventType, ({ target }) => {
-    state.filter[target.name] = target.value === ''
-      ? null
-      : target.value;
-    render(state);
-  });
-});
 
 export default app;
 // END
