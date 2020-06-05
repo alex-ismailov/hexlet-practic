@@ -11,71 +11,10 @@ const notebooks = [
 ];
 
 // BEGIN (write your solution here)
-const app = () => {
-  const state = {
-    notebooks: [...notebooks],
-    processor: null,
-    memory: null,
-    freqMin: null,
-    freqMax: null,
-  };
-
-  const processorSelect = document.querySelector('select[name="processor_eq"]');
-  processorSelect.addEventListener('change', (e) => {
-    // console.log('changed processor select');
-    const procSelectValue = e.target.value;
-    // console.log(processorValue);
-    state.processor = procSelectValue === ''
-      ? null
-      : procSelectValue;
-
-    render(state);
-  });
-
-  const memorySelect = document.querySelector('select[name="memory_eq"]');
-  memorySelect.addEventListener('change', (e) => {
-    // console.log('changed memory select');
-    const memorySelectValue = e.target.value;
-    console.log(memorySelectValue);
-    state.memory = memorySelectValue === ''
-      ? null
-      : Number(memorySelectValue);
-
-    render(state);
-  });
-
-  const freqMinInput = document.querySelector('input[name="frequency_gte"]');
-  freqMinInput.addEventListener('input', (e) => {
-    // console.log('changed freqMinInput');
-    const freqMinInputValue = e.target.value;
-    // console.log(typeof freqMinInputValue);
-    state.freqMin = freqMinInputValue === null
-      ? null
-      : Number(freqMinInputValue);
-
-    render(state);
-  });
-
-  const freqMaxInput = document.querySelector('input[name="frequency_lte"]');
-  freqMaxInput.addEventListener('input', (e) => {
-    // console.log('changed freqMaxInput');
-    const freqMaxInputValue = e.target.value;
-    // console.log(freqMaxInputValue);
-    state.freqMax = freqMaxInputValue === null
-      ? null
-      : Number(freqMaxInputValue);
-
-    render(state);
-  });
-
-  render(state); // first DOM init
-};
-
 const render = (state) => {
   const divResult = document.querySelector('.result');
 
   const currentNotebooks = state.notebooks.slice();
-  // console.log(currentNotebooks);
 
   const filteredNotebooks = currentNotebooks
     .filter((notebook) => { // processor filter
@@ -102,14 +41,69 @@ const render = (state) => {
       }
       return notebook.frequency <= state.freqMax;
     });
-  
-  console.log('-------------');
-  console.log(filteredNotebooks);
 
   const ul = document.createElement('ul');
   const listInputs = filteredNotebooks.map((notebook) => `<li>${notebook.model}</li>`).join('');
+
+  if (filteredNotebooks.length === 0) {
+    divResult.innerHTML = '';
+    return;
+  }
+
   ul.innerHTML = listInputs;
   divResult.innerHTML = ul.outerHTML;
+}; // render end
+
+const app = () => {
+  const state = {
+    notebooks: [...notebooks],
+    processor: null,
+    memory: null,
+    freqMin: null,
+    freqMax: null,
+  };
+
+  const processorSelect = document.querySelector('select[name="processor_eq"]');
+  processorSelect.addEventListener('change', (e) => {
+    const procSelectValue = e.target.value;
+    state.processor = procSelectValue === ''
+      ? null
+      : procSelectValue;
+
+    render(state);
+  });
+
+  const memorySelect = document.querySelector('select[name="memory_eq"]');
+  memorySelect.addEventListener('change', (e) => {
+    const memorySelectValue = e.target.value;
+    state.memory = memorySelectValue === ''
+      ? null
+      : Number(memorySelectValue);
+
+    render(state);
+  });
+
+  const freqMinInput = document.querySelector('input[name="frequency_gte"]');
+  freqMinInput.addEventListener('input', (e) => {
+    const freqMinInputValue = e.target.value;
+    state.freqMin = freqMinInputValue === ''
+      ? null
+      : Number(freqMinInputValue);
+
+    render(state);
+  });
+
+  const freqMaxInput = document.querySelector('input[name="frequency_lte"]');
+  freqMaxInput.addEventListener('input', (e) => {
+    const freqMaxInputValue = e.target.value;
+    state.freqMax = freqMaxInputValue === ''
+      ? null
+      : Number(freqMaxInputValue);
+
+    render(state);
+  });
+
+  render(state); // first DOM init
 };
 
 export default app;
