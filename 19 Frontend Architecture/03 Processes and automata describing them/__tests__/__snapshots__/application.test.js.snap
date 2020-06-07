@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`application 1 1`] = `
+"<div class=\\"container m-3\\">
+    <div data-editable-target=\\"name\\"><i>name</i></div>
+    <div data-editable-target=\\"email\\"><i>email</i></div>
+</div>
+"
+`;
+
+exports[`application 1 2`] = `
+"<div class=\\"container m-3\\">
+    <div data-editable-target=\\"name\\">
+        <form>
+            <input type=\\"text\\" name=\\"name\\" value=\\"\\" />
+            <input type=\\"submit\\" value=\\"Save\\" />
+        </form>
+    </div>
+    <div data-editable-target=\\"email\\"><i>email</i></div>
+</div>
+"
+`;
+
+exports[`application 1 3`] = `
+"<div class=\\"container m-3\\">
+    <div data-editable-target=\\"name\\">Hexlet</div>
+    <div data-editable-target=\\"email\\"><i>email</i></div>
+</div>
+"
+`;
+
+exports[`application 1 4`] = `
+"<div class=\\"container m-3\\">
+    <div data-editable-target=\\"name\\">Hexlet</div>
+    <div data-editable-target=\\"email\\">
+        <form>
+            <input type=\\"text\\" name=\\"email\\" value=\\"\\" />
+            <input type=\\"submit\\" value=\\"Save\\" />
+        </form>
+    </div>
+</div>
+"
+`;
+
+exports[`application 1 5`] = `
+"<div class=\\"container m-3\\">
+    <div data-editable-target=\\"name\\">Hexlet</div>
+    <div data-editable-target=\\"email\\">support@hexlet.io</div>
+</div>
+"
+`;
+
+exports[`application 1 6`] = `
+"<div class=\\"container m-3\\">
+    <div data-editable-target=\\"name\\"><i>name</i></div>
+    <div data-editable-target=\\"email\\">support@hexlet.io</div>
+</div>
+"
+`;
+
+exports[`application 2 1`] = `
+"<div class=\\"container m-3\\">
+    <div data-editable-target=\\"name\\"><i>name</i></div>
+    <div data-editable-target=\\"email\\"><i>email</i></div>
+</div>
+"
+`;
