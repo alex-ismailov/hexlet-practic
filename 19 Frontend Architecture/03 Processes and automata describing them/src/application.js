@@ -45,5 +45,42 @@ src/application.js
 /* eslint-disable no-param-reassign */
 
 // BEGIN (write your solution here)
+const buildForm = (nameOfInput) => {
+  const form = document.createElement('form');
+  const nameInput = document.createElement('input');
+  nameInput.type = 'text';
+  nameInput.name = nameOfInput;
+  const submit = document.createElement('input');
+  submit.type = 'submit';
+  submit.value = 'Save';
+  form.append(nameInput, submit);
 
+  return form.outerHTML;
+};
+
+const render = () => {};
+
+const app = () => {
+  const state = {
+    registrationProcess: {
+      state: 'disabled',
+    }
+  };
+
+  const divs = document.querySelectorAll('div[data-editable-target]');
+  divs.addEventListener('click', (currentTarget) => {
+    console.log(currentTarget);
+  });
+
+  // console.log(divs);
+
+};
+
+const divs = document.querySelectorAll('div[data-editable-target]');
+// console.log(divs);
+
+export default app;
 // END
+
+// Замыкание
+// https://ru.hexlet.io/topics/42731

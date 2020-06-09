@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <div class="container m-3">
+      <div data-editable-target="name"><i>name</i></div>
+      <div data-editable-target="email"><i>email</i></div>
+    </div>
+
+    <script>
+      const buildForm = (nameOfInput) => {
+        const form = document.createElement('form');
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.name = nameOfInput;
+        const submit = document.createElement('input');
+        submit.type = 'submit';
+        submit.value = 'Save';
+        form.append(nameInput, submit);
+
+        return form.outerHTML;
+      };
+
+      const render = (state) => {
+        const nameInput = document.querySelector('div[data-editable-target="name"]');
+        nameInput.removeEventListener();
+        const emailInput = document.querySelector('div[data-editable-target="name"]');
+        emailInput.removeEventListener();
+        if (state.registrationProcess.name === 'filling') {
+          nameInput.innerHTML = buildForm('name');
+        }
+        if (state.registrationProcess.name === 'filling') {
+          emailInput.innerHTML = buildForm('email');
+        }
+      };
+
+      // const handle = (element, name, state) => {
+      //   const render = (state) => {
+      //     if (state.registrationProcess.name === 'filling') {
+      //       element.innerHTML = buildForm(name);
+      //     }
+      //   };
+
+      //   render(state);
+      // };
+
+      const state = {
+        registrationProcess: {
+          name: 'disabled',
+          email: 'disabled',
+        }
+      };
+
+      const divs = document.querySelectorAll('div[data-editable-target]');
+      divs.forEach((div) => div.addEventListener('click', handler));
+    </script>
+  </body>
+</html>

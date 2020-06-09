@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <form>
+    <input type="text">
+    <input type="submit" value="Save">
+  </form> -->
+  <div></div>
+</body>
+
+<script>
+  // const form = document.querySelector('form');
+  // form.addEventListener('submit', (e) => {
+  //   // e.preventDefault();
+  //   console.log('submit pushed!!!');
+  // });
+  
+  const buildForm = (nameOfInput) => {
+    const form = document.createElement('form');
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = nameOfInput;
+    const submit = document.createElement('input');
+    submit.type = 'submit';
+    submit.value = 'Save';
+    form.append(input, submit);
+    
+    return form;
+  };
+
+  const div = document.querySelector('div');
+  const newForm = buildForm('someName');
+  div.innerHTML = newForm.outerHTML;
+  const form = document.querySelector('div>form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    console.log('pushed button Save');
+
+    document.body.innerHTML = '##########@@@@@@@@@@@@@@';
+  });
+</script>
+</html>
