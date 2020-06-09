@@ -9,40 +9,22 @@ const buildForm = (nameOfInput) => {
   submit.value = 'Save';
   form.append(input, submit);
 
-  // form.addEventListener('submit', (e) => {
-  //   e.preventDefault();
-    
-  //   console.log('pushed button Save');
-
-  //   document.body.innerHTML = '##########@@@@@@@@@@@@@@';
-  // });
-
   return form;
 };
 
-const render = (state, element) => {
-  element.innerHTML = element.outerHTML;
+const render = (state, element, elementName) => {
+  let newElement;
+  if (state.registrationProcess[elementName] === 'filling') {
+    newElement = buildForm(elementName);
+    element.innerHTML = newElement.outerHTML;
+    const form = element.querySelector('form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      console.log('pushed submit@@@');
+    });
+  }
 };
   
-const showData = (element, content) => {
-  element.innerHTML = content;
-};
-
-const handle = (element, currentTargetName, state) => {
-  let newElement;
-
-  if (state.registrationProcess[currentTargetName] === 'filling') {
-    newElement = buildForm(currentTargetName);
-    
-  }
-
-  if (state.registrationProcess[currentTargetName] === 'finished') {
-    newElement = showData(element, data);
-  }
-
-  render(state, newElement);
-};
-
 const app = () => {
   const state = {
     registrationProcess: {       
@@ -55,7 +37,7 @@ const app = () => {
   elements.forEach((element) => element.addEventListener('click', ({ target }) => {
     const elementName = target.parentNode.dataset.editableTarget;
     state.registrationProcess[elementName] = 'filling';
-    handle(target, elementName, state);
+    render(state, target.parentNode, elementName);
   }));
 };
 
