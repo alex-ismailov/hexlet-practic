@@ -20,7 +20,9 @@ const render = (state, element, elementName) => {
     const form = element.querySelector('form');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      console.log('pushed submit@@@');
+      // console.log('pushed submit@@@');
+      state.registrationProcess[elementName] = 'finshed'
+      
     });
   }
 };
