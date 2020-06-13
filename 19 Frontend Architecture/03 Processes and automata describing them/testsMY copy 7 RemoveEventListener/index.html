@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Local</title>
+  </head>
+  <body>
+    <div class="container m-3">
+      <div data-editable-target="name"><i>name</i></div>
+    </div>
+
+    <script>
+      
+      const handleOnClick = (arg, counter) => (event) => {
+        event.currentTarget.innerHTML = `content of arg is: ${arg}, handler worked: ${counter.value} time`;
+        counter.value += 1;
+      };
+
+      let counter = {
+        value: 0,
+      };
+
+      const element = document.querySelector('div[data-editable-target]');
+      // element.addEventListener('click', handleOnClick('some value', counter));
+      element.addEventListener('click', handleOnClick('some value', counter), { once: true });
+
+    </script>
+
+  </body>
+</html>
