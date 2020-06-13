@@ -167,7 +167,6 @@ const app = () => {
   render(state);
 };
 
-
 export default app;
 // END
 
