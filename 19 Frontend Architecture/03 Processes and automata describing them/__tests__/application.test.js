@@ -3,7 +3,8 @@ import path from 'path';
 import prettier from 'prettier';
 import userEvent from '@testing-library/user-event';
 
-import run from '../src/application.js';
+// import run from '../src/application.js';
+import run from '../src/application teacher solution.js';
 
 const options = {
   parser: 'html',
