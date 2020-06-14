@@ -103,9 +103,9 @@ const handle = {
       state.registrationProcess[elementName] = 'disabled';
       const defaultContent = elementName;
       render(state, divWrapper, elementName, handle, defaultContent)
+    } else {
+      render(state, divWrapper, elementName, handle, content);
     }
-
-    render(state, divWrapper, elementName, handle, content);
   },
   onInput: (state, elementName) => (e) => {
     state.registrationProcess[elementName] = 'disabled';
