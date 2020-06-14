@@ -8,8 +8,6 @@ const render = (state, element, elementName, content) => {
     
     element.innerHTML = '';
     element.appendChild(form);
-    element.removeEventListener('click', handleDivOnClick);
-    // element.addEventListener('click', {});
     element.firstChild.addEventListener('submit', (e) => handleFormOnSubmit(e, elementName, state));
     element.firstChild.addEventListener('input', (e) => handleFormOnInput(e, elementName, state));
     // element.innerHTML = form.outerHTML;
@@ -19,18 +17,18 @@ const render = (state, element, elementName, content) => {
  
     return;
   }
-  if (state.registrationProcess[elementName] === 'finished') {
-    // console.log(content);
-    element.innerHTML = content;
-    // console.log(element);
-    return;
-  }
-  if (state.registrationProcess[elementName] = 'disabled') {
-    element.innerHTML = '';
-    element.innerHTML = content;
-    element.firstChild.addEventListener('click', (e) => handleDivOnClick(state, e));
-    return;
-  }
+  // if (state.registrationProcess[elementName] === 'finished') {
+  //   // console.log(content);
+  //   element.innerHTML = content;
+  //   // console.log(element);
+  //   return;
+  // }
+  // if (state.registrationProcess[elementName] = 'disabled') {
+  //   element.innerHTML = '';
+  //   element.innerHTML = content;
+  //   element.firstChild.addEventListener('click', (e) => handleDivOnClick(state, e));
+  //   return;
+  // }
 };
 
 const buildForm = (nameOfInput) => {
@@ -66,20 +64,12 @@ const handleFormOnInput = (e, elementName, state) => {
   }
 };
 
-// const handleDivOnClick = (state, currentTarget) => {
-//   // console.log(currentTarget);
-//   const elementName = currentTarget.dataset.editableTarget;
-//   state.registrationProcess[elementName] = 'filling';
+const handleDivOnClick = (state) => (e) => {
+  const div = e.currentTarget;
+  const divName = div.dataset.editableTarget;
+  state.registrationProcess[divName] = 'filling';
 
-//   render(state, currentTarget, elementName);
-// };
-
-const handleDivOnClick = ({ currentTarget }, state) => {
-  console.log(currentTarget);
-  const elementName = currentTarget.dataset.editableTarget;
-  state.registrationProcess[elementName] = 'filling';
-
-  render(state, currentTarget, elementName);
+  render(state, div, divName);
 };
   
 const app = () => {
@@ -90,11 +80,9 @@ const app = () => {
     }
   };
 
-  // console.log(document.querySelector('[data-editable-target="name"]'));
-
   const elements = document.querySelectorAll('div[data-editable-target]');
-  elements.forEach((element) => element.addEventListener('click', (e) => handleDivOnClick(e, state)));
-  // elements.forEach((element) => element.addEventListener('click', handleDivOnClick));
+  // elements.forEach((element) => element.addEventListener('click', (e) => handleDivOnClick(e, state)));
+  elements.forEach((element) => element.addEventListener('click', handleDivOnClick(state)));
 };
 
 // export default app;

@@ -7,7 +7,6 @@ const buildForm = (nameOfInput) => {
   input.type = 'text';
   input.name = nameOfInput;
   input.setAttribute('value', '');
-  // input.value = '';
 
   const submit = document.createElement('input');
   submit.type = 'submit';
@@ -45,7 +44,7 @@ const handleDivOnClick = (state) => (e) => {
   render(state, div, divName);
 };
 
-const render = (state, element, elementName, content) => {
+const render = (state, element, elementName, content, handler) => {
   if (state.registrationProcess[elementName] === 'filling') {
     const form = buildForm(elementName);
     form.addEventListener('submit', handleFormOnSubmit(state, elementName));
@@ -64,7 +63,6 @@ const render = (state, element, elementName, content) => {
     element.innerHTML = '';
     element.innerHTML = `<i>${elementName}</i>`;
     element.addEventListener('click', handleDivOnClick(state), { once: true });
-    return;
   }
 };
 
