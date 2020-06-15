@@ -1,0 +1,1 @@
+^support@hexlet\.io$
