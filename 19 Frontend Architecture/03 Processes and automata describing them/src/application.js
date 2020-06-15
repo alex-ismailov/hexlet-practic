@@ -108,10 +108,10 @@ const handle = {
     }
   },
   onInput: (state, elementName) => (e) => {
-    state.registrationProcess[elementName] = 'disabled';
     const content = e.target.value;
     const divWrapper = document.querySelector(`div[data-editable-target="${elementName}"]`);
     if (content === '') {
+      state.registrationProcess[elementName] = 'disabled';
       const defaultContent = elementName;
       render(state, divWrapper, elementName, handle, defaultContent);
     }
@@ -135,3 +135,9 @@ export default app;
 
 // Замыкание
 // https://ru.hexlet.io/topics/42731
+
+// state
+// https://ru.hexlet.io/topics/36509
+
+// curring
+// 
