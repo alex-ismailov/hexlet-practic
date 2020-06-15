@@ -1,0 +1,334 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`application 1`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-2\\">
+            <h3>Lists</h3>
+            <div data-container=\\"lists\\">
+                <ul>
+                    <li><b>General</b></li>
+                </ul>
+            </div>
+            <form data-container=\\"new-list-form\\">
+                <input type=\\"text\\" class=\\"form-control mb-2\\" name=\\"name\\" />
+                <input
+                    type=\\"submit\\"
+                    class=\\"btn btn-primary btn-sm\\"
+                    value=\\"Add\\"
+                />
+            </form>
+        </div>
+        <div class=\\"col-10\\">
+            <h3>Tasks</h3>
+            <form class=\\"form-inline\\" data-container=\\"new-task-form\\">
+                <input type=\\"text\\" class=\\"form-control mr-2\\" name=\\"name\\" />
+                <input type=\\"submit\\" class=\\"btn btn-primary\\" value=\\"Add\\" />
+            </form>
+            <div data-container=\\"tasks\\"></div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 2`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-2\\">
+            <h3>Lists</h3>
+            <div data-container=\\"lists\\">
+                <ul>
+                    <li><b>General</b></li>
+                </ul>
+            </div>
+            <form data-container=\\"new-list-form\\">
+                <input type=\\"text\\" class=\\"form-control mb-2\\" name=\\"name\\" />
+                <input
+                    type=\\"submit\\"
+                    class=\\"btn btn-primary btn-sm\\"
+                    value=\\"Add\\"
+                />
+            </form>
+        </div>
+        <div class=\\"col-10\\">
+            <h3>Tasks</h3>
+            <form class=\\"form-inline\\" data-container=\\"new-task-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mr-2\\"
+                    name=\\"name\\"
+                    value=\\"First Task in General\\"
+                />
+                <input type=\\"submit\\" class=\\"btn btn-primary\\" value=\\"Add\\" />
+            </form>
+            <div data-container=\\"tasks\\">
+                <ul>
+                    <li>First Task in General</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 2 1`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-2\\">
+            <h3>Lists</h3>
+            <div data-container=\\"lists\\">
+                <ul>
+                    <li><b>General</b></li>
+                </ul>
+            </div>
+            <form data-container=\\"new-list-form\\">
+                <input type=\\"text\\" class=\\"form-control mb-2\\" name=\\"name\\" />
+                <input
+                    type=\\"submit\\"
+                    class=\\"btn btn-primary btn-sm\\"
+                    value=\\"Add\\"
+                />
+            </form>
+        </div>
+        <div class=\\"col-10\\">
+            <h3>Tasks</h3>
+            <form class=\\"form-inline\\" data-container=\\"new-task-form\\">
+                <input type=\\"text\\" class=\\"form-control mr-2\\" name=\\"name\\" />
+                <input type=\\"submit\\" class=\\"btn btn-primary\\" value=\\"Add\\" />
+            </form>
+            <div data-container=\\"tasks\\"></div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 3`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-2\\">
+            <h3>Lists</h3>
+            <div data-container=\\"lists\\">
+                <ul>
+                    <li><b>General</b></li>
+                </ul>
+            </div>
+            <form data-container=\\"new-list-form\\">
+                <input type=\\"text\\" class=\\"form-control mb-2\\" name=\\"name\\" />
+                <input
+                    type=\\"submit\\"
+                    class=\\"btn btn-primary btn-sm\\"
+                    value=\\"Add\\"
+                />
+            </form>
+        </div>
+        <div class=\\"col-10\\">
+            <h3>Tasks</h3>
+            <form class=\\"form-inline\\" data-container=\\"new-task-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mr-2\\"
+                    name=\\"name\\"
+                    value=\\"Second Task in General\\"
+                />
+                <input type=\\"submit\\" class=\\"btn btn-primary\\" value=\\"Add\\" />
+            </form>
+            <div data-container=\\"tasks\\">
+                <ul>
+                    <li>First Task in General</li>
+                    <li>Second Task in General</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 4`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-2\\">
+            <h3>Lists</h3>
+            <div data-container=\\"lists\\">
+                <ul>
+                    <li><b>General</b></li>
+                    <li><a href=\\"#random\\">Random</a></li>
+                </ul>
+            </div>
+            <form data-container=\\"new-list-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mb-2\\"
+                    name=\\"name\\"
+                    value=\\"Random\\"
+                />
+                <input
+                    type=\\"submit\\"
+                    class=\\"btn btn-primary btn-sm\\"
+                    value=\\"Add\\"
+                />
+            </form>
+        </div>
+        <div class=\\"col-10\\">
+            <h3>Tasks</h3>
+            <form class=\\"form-inline\\" data-container=\\"new-task-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mr-2\\"
+                    name=\\"name\\"
+                    value=\\"Second Task in General\\"
+                />
+                <input type=\\"submit\\" class=\\"btn btn-primary\\" value=\\"Add\\" />
+            </form>
+            <div data-container=\\"tasks\\">
+                <ul>
+                    <li>First Task in General</li>
+                    <li>Second Task in General</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 5`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-2\\">
+            <h3>Lists</h3>
+            <div data-container=\\"lists\\">
+                <ul>
+                    <li><a href=\\"#general\\">General</a></li>
+                    <li><b>Random</b></li>
+                </ul>
+            </div>
+            <form data-container=\\"new-list-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mb-2\\"
+                    name=\\"name\\"
+                    value=\\"Random\\"
+                />
+                <input
+                    type=\\"submit\\"
+                    class=\\"btn btn-primary btn-sm\\"
+                    value=\\"Add\\"
+                />
+            </form>
+        </div>
+        <div class=\\"col-10\\">
+            <h3>Tasks</h3>
+            <form class=\\"form-inline\\" data-container=\\"new-task-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mr-2\\"
+                    name=\\"name\\"
+                    value=\\"Second Task in General\\"
+                />
+                <input type=\\"submit\\" class=\\"btn btn-primary\\" value=\\"Add\\" />
+            </form>
+            <div data-container=\\"tasks\\"></div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 6`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-2\\">
+            <h3>Lists</h3>
+            <div data-container=\\"lists\\">
+                <ul>
+                    <li><a href=\\"#general\\">General</a></li>
+                    <li><b>Random</b></li>
+                </ul>
+            </div>
+            <form data-container=\\"new-list-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mb-2\\"
+                    name=\\"name\\"
+                    value=\\"Random\\"
+                />
+                <input
+                    type=\\"submit\\"
+                    class=\\"btn btn-primary btn-sm\\"
+                    value=\\"Add\\"
+                />
+            </form>
+        </div>
+        <div class=\\"col-10\\">
+            <h3>Tasks</h3>
+            <form class=\\"form-inline\\" data-container=\\"new-task-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mr-2\\"
+                    name=\\"name\\"
+                    value=\\"First Task in Random\\"
+                />
+                <input type=\\"submit\\" class=\\"btn btn-primary\\" value=\\"Add\\" />
+            </form>
+            <div data-container=\\"tasks\\">
+                <ul>
+                    <li>First Task in Random</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`application 7`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-2\\">
+            <h3>Lists</h3>
+            <div data-container=\\"lists\\">
+                <ul>
+                    <li><b>General</b></li>
+                    <li><a href=\\"#random\\">Random</a></li>
+                </ul>
+            </div>
+            <form data-container=\\"new-list-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mb-2\\"
+                    name=\\"name\\"
+                    value=\\"Random\\"
+                />
+                <input
+                    type=\\"submit\\"
+                    class=\\"btn btn-primary btn-sm\\"
+                    value=\\"Add\\"
+                />
+            </form>
+        </div>
+        <div class=\\"col-10\\">
+            <h3>Tasks</h3>
+            <form class=\\"form-inline\\" data-container=\\"new-task-form\\">
+                <input
+                    type=\\"text\\"
+                    class=\\"form-control mr-2\\"
+                    name=\\"name\\"
+                    value=\\"First Task in Random\\"
+                />
+                <input type=\\"submit\\" class=\\"btn btn-primary\\" value=\\"Add\\" />
+            </form>
+            <div data-container=\\"tasks\\">
+                <ul>
+                    <li>First Task in General</li>
+                    <li>Second Task in General</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
