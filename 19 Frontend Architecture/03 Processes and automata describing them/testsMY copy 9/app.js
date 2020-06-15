@@ -63,10 +63,10 @@ const handle = {
     render(state, divWrapper, elementName, handle, content);
   },
   onInput: (state, elementName) => (e) => {
-    state.registrationProcess[elementName] = 'disabled';
     const content = e.target.value;
-    const divWrapper = document.querySelector(`div[data-editable-target="${elementName}"]`);
     if (content === '') {
+      state.registrationProcess[elementName] = 'disabled';
+      const divWrapper = document.querySelector(`div[data-editable-target="${elementName}"]`);
       const defaultContent = elementName;
       render(state, divWrapper, elementName, handle, defaultContent);
     }
