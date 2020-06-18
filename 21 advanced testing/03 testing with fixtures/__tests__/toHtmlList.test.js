@@ -7,7 +7,8 @@ const toHtmlList = getFunction();
 // BEGIN (write your solution here)
 /* teacher solution */
 const formats = ['csv', 'json', 'yml'];
-const getFixturePath = (name) => path.join('__fixtures__', name);
+// const getFixturePath = (name) => path.join('__fixtures__', name);
+const getFixturePath = (name) => path.join(`${path.resolve()}/21 advanced testing/03 testing with fixtures/__fixtures__/${name}`);
 
 let expected;
 
@@ -18,7 +19,7 @@ beforeAll(async () => {
 test.each(formats)('%s', async (format) => {
   const filepath = getFixturePath(`list.${format}`);
   const actual = await toHtmlList(filepath);
-  expected(actual).toEqual(expected.trim());
+  expect(actual).toEqual(expected.trim());
 });
 /* ************************************************ */
 
