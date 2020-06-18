@@ -3,22 +3,19 @@ import getFunction from '../functions.js';
 const buildUser = getFunction();
 
 // BEGIN (write your solution here)
-// test('different person', () => {
-//   const user1 = buildUser();
-//   const user2 = buildUser();
-//   expect(user1).not.toEqual(user2);
-// });
-
 describe('fakers tests', () => {
   test('different persons', () => {
-    expect(buildUser()).not.toEqual(buildUser());
+    const user1 = buildUser();
+    const user2 = buildUser();
+    expect(user1).not.toEqual(user2);
   });
   test('props setting to person', () => {
-    const expected = {
+    const user1Data = {
       email: 'Zulauf@yahoo.com',
       firstName: 'Petya',
       lastName: 'Zulauf',
     };
-    expect(buildUser(expected)).toEqual(expected);
+    const user1 = buildUser(user1Data);
+    expect(buildUser(user1)).toEqual(user1Data);
   });
 });
