@@ -24,6 +24,7 @@
     "eslint": "^6.7.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "faker": "^4.1.0",
     "jest": "^25.1.0",
     "js-yaml": "^3.14.0",
     "keycode": "^2.2.0",
