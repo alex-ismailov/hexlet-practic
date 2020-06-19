@@ -13,25 +13,33 @@ let destPathForBeforeFile;
 let destPathForAfterFile
 
 beforeEach(async () => {
-  // expected = await fs.readFile(getFixturePath('after.html'), 'utf-8');
   const beforeFilePath = getFixturePath('before.html');
   destPathForBeforeFile = `${tmpPath}/before.html`;
   await fs.copyFile(beforeFilePath, destPathForBeforeFile);
+
+  const afterFilePath = getFixturePath('after.html');
+  destPathForAfterFile = `${tmpPath}/after.html`;
+  await fs.copyFile(afterFilePath, destPathForAfterFile);
 });
 
 test('prettifyHTMLFile', async () => {
-  // const filePath = `${tmpPath}/before.html`;
-  // console.log(filePath);
-  // await prettifyHTMLFile(filePath);
-  // const res = await fs.readFile(filePath, 'utf-8');
-  // expect(res).toEqual(expected);
-  // console.log(os.tmpdir());
-
-  /* good */
-  console.log(destPathForBeforeFile);
-  const copiedSrcFile = await fs.readFile(destPathForBeforeFile, 'utf-8');
-  console.log(copiedSrcFile);
+    /* good */
+  // console.log(destPathForBeforeFile);
+  // const copiedBeforeFile = await fs.readFile(destPathForBeforeFile, 'utf-8');
+  // console.log(copiedBeforeFile);
   /* *** */
+  // console.log(destPathForAfterFile);
+  // const copiedAfterFile = await fs.readFile(destPathForAfterFile, 'utf-8');
+  // console.log(copiedAfterFile);
+  /* *** */
+  const expected = await fs.readFile(getFixturePath('after.html'), 'utf-8');
+
+  const filePath = `${tmpPath}/before.html`;
+  // console.log(filePath);
+  await prettifyHTMLFile(filePath);
+  const res = await fs.readFile(filePath, 'utf-8');
+  expect(res).toEqual(expected);
+  // console.log(os.tmpdir());
 });
 
 
