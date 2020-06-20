@@ -6,7 +6,7 @@ import getFunction from '../functions.js';
 const prettifyHTMLFile = getFunction();
 
 // BEGIN (write your solution here)
-const getFixturePath = (fileName) => path.join(path.resolve(), '21 advanced testing/05 testing code that interacts with files/__fixtures__', fileName);
+const getFixturePath = (fileName) => path.join('21 advanced testing/05 testing code that interacts with files/__fixtures__', fileName);
 const tmpPath = os.tmpdir();
 let destPathForBeforeFile;
 
@@ -24,25 +24,6 @@ test('prettifyHTMLFile', async () => {
   expect(actual).toEqual(expected);
 });
 // END
-
-// const getFixturePath = (fileName) => path.join(path.resolve(), '21 advanced testing/05 testing code that interacts with files/__fixtures__', fileName);
-// const tmpPath = os.tmpdir();
-// let destPathForBeforeFile;
-
-// beforeEach(async () => {
-//   const beforeFilePath = getFixturePath('before.html');
-//   destPathForBeforeFile = `${tmpPath}/before.html`;
-//   await fs.copyFile(beforeFilePath, destPathForBeforeFile);
-// });
-
-// test('prettifyHTMLFile', async () => {
-//   const expected = await fs.readFile(getFixturePath('after.html'), 'utf-8');
-
-//   const filePath = `${tmpPath}/before.html`;
-//   await prettifyHTMLFile(filePath);
-//   const res = await fs.readFile(filePath, 'utf-8');
-//   expect(res).toEqual(expected);
-// });
 
 /* ***************************** */
 /* ****** teacher solution ***** */
