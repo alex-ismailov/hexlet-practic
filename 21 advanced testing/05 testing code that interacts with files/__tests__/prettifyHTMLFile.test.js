@@ -7,18 +7,19 @@ const prettifyHTMLFile = getFunction();
 
 // BEGIN (write your solution here)
 const getFixturePath = (fileName) => path.join('21 advanced testing/05 testing code that interacts with files/__fixtures__', fileName);
-const tmpPath = os.tmpdir();
-let destPathForBeforeFile;
+const makeDestPath = (fileName) => path.join(os.tmpdir(), fileName);
+let expected;
+
+beforeAll(async () => {
+  expected = await fs.readFile(getFixturePath('after.html'), 'utf-8');
+});
 
 beforeEach(async () => {
-  const beforeFilePath = getFixturePath('before.html');
-  destPathForBeforeFile = path.join(tmpPath, 'before.html');
-  await fs.copyFile(beforeFilePath, destPathForBeforeFile);
+  await fs.copyFile(getFixturePath('before.html'), makeDestPath('before.html'));
 });
 
 test('prettifyHTMLFile', async () => {
-  const expected = await fs.readFile(getFixturePath('after.html'), 'utf-8');
-  const testFilePath = path.join(tmpPath, 'before.html');
+  const testFilePath = makeDestPath('before.html');
   await prettifyHTMLFile(testFilePath);
   const actual = await fs.readFile(testFilePath, 'utf-8');
   expect(actual).toEqual(expected);
