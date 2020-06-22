@@ -4,7 +4,8 @@ import getFunction from '../functions';
 
 const getFilesCount = getFunction();
 
-const getFixturePath = (name) => path.join('21 advanced testing/06 inver deps/__fixtures__', name);
+const getFixturePath = (name) => path.join('21 advanced testing/06 dependency inversion/__fixtures__', name);
+
 
 // BEGIN (write your solution here)
 
