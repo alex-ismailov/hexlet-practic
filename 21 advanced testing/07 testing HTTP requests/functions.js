@@ -1,9 +1,9 @@
 import _ from 'lodash';
-import { octokitRest } from '@octokit/rest';
+import { Octokit } from '@octokit/rest';
 
-const Octokit = octokitRest;
+const OctokitConstructor = Octokit;
 
-const getUserMainLanguage = async (username, client = new Octokit()) => {
+const getUserMainLanguage = async (username, client = new OctokitConstructor()) => {
   const { data } = await client.repos.listForUser({ username });
   if (data.length === 0) {
     return null;
