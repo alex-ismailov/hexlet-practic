@@ -9,16 +9,19 @@ export default class DatabaseConfigLoader {
   }
 
   load(env) {
-    const filePath = path.join(this.pathToConfigs, `database.${env}.json`);
-    const configFile = fs.readFileSync(filePath, 'utf-8');
-    const configObj = JSON.parse(configFile);
+    const fileName = `database.${env}.json`;
+    const filePath = path.join(this.pathToConfigs, fileName);
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    const config = JSON.parse(raw);
 
-    if (_.has(configObj, 'extend')) {
-      const mergedConfigFile = _.merge(this.load(configObj.extend), configObj);
-      delete mergedConfigFile.extend;
-      return mergedConfigFile;
+    if (!_.has(config, 'extend')) {
+      return config;
     }
-    return configObj;
+
+    const newEnv = config.extend;
+    const extension = this.load(newEnv);
+    const configWithoutExtend = _.omit(config, 'extend');
+    return _.merge(extension, configWithoutExtend);
   }
 }
 // END
