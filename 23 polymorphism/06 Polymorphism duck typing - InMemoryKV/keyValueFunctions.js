@@ -1,15 +1,9 @@
 // BEGIN (write your solution here)
 const swapKeyValue = (map) => {
-  const mapObj = map.toObject();
-  const keysValues = Object.entries(mapObj);
-  keysValues.forEach(([key]) => map.unset(key));
-
-  const reversedKeysValues = keysValues
-    .map((keyValue) => keyValue.reverse());
-
-  reversedKeysValues.forEach(([key, value]) => {
-    map.set(key, value);
-  });
+  const data = map.toObject();
+  const entries = Object.entries(data);
+  entries.forEach(([key]) => map.unset(key));
+  entries.forEach(([key, value]) => map.set(value, key));
 };
 
 export default swapKeyValue;
