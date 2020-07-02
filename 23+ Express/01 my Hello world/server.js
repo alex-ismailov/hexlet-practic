@@ -7,10 +7,7 @@ const getRandomNumber = (min = 0, max = 1000) => (
 );
 
 app.get('/', (req, res) => {
-  res.json({ 
-    key1: 'My first Hello World from server',
-    key2: getRandomNumber(),
-   });
+  res.json({ key1: getRandomNumber() });
 });
 
 app.listen(3000, () => {
