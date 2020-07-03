@@ -4,21 +4,17 @@ import http from 'http';
 
 export default async (port, callback) => {
   // BEGIN (write your solution here)
-
-  const getPhoneBook = async () => {
-    const pbPath = path.join(`${path.resolve()}/23.1 HTTP server/02 Server implementation/phonebook.txt`);
-    console.log(pbPath);
-    const phoneBook = await fs.readFile(pbPath, 'utf-8');
-    return phoneBook.trim();
-  };
+  const data = await fs.readFile(path.join(path.resolve(), '23.1 HTTP server/02 Server implementation/phonebook.txt'));
+  const users = data.toString()
+    .trim()
+    .split('\n');
 
   const server = new http.createServer((request, response) => {
-    getPhoneBook().then((content) => {
-      const pbStrings = content.split('\n');
-      const resString = `Welcome to The Phonebook\nRecords count: ${pbStrings.length}`;
-      response.write(resString);
-      response.end();
-    });
+    const messages = [
+      'Welcome to The Phonebook',
+      `Records count: ${users.length}`,
+    ];
+    response.end(messages.join('\n'));
   });
 
   server.listen(port, callback);
