@@ -14,9 +14,13 @@ export default async (port, callback = () => {}) => {
     const [id, name, phone] = user.split('|');
     return { ...acc,  [id]: { name, phone } };
   }, {});
-  console.log(usersById); // good
+  // console.log(usersById); // good
   // END
 
   const server = makeServer(usersById);
-  server.listen(port, () => callback(server));
+  server.listen(port, () => {
+    // eslint-disable-next-line no-console
+    console.log('server started! les 3');
+    return callback(server);
+  });
 };
