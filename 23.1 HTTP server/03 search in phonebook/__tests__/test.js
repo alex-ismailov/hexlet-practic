@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-import startServer from '..';
+/* this is my test patch */
+import http from 'axios/lib/adapters/http';
+axios.defaults.adapter = http;
+/* ********************* */
+
+import startServer from '../index.js';
 
 const hostname = 'http://localhost';
 const port = 9000;
