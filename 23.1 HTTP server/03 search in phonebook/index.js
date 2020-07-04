@@ -11,16 +11,13 @@ export default async (port, callback = () => {}) => {
   // BEGIN (write your solution here)
   const userRows = data.trim().split('\n');
   const usersById = userRows.reduce((acc, user) => {
-    const [id, name, phone] = user.split('|');
-    return { ...acc,  [id]: { name, phone } };
+    const splited = user.split('|').map((item) => item.trim());
+    const [id, name, phone] = splited;
+    // return { ...acc, [id]: { name, phone } };
+    return _.set(acc, id, { name, phone });
   }, {});
-  // console.log(usersById); // good
   // END
 
   const server = makeServer(usersById);
-  server.listen(port, () => {
-    // eslint-disable-next-line no-console
-    console.log('server started! les 3');
-    return callback(server);
-  });
+  server.listen(port, () => callback(server));
 };
