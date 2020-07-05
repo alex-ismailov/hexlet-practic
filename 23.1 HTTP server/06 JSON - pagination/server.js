@@ -1,4 +1,5 @@
 import http from 'http';
+import { chunk } from 'lodash';
 
 export default (usersById) => http.createServer((request, response) => {
   request.on('error', (err) => {
@@ -24,7 +25,33 @@ export default (usersById) => http.createServer((request, response) => {
       response.end(JSON.stringify(result));
     } else if (request.url.startsWith('/users.json')) {
       // BEGIN (write your solution here)
+      const url = new URL(request.url, `http://${request.headers.host}`);
+
+      const page = url.searchParams.get('page') || 1;
+      const perPage = url.searchParams.get('perPage') || 10;
+
+      console.log(`page: ${page}; perPage: ${perPage}`);
+      console.log(usersById['10']);
       
+      /* сделать группы по perPage */
+      const users = Object.values(usersById);
+      // console.log(users);
+
+      // const splitArr = (arr, chunks) => arr
+      //   .reduce((acc, n, i) => ((acc[i % chunks] = acc[i % chunks] || []).push(n), acc), []);
+
+      // callback(currentValue, index, array)
+      const splitArr = (arr, chunkSize) => arr
+        .reduce((acc, item, i) => {
+          if (i % chunkSize === 0) {
+            
+          }
+        }, []);
+
+      const usersChunks = splitArr(users, 3);
+      console.log(usersChunks[0]);
+
+      response.end();
       // END
     }
   });
