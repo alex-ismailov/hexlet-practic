@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import server from '..';
+import server from '../index.js';
 
 const hostname = 'localhost';
 const port = 9000;
