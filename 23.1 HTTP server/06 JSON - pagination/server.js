@@ -1,5 +1,4 @@
 import http from 'http';
-import { chunk } from 'lodash';
 
 export default (usersById) => http.createServer((request, response) => {
   request.on('error', (err) => {
@@ -30,26 +29,28 @@ export default (usersById) => http.createServer((request, response) => {
       const page = url.searchParams.get('page') || 1;
       const perPage = url.searchParams.get('perPage') || 10;
 
-      console.log(`page: ${page}; perPage: ${perPage}`);
-      console.log(usersById['10']);
+      // console.log(`page: ${page}; perPage: ${perPage}`);
+      // console.log(usersById['10']);
+      // console.log(usersById);
+      console.log('------------\n');
       
       /* сделать группы по perPage */
       const users = Object.values(usersById);
-      // console.log(users);
+      console.log(users);
 
-      // const splitArr = (arr, chunks) => arr
-      //   .reduce((acc, n, i) => ((acc[i % chunks] = acc[i % chunks] || []).push(n), acc), []);
-
-      // callback(currentValue, index, array)
-      const splitArr = (arr, chunkSize) => arr
-        .reduce((acc, item, i) => {
-          if (i % chunkSize === 0) {
-            
+      const usersPages = Object.values(usersById)
+        .reduce((acc, item) => {
+          if (acc[acc.length - 1].length === perPage) {
+            acc.push([]);
           }
-        }, []);
+          acc[acc.length - 1].push(item);
+          return acc;
+        }, [[]]);
 
-      const usersChunks = splitArr(users, 3);
-      console.log(usersChunks[0]);
+      console.log(usersPages[page]);
+      console.log(`page: ${page}; perPage: ${perPage}`);
+      console.log(url.searchParams.get('page'));
+      console.log(url.searchParams.get('perPage'));
 
       response.end();
       // END
@@ -57,3 +58,11 @@ export default (usersById) => http.createServer((request, response) => {
   });
   request.resume();
 });
+
+// {
+//   "meta": { "page": 5, "perPage": 2, "totalPages": 500  },
+//   "data": [
+//     { "name": "Mrs. Marlee Lesch", "phone": "(412) 979-7311" },
+//     { "name": "Mrs. Mabelle Cormier", "phone": "307.095.4754" }
+//   ]
+// }
