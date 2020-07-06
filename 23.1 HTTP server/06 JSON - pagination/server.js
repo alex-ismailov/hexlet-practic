@@ -25,21 +25,11 @@ export default (usersById) => http.createServer((request, response) => {
     } else if (request.url.startsWith('/users.json')) {
       // BEGIN (write your solution here)
       const url = new URL(request.url, `http://${request.headers.host}`);
-
-      const page = url.searchParams.get('page') || 1;
-      const perPage = url.searchParams.get('perPage') || 10;
-
-      // console.log(`page: ${page}; perPage: ${perPage}`);
-      // console.log(usersById['10']);
-      // console.log(usersById);
-      console.log('------------\n');
-      
-      /* сделать группы по perPage */
-      const users = Object.values(usersById);
-      console.log(users);
+      const page = Number(url.searchParams.get('page')) || 1;
+      const perPage = Number(url.searchParams.get('perPage')) || 10;
 
       const usersPages = Object.values(usersById)
-        .reduce((acc, item) => {
+        .reduce((acc, item, i) => {
           if (acc[acc.length - 1].length === perPage) {
             acc.push([]);
           }
@@ -47,12 +37,23 @@ export default (usersById) => http.createServer((request, response) => {
           return acc;
         }, [[]]);
 
-      console.log(usersPages[page]);
-      console.log(`page: ${page}; perPage: ${perPage}`);
-      console.log(url.searchParams.get('page'));
-      console.log(url.searchParams.get('perPage'));
+      // const usersPages = Object.values(usersById).slice();
+      // console.log(usersById);
+      // console.log(usersPages[0][0]);
+      
+      // console.log(`page: ${page}; perPage: ${perPage}`);
+      // console.log(usersPages[page]);
+      
+      const res = {
+        meta: { page, perPage, totalPages: usersPages.length },
+        data: usersPages[page],
+      }
 
-      response.end();
+      response.setHeader(
+        'Content-Type', 'application/json'
+      );
+
+      response.end(JSON.stringify(res));
       // END
     }
   });
