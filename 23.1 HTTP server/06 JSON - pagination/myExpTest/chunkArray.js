@@ -39,7 +39,7 @@ const splitToChunks = (coll, chunkSize) => coll
     return acc;
   }, [[]]);
 
-  console.log(splitToChunks(array, CHUNK_SIZE));
+console.log(splitToChunks(array, CHUNK_SIZE));
 
 
 const users = {
@@ -58,12 +58,12 @@ const users = {
 };
 const perPage = 2;
 const usersPages = Object.values(users)
-.reduce((acc, item) => {
-  if (acc[acc.length - 1].length === perPage) {
-    acc.push([]);
-  }
-  acc[acc.length - 1].push(item);
-  return acc;
-}, [[]]);
+  .reduce((acc, item) => {
+    if (acc[acc.length - 1].length === perPage) {
+      acc.push([]);
+    }
+    acc[acc.length - 1].push(item);
+    return acc;
+  }, [[]]);
 
 console.log(usersPages);
