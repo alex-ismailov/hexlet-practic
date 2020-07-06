@@ -27,27 +27,23 @@ export default (usersById) => http.createServer((request, response) => {
       const url = new URL(request.url, `http://${request.headers.host}`);
       const page = Number(url.searchParams.get('page')) || 1;
       const perPage = Number(url.searchParams.get('perPage')) || 10;
+      const usersValues = Object.values(usersById);
 
-      const usersPages = Object.values(usersById)
-        .reduce((acc, item, i) => {
-          if (acc[acc.length - 1].length === perPage) {
-            acc.push([]);
-          }
-          acc[acc.length - 1].push(item);
-          return acc;
-        }, [[]]);
+      const end = page * perPage;
+      const start = end - perPage;
+      const pages = Math.ceil(usersValues.length / perPage);
+      const chunk = usersValues.slice(start, end);
 
-     
-      const res = {
-        meta: { page, perPage, totalPages: usersPages.length },
-        data: usersPages[page - 1],
-      }
+      const responseObj = {
+        meta: { page, perPage, totalPages: pages },
+        data: chunk,
+      };
 
       response.setHeader(
-        'Content-Type', 'application/json'
+        'Content-Type', 'application/json',
       );
 
-      response.end(JSON.stringify(res));
+      response.end(JSON.stringify(responseObj));
       // END
     }
   });
