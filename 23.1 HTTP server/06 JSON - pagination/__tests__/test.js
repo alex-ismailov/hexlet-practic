@@ -2,6 +2,11 @@ import axios from 'axios';
 
 import server from '../index.js';
 
+/* this is my test patch */
+import http from 'axios/lib/adapters/http';
+axios.defaults.adapter = http;
+/* ********************* */
+
 const hostname = 'localhost';
 const port = 9000;
 const base = `http://${hostname}:${port}`;
