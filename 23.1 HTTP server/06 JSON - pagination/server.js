@@ -37,16 +37,10 @@ export default (usersById) => http.createServer((request, response) => {
           return acc;
         }, [[]]);
 
-      // const usersPages = Object.values(usersById).slice();
-      // console.log(usersById);
-      // console.log(usersPages[0][0]);
-      
-      // console.log(`page: ${page}; perPage: ${perPage}`);
-      // console.log(usersPages[page]);
-      
+     
       const res = {
         meta: { page, perPage, totalPages: usersPages.length },
-        data: usersPages[page],
+        data: usersPages[page - 1],
       }
 
       response.setHeader(
