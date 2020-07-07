@@ -59,16 +59,36 @@ const router = {
   },
   POST: {
     // BEGIN (write your solution here)
-    '/users.json': (req, res, matches, body) => {
-      const data = body.join();
-      console.log(data);
-      if (!data) {
-        // TODO
+    '/users.json': (req, res, matches, body, users) => {
+      const [userData] = body;
+      if (!userData) {
         res.end();
         return;
       }
+      const parsedUser = JSON.parse(userData);
+      const errors = validate(parsedUser);
+      if (errors.length > 0) {
+        res.writeHead(422);
+        res.end(JSON.stringify({
+          errors,
+        }));
+        return;
+      }
+      const id = nextId();
+      const [userPath, extension] = req.url.split('.');
+      const location = `${userPath}/${id}.${extension}`;
+      _.set(users, id, parsedUser);
 
-      res.end();
+      res.writeHead(201);
+      res.end(JSON.stringify({
+        meta: {
+          location,
+        },
+        data: {
+          ...parsedUser,
+          id,
+        },
+      }));
     },
     // END
   },
