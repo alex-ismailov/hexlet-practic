@@ -5,7 +5,7 @@ import _ from 'lodash';
 import makeServer from './server.js';
 
 export default async (port, callback = () => {}) => {
-  const data = await fs.readFile(path.join(path.resolve(), '23.1 HTTP server/08 request body processing/bin/phonebook.js'));
+  const data = await fs.readFile(path.join(path.resolve(), '23.1 HTTP server/08 request body processing/phonebook.txt'));
   const users = data.toString()
     .trim()
     .split('\n')
