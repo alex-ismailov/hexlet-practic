@@ -12,13 +12,14 @@ const router = {
   GET: {
     '/users/(\\w+).json': (req, res, matches, usersById) => {
       // BEGIN (write your solution here)
-      const [, userId ] = matches;
-      if (!_.has(usersById, userId)) {
+      const [, userId] = matches;
+      const user = usersById[userId];
+      if (!user) {
         res.statusCode = 404;
         res.end();
         return;
       }
-      const responseObj = {"data": usersById[userId]};
+      const responseObj = { data: user };
       res.setHeader(
         'Content-Type', 'application/json',
       );
