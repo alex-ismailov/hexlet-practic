@@ -15,7 +15,7 @@ const router = {
       const [, userId] = matches;
       const user = usersById[userId];
       if (!user) {
-        res.statusCode = 404;
+        res.writeHead(404);
         res.end();
         return;
       }
