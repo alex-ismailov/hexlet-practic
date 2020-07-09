@@ -23,7 +23,7 @@ export default () => {
     counter.value = 0;
     res.status(204).end();
   });
-  app.put('/set', (req, res) => {
+  app.put('/set', (req, res) => { // curl -X PUT "localhost:8080/set?value=73"
     const { value } = req.query;
     counter.value = Number(value);
     res.status(204).end();
