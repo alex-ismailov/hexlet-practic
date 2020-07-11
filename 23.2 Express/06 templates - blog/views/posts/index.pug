@@ -14,5 +14,13 @@ block content
   // </table>
 
   // BEGIN (write your solution here)
-  
+  //- Вывод списка постов в табличной форме
+  table.table
+    tbody
+      tr
+        th Title
+      each post in postsList
+        tr
+          td
+            a(href= `posts/${post.id}`)= post.title
   // END
