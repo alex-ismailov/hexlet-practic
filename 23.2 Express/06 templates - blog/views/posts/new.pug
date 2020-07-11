@@ -10,12 +10,18 @@ block content
   // BEGIN (write your solution here)
   form(action="/posts" method="post")
     div
-      label Title
+      label 
+        | Title
         sup *
-      input(rows="10" name="title")
+      input(name="title" value=form.title)
+      if errors.title
+        p= errors.title
     div
-      label Body
+      label
+        | Body
         sup *
-      textarea(name="body", cols="30", rows="10")
+      textarea(rows="10" name="body")= form.body
+      if errors.body
+        p= errors.body
     input(type="submit" value="Save")
   // END

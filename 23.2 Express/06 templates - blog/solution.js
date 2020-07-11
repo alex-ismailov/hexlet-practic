@@ -25,30 +25,38 @@ export default () => {
 
   // BEGIN (write your solution here)
   app.get('/posts', (req, res) => { // список постов
-    const data = { posts };
-    res.render('posts/index', data);
+    res.render('posts/index', { posts });
   });
 
   app.get('/posts/new', (req, res) => { // форма для создания нового поста
-    res.render('posts/new');
+    res.render('posts/new', { form: {}, errors: {} });
   });
 
   app.get('/posts/:id', (req, res) => { // страница поста
-    const id = Number(req.params.id);
-    const post = posts[id];
+    const post = posts.find((p) => p.id.toString() === req.params.id);
     res.render('posts/show', post);
   });
 
   app.post('/posts', (req, res) => { // форма для создания нового поста
     const { title, body } = req.body;
-    if (!title || !body) {
-      res.status(422).end();
+    
+    const errors = {};
+    if (!title) {
+      errors.title = "Can't be blank";
+    }
+    if (!body) {
+      errors.body = "Can't be blank";
     }
 
-    const newPost = new Post(title, body);
-    posts.push(newPost);
-    const url = `/posts/${newPost.id}`;
-    res.redirect(url);
+    if (Object.keys(errors).length === 0) {
+      const newPost = new Post(title, body);
+      posts.push(newPost);
+      res.redirect(`/posts/${newPost.id}`);
+      return;
+    }
+
+    res.status(422);
+    res.render('posts/new', { form: req.body, errors });
   });
   // END
 
