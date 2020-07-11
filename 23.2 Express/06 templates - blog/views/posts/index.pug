@@ -19,8 +19,8 @@ block content
     tbody
       tr
         th Title
-      each post in postsList
+      each post in posts
         tr
           td
-            a(href= `posts/${post.id}`)= post.title
+            a(href= `/posts/${post.id}`)= post.title
   // END
