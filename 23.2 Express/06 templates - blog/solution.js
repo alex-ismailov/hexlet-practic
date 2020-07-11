@@ -29,18 +29,36 @@ export default () => {
     res.render('posts/index', data);
   });
 
+  app.get('/posts/new', (req, res) => { // форма для создания нового поста
+    
+    res.render('posts/new');
+  });
+
   app.get('/posts/:id', (req, res) => { // страница поста
     const id = Number(req.params.id);
     const data = { posts, id };
     res.render('posts/show', data);
   });
 
-  app.get('/posts/new', (req, res) => { // форма для создания нового поста
-    
-  });
-
   app.post('/posts', (req, res) => { // форма для создания нового поста
-    
+    // console.log(JSON.parse(req.body));
+    console.log(req.body);
+    const { title, body } = req.body;
+    // const isExistPost = (title) =>(
+    //   posts.some((post) => post.title === title )
+    //     ? true
+    //     : false
+    // );
+
+    // if (isExistPost(title)) {
+    //   res.status(422).end();
+    // }
+    console.log(`title: ${title}; body: ${body}`);
+    const newPost = new Post(title, body);
+    posts.push(newPost);
+    const url = path.join('/posts/', String(newPost.id));
+    console.log(url);
+    res.redirect(url)
   });
   // END
 
