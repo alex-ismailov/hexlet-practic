@@ -25,12 +25,14 @@ export default () => {
 
   // BEGIN (write your solution here)
   app.get('/posts', (req, res) => { // список постов
-    const data = { postsList: posts};
+    const data = { posts };
     res.render('posts/index', data);
   });
 
   app.get('/posts/:id', (req, res) => { // страница поста
-
+    const id = Number(req.params.id);
+    const data = { posts, id };
+    res.render('posts/show', data);
   });
 
   app.get('/posts/new', (req, res) => { // форма для создания нового поста
