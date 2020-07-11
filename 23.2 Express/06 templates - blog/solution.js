@@ -1,9 +1,9 @@
 import Express from 'express';
 import bodyParser from 'body-parser';
 
+import path from 'path';
 import Post from './entities/Post.js';
 
-import path from 'path';
 
 export default () => {
   const app = new Express();
@@ -30,35 +30,25 @@ export default () => {
   });
 
   app.get('/posts/new', (req, res) => { // форма для создания нового поста
-    
     res.render('posts/new');
   });
 
   app.get('/posts/:id', (req, res) => { // страница поста
     const id = Number(req.params.id);
-    const data = { posts, id };
-    res.render('posts/show', data);
+    const post = posts[id];
+    res.render('posts/show', post);
   });
 
   app.post('/posts', (req, res) => { // форма для создания нового поста
-    // console.log(JSON.parse(req.body));
-    console.log(req.body);
     const { title, body } = req.body;
-    // const isExistPost = (title) =>(
-    //   posts.some((post) => post.title === title )
-    //     ? true
-    //     : false
-    // );
+    if (!title || !body) {
+      res.status(422).end();
+    }
 
-    // if (isExistPost(title)) {
-    //   res.status(422).end();
-    // }
-    console.log(`title: ${title}; body: ${body}`);
     const newPost = new Post(title, body);
     posts.push(newPost);
-    const url = path.join('/posts/', String(newPost.id));
-    console.log(url);
-    res.redirect(url)
+    const url = `/posts/${newPost.id}`;
+    res.redirect(url);
   });
   // END
 
