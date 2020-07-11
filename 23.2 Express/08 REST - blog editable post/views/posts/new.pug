@@ -1,0 +1,8 @@
+extends ../layouts/app.pug
+
+block content
+  .row.mt-3
+    .col-sm-6.mx-auto
+      h3.text-xs-center New Blog Post
+      form(action='/posts' method='post')
+        include _form.pug
