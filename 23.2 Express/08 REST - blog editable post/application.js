@@ -73,9 +73,25 @@ export default () => {
   app.patch('/posts/:id', (req, res) => {
     const { title, body } = req.body;
     const post = posts.find((p) => p.id.toString() === req.params.id);
-    post.title = title;
-    post.body = body;
-    res.redirect('/posts');
+
+    const errors = {};
+    if (!title) {
+      errors.title = "Title can't be blank";
+    }
+
+    if (!body) {
+      errors.body = "Body can't be blank";
+    }
+
+    if (Object.keys(errors).length === 0) {
+      post.title = title;
+      post.body = body;
+      res.redirect('/posts');
+      return;
+    }
+
+    res.status(422);
+    res.render('posts/edit', { form: {id: post.id, ...req.body}, errors });
   });
 
   app.delete('/posts/:id', (req, res) => {
