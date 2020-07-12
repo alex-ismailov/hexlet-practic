@@ -2,5 +2,9 @@ extends ../layouts/app.pug
 
 block content
   // BEGIN (write your solution here)
-  
+  .row.mt-3
+    .col-sm-6.mx-auto
+      h3.text-xs-center Edit Post
+      form(action=`/posts/${form.id}?_method=PATCH` method='post')
+        include _form.pug
   // END
