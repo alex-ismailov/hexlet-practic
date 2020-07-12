@@ -5,6 +5,8 @@ import methodOverride from 'method-override';
 
 import Post from './entities/Post.js';
 
+import path from 'path';
+
 export default () => {
   const app = new Express();
   app.use(morgan('combined'));
@@ -12,6 +14,10 @@ export default () => {
   app.use('/assets', Express.static(process.env.NODE_PATH.split(':')[0]));
   app.use(methodOverride('_method'));
   app.use(bodyParser.urlencoded({ extended: false }));
+
+
+  /* local views directory location */
+  app.set('views', path.join(path.resolve(), '23.2 Express/08 REST - blog editable post/views'));
 
   let posts = [
     new Post('hello', 'how are your?'),
@@ -59,7 +65,25 @@ export default () => {
   });
 
   // BEGIN (write your solution here)
-  
+  app.get('/posts/:id/edit', (req, res) => {
+    const post = posts.find((p) => p.id.toString() === req.params.id);
+    res.render('posts/edit', { form: post, errors: {} });
+  });
+
+  app.patch('/posts/:id', (req, res) => {
+    const { title, body } = req.body;
+    const post = posts.find((p) => p.id.toString() === req.params.id);
+    post.title = title;
+    post.body = body;
+    res.redirect('/posts');
+  });
+
+  app.delete('/posts/:id', (req, res) => {
+    const post = posts.find((p) => p.id.toString() === req.params.id);
+    const index = posts.indexOf(post);
+    posts.splice(index, 1);
+    res.render('posts/index', { posts });
+  });
   // END
 
   return app;
