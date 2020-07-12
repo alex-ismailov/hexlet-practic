@@ -2,5 +2,12 @@ extends ../layouts/app.pug
 
 block content
   // BEGIN (write your solution here)
-  
+  table.table
+    tbody
+      tr
+        th Title
+      each post in posts
+        tr
+          td
+            a(href=`/posts/${post.id}`)= post.title
   // END
