@@ -2,12 +2,22 @@ extends ../layouts/app.pug
 
 block content
   // BEGIN (write your solution here)
-  table.table
-    tbody
-      tr
-        th Title
-      each post in posts
-        tr
-          td
-            a(href=`/posts/${post.id}`)= post.title
+  .row.mt-3
+    .col-sm-10.mx-auto
+      table.table
+        tbody
+          tr
+            th Title
+          each post in posts
+            tr
+              td.row
+                .col-sm-9
+                  a(href=`/posts/${post.id}`)= post.title
+                .col-sm-3
+                  .d-flex.justify-content-between
+                  form(action=`/posts/${post.id}/edit`)
+                    button= 'edit'
+                    button(formaction=`/posts/${post.id}?_method=DELETE` formmethod=`post`)= 'delete'
+                    //- a(href=`/posts/${post.id}/edit`)= 'edit'
+                    //- a(href=`/posts/${post.id}?_method=DELETE`)= 'delete'
   // END
