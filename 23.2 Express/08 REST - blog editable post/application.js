@@ -67,7 +67,7 @@ export default () => {
   // BEGIN (write your solution here)
   app.get('/posts/:id/edit', (req, res) => {
     const post = posts.find((p) => p.id.toString() === req.params.id);
-    res.render('posts/edit', { form: post, errors: {} });
+    res.render('posts/edit', { post, form: post, errors: {} });
   });
 
   app.patch('/posts/:id', (req, res) => {
@@ -83,15 +83,15 @@ export default () => {
       errors.body = "Body can't be blank";
     }
 
-    if (Object.keys(errors).length === 0) {
-      post.title = title;
-      post.body = body;
-      res.redirect('/posts');
+    if (Object.keys(errors).length > 0) {
+      res.status(422);
+      res.render('posts/edit', { form: { id: post.id, ...req.body }, errors });
       return;
     }
 
-    res.status(422);
-    res.render('posts/edit', { form: { id: post.id, ...req.body }, errors });
+    post.title = title;
+    post.body = body;
+    res.redirect('/posts');
   });
 
   app.delete('/posts/:id', (req, res) => {
