@@ -99,7 +99,7 @@ export default () => {
     // const index = posts.indexOf(post);
     // posts.splice(index, 1);
     posts = posts.filter((post) => post.id.toString() !== req.params.id);
-    res.status(302).render('posts/index', { posts });
+    res.redirect('/posts');
   });
   // END
 
