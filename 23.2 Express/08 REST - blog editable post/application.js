@@ -19,7 +19,7 @@ export default () => {
   /* local views directory location */
   app.set('views', path.join(path.resolve(), '23.2 Express/08 REST - blog editable post/views'));
 
-  const posts = [
+  let posts = [
     new Post('hello', 'how are your?'),
     new Post('nodejs', 'story about nodejs'),
   ];
@@ -95,11 +95,10 @@ export default () => {
   });
 
   app.delete('/posts/:id', (req, res) => {
-    const post = posts.find((p) => p.id.toString() === req.params.id);
-    const index = posts.indexOf(post);
-    posts.splice(index, 1);
-    // const newPosts = posts.filter(({ id }) => id !== req.params.id);
-    // posts = newPosts;
+    // const post = posts.find((p) => p.id.toString() === req.params.id);
+    // const index = posts.indexOf(post);
+    // posts.splice(index, 1);
+    posts = posts.filter((post) => post.id.toString() !== req.params.id);
     res.status(302).render('posts/index', { posts });
   });
   // END
