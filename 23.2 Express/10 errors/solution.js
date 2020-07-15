@@ -3,7 +3,7 @@ import Express from 'express';
 import path from 'path';
 
 import Post from './entities/Post.js';
-// import NotFoundError from './errors/NotFoundError.js';
+import NotFoundError from './errors/NotFoundError.js';
 
 export default () => {
   const app = new Express();
@@ -27,20 +27,24 @@ export default () => {
     if (post) {
       res.render('posts/show', { post });
     } else {
-      // next(new NotFoundError());
-      next(new Error());
+      next(new NotFoundError());
     }
   });
 
   // BEGIN (write your solution here)
-  app.use((err, req, res, next) => {
-    res.status(404);
-    res.render('404');
+  app.use((_req, _res, next) => {
+    next(new NotFoundError());
   });
 
-  app.use((req, res) => {
-    res.status(404);
-    res.render('404');
+  app.use((err, _req, res, next) => {
+    res.status(err.status);
+    switch (err.status) {
+      case 404:
+        res.render(err.status.toString());
+        break;
+      default:
+        next(new Error('Unexpected error'));
+    }
   });
   // END
 
