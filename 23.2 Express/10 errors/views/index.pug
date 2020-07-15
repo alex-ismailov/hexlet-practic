@@ -1,0 +1,12 @@
+extends layouts/app.pug
+
+block content
+  h3 links
+
+  table.table
+    tr
+      th Title
+    for post in posts
+      tr
+        td
+          a(href=`/posts/${post.id}`)= post.title
