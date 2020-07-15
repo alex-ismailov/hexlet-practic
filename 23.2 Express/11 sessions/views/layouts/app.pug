@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet' href='/assets/bootstrap/dist/css/bootstrap.css')
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href="/") HexletBlogs
+      if currentUser.isGuest()
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href="/session/new") Sign in
+          li.nav-item
+            a.nav-link(href="/users/new") Sign up
+      else
+        form.form-inline.float-xs-right(action='/session?_method=DELETE' method='post')
+          button.btn.btn-link(type='submit') Sign out
+    .container
+      block content
