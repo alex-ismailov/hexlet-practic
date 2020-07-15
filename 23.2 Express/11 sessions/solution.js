@@ -8,6 +8,8 @@ import encrypt from './encrypt.js';
 import User from './entities/User.js';
 import Guest from './entities/Guest.js';
 
+import path from 'path';
+
 export default () => {
   const app = new Express();
   app.use(morgan('combined'));
@@ -20,6 +22,9 @@ export default () => {
     resave: false,
     saveUninitialized: false,
   }));
+
+  /* local views directory location */
+  app.set('views', path.join(path.resolve(), '23.2 Express/11 sessions/views'));
 
   const users = [new User('admin', encrypt('qwerty'))];
 
@@ -38,7 +43,46 @@ export default () => {
   });
 
   // BEGIN (write your solution here)
-  
+  app.get('/users/new', (req, res) => {
+    res.render('users/new', { form: users, errors: {} });
+  });
+
+  app.post('/users/', (req, res) => {
+    const { nickname, password } = req.body;
+    const errors = {};
+
+    if (!nickname) {
+      errors.nickname = "Nickname can't be blank";
+    }
+    if (users.find((user) => user.nickname === nickname)) {
+      errors.nickname = 'This nickname is already taken';
+    }
+    if (!password) {
+      errors.password = "Password can't be blank";
+    }
+
+    if (Object.keys(errors).length > 0) {
+      res.status(422);
+      res.render('users/new', { form: req.body, errors });
+      return;
+    }
+    // TODO
+    const newUser = new User(nickname, encrypt(password));
+    users.push(newUser);
+    res.redirect('/');
+  });
+
+  app.get('/session/new', (req, res) => {
+    res.render('session/new', { form: {}, errors: {}});
+  });
+
+  app.post('/session', (req, res) => {
+    
+  });
+
+  app.delete('/session', (req, res) => {
+    
+  });
   // END
 
   return app;
