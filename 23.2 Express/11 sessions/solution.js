@@ -44,21 +44,23 @@ export default () => {
 
   // BEGIN (write your solution here)
   app.get('/users/new', (req, res) => {
-    res.render('users/new', { form: users, errors: {} });
+    res.render('users/new', { form: {}, errors: {} });
   });
 
-  app.post('/users/', (req, res) => {
+  app.post('/users', (req, res) => {
     const { nickname, password } = req.body;
     const errors = {};
 
     if (!nickname) {
-      errors.nickname = "Nickname can't be blank";
-    }
-    if (users.find((user) => user.nickname === nickname)) {
-      errors.nickname = 'This nickname is already taken';
+      errors.nickname = "Can't be blank";
+    } else {
+      const isExistsUser = users.some((user) => user.nickname === nickname);
+      if (isExistsUser) {
+        errors.nickname = 'This nickname is already taken';
+      }
     }
     if (!password) {
-      errors.password = "Password can't be blank";
+      errors.password = "Can't be blank";
     }
     if (Object.keys(errors).length > 0) {
       res.status(422);
@@ -72,23 +74,15 @@ export default () => {
   });
 
   app.get('/session/new', (req, res) => {
-    res.render('session/new', { form: {}, errors: {} });
+    res.render('session/new', { form: {} });
   });
 
   app.post('/session', (req, res) => {
     const { nickname, password } = req.body;
-    const errors = {};
     const user = users.find((u) => u.nickname === nickname);
-    if (!user) {
-      errors.authentication = 'invalid nickname or password';
+    if (!user || (encrypt(password) !== user.password)) {
       res.status(422);
-      res.render('session/new', { form: {}, errors });
-      return;
-    }
-    if (encrypt(password) !== user.password) {
-      errors.authentication = 'invalid nickname or password';
-      res.status(422);
-      res.render('session/new', { form: {}, errors });
+      res.render('session/new', { form: req.body, error: 'Invalid nickname or password' });
       return;
     }
 
@@ -97,8 +91,9 @@ export default () => {
   });
 
   app.delete('/session', (req, res) => {
-    req.session.destroy((err) => new Error(err));
-    res.redirect('/');
+    req.session.destroy((err) => {
+      res.redirect('/');
+    });
   });
   // END
 
