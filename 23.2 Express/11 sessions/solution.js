@@ -39,15 +39,6 @@ export default () => {
   });
 
   app.get('/', (_req, res) => {
-    // console.log('******* in GET / , session info');
-    // console.log(_req.session.nickname);
-    // console.log(res.locals.currentUser);
-    // console.log('******* END of in GET / , session info');
-    console.log('----------------------');
-    console.log(_req.session);
-    console.log(_req.session?.nickname);
-    console.log(_req.session.nickname);
-    console.log(res.locals.currentUser);
     res.render('index');
   });
 
@@ -69,13 +60,12 @@ export default () => {
     if (!password) {
       errors.password = "Password can't be blank";
     }
-
     if (Object.keys(errors).length > 0) {
       res.status(422);
       res.render('users/new', { form: req.body, errors });
       return;
     }
-    // TODO
+
     const newUser = new User(nickname, encrypt(password));
     users.push(newUser);
     res.redirect('/');
@@ -88,7 +78,7 @@ export default () => {
   app.post('/session', (req, res) => {
     const { nickname, password } = req.body;
     const errors = {};
-    const user = users.find((user) => user.nickname === nickname);
+    const user = users.find((u) => u.nickname === nickname);
     if (!user) {
       errors.authentication = 'invalid nickname or password';
       res.status(422);
