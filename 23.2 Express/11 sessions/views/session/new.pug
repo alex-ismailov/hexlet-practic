@@ -5,9 +5,9 @@ block content
   .row.mt-3
     .col-sm-4.mx-auto
       h3.text-xs-center Authentication form
+      if error
+          .alert.alert-warning= error
       form(action='/session' method='post')
-        if errors.authentication
-          .text-warning= errors.authentication
         .row.form-group
           .col-sm
             input.form-control(name='nickname' placeholder='nickname' value=form.nickname)
