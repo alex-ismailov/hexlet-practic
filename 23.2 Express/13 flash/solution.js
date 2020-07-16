@@ -3,19 +3,20 @@ import session from 'express-session';
 import bodyParser from 'body-parser';
 import methodOverride from 'method-override';
 
-import path from 'path';
 import flash from './flash.js';
 
 import encrypt from './encrypt.js';
 import User from './entities/User.js';
 import Guest from './entities/Guest.js';
 
+import path from 'path';
 
 export default () => {
   const app = new Express();
   app.set('view engine', 'pug');
   app.use(methodOverride('_method'));
   app.use(bodyParser.urlencoded({ extended: false }));
+  console.log(process.env.NODE_PATH.split(':')[0]);
   app.use('/assets', Express.static(process.env.NODE_PATH.split(':')[0]));
   app.use(session({
     secret: 'secret key',
@@ -25,7 +26,7 @@ export default () => {
   app.use(flash());
 
   /* local views directory location */
-  app.set('views', path.join(path.resolve(), '23.2 Express/11 sessions/views'));
+  app.set('views', path.join(path.resolve(), '23.2 Express/13 flash/views'));
 
   const users = [new User('admin', encrypt('qwerty'))];
 
