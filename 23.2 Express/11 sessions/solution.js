@@ -4,11 +4,11 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import methodOverride from 'method-override';
 
+import path from 'path';
 import encrypt from './encrypt.js';
 import User from './entities/User.js';
 import Guest from './entities/Guest.js';
 
-import path from 'path';
 
 export default () => {
   const app = new Express();
@@ -39,6 +39,15 @@ export default () => {
   });
 
   app.get('/', (_req, res) => {
+    // console.log('******* in GET / , session info');
+    // console.log(_req.session.nickname);
+    // console.log(res.locals.currentUser);
+    // console.log('******* END of in GET / , session info');
+    console.log('----------------------');
+    console.log(_req.session);
+    console.log(_req.session?.nickname);
+    console.log(_req.session.nickname);
+    console.log(res.locals.currentUser);
     res.render('index');
   });
 
@@ -73,15 +82,33 @@ export default () => {
   });
 
   app.get('/session/new', (req, res) => {
-    res.render('session/new', { form: {}, errors: {}});
+    res.render('session/new', { form: {}, errors: {} });
   });
 
   app.post('/session', (req, res) => {
-    
+    const { nickname, password } = req.body;
+    const errors = {};
+    const user = users.find((user) => user.nickname === nickname);
+    if (!user) {
+      errors.authentication = 'invalid nickname or password';
+      res.status(422);
+      res.render('session/new', { form: {}, errors });
+      return;
+    }
+    if (encrypt(password) !== user.password) {
+      errors.authentication = 'invalid nickname or password';
+      res.status(422);
+      res.render('session/new', { form: {}, errors });
+      return;
+    }
+
+    req.session.nickname = user.nickname;
+    res.redirect('/');
   });
 
   app.delete('/session', (req, res) => {
-    
+    req.session.destroy((err) => new Error(err));
+    res.redirect('/');
   });
   // END
 
