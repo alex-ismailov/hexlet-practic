@@ -11,6 +11,6 @@ const weatherService = new WeatherService(httpClient);
 
 const temperature = weatherService.getTemperature(city);
 temperature.then((data) => {
-  console.log(`Temperature in ${city}: ${data}C`);
+  console.log(`Temperature in ${city}: ${data}C`.trim());
 });
 // END
