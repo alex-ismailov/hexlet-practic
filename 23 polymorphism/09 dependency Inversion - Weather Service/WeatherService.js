@@ -11,8 +11,7 @@ class WeatherService {
   async getTemperature(city) {
     const reqUrl = resolve(apiUrl, `cities/${city}`);
     const responce = await this.httpClient.get(reqUrl);
-    const data = JSON.parse(responce.data);
-    return data.temperature;
+    return responce.data.temperature;
   }
 }
 
