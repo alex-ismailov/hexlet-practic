@@ -11,51 +11,13 @@ class TicTacToe {
     normal: new Normal(),
   };
 
-  // static isWinnerMove = (gameField) => {
-  //   // По горизонтали
-  //   if ((gameField[0][0] === 'X' && gameField[0][1] === 'X' && gameField[0][2] === 'X')
-  //       || (gameField[0][0] === 'O' && gameField[0][1] === 'O' && gameField[0][2] === 'O')) {
-  //     return true;
-  //   }
-  //   if ((gameField[1][0] === 'X' && gameField[1][1] === 'X' && gameField[1][2] === 'X')
-  //       || (gameField[1][0] === 'O' && gameField[1][1] === 'O' && gameField[1][2] === 'O')) {
-  //     return true;
-  //   }
-  //   if ((gameField[2][0] === 'X' && gameField[2][1] === 'X' && gameField[2][2] === 'X')
-  //       || (gameField[2][0] === 'O' && gameField[2][1] === 'O' && gameField[2][2] === 'O')) {
-  //     return true;
-  //   }
-  //   // По вертикали
-  //   if ((gameField[0][0] === 'X' && gameField[1][0] === 'X' && gameField[2][0] === 'X')
-  //       || (gameField[0][0] === 'O' && gameField[1][0] === 'O' && gameField[2][0] === 'O')) {
-  //     return true;
-  //   }
-  //   if ((gameField[0][1] === 'X' && gameField[1][1] === 'X' && gameField[2][1] === 'X')
-  //       || (gameField[0][1] === 'O' && gameField[1][1] === 'O' && gameField[2][1] === 'O')) {
-  //     return true;
-  //   }
-  //   if ((gameField[0][2] === 'X' && gameField[1][2] === 'X' && gameField[2][2] === 'X')
-  //       || (gameField[0][2] === 'O' && gameField[1][2] === 'O' && gameField[2][2] === 'O')) {
-  //     return true;
-  //   }
-  //   // По горизонтали
-  //   if ((gameField[0][0] === 'X' && gameField[1][1] === 'X' && gameField[2][2] === 'X')
-  //       || (gameField[0][0] === 'O' && gameField[1][1] === 'O' && gameField[2][2] === 'O')) {
-  //     return true;
-  //   }
-  //   if ((gameField[0][2] === 'X' && gameField[1][1] === 'X' && gameField[2][0] === 'X')
-  //       || (gameField[0][2] === 'O' && gameField[1][1] === 'O' && gameField[2][0] === 'O')) {
-  //     return true;
-  //   }
-  //   return false;
-  // };
-
   constructor(level = 'easy') {
     this.gameField = [
-      [null, null, null],
-      [null, null, null],
-      [null, null, null],
+      Array(3).fill(null),
+      Array(3).fill(null),
+      Array(3).fill(null),
     ];
+    
     this.strategy = TicTacToe.strategies[level];
   }
 
