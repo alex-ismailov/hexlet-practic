@@ -58,15 +58,13 @@ class TicTacToe {
     ];
     this.strategy = TicTacToe.strategies[level];
   }
-
   go(row = null, cell = null) {
-    let badge = 'X';
     if (row === null || cell === null) {
-      [row, cell] = this.strategy.getCoordinates(this.gameField);
-      badge = 'O';
+      const [aiRow, aiCell] = this.strategy.getCoordinates(this.gameField);
+      this.gameField[aiRow][aiCell] = 'O';
+    } else {
+      this.gameField[row][cell] = 'X';
     }
-    this.gameField[row][cell] = badge;
-
     return TicTacToe.isWinnerMove(this.gameField);
   }
   // END
