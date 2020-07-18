@@ -3,14 +3,13 @@
 class Normal {
   // BEGIN (write your solution here)
   getCoordinates(gameField) {
-    for (let row = gameField.length - 1; row >= 0; row -= 1) {
-      for (let cell = 0; cell < gameField[row].length; cell += 1) {
-        if (gameField[row][cell] === null) {
-          return [row, cell];
-        }
+    return gameField.reduceRight((acc, row, rowIndex) => {
+      const cellIndex = row.indexOf(null);
+      if (acc.length === 0 && cellIndex !== -1) {
+        return [rowIndex, cellIndex];
       }
-    }
-    return false;
+      return acc;
+    }, []);
   }
   // END
 }
