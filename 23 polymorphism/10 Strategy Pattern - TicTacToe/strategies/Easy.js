@@ -3,14 +3,13 @@
 class Easy {
   // BEGIN (write your solution here)
   getCoordinates(gameField) {
-    for (let row = 0; row < gameField.length; row += 1) {
-      for (let cell = 0; cell < gameField[row].length; cell += 1) {
-        if (gameField[row][cell] === null) {
-          return [row, cell];
-        }
+    return gameField.reduce((acc, row, rowIndex) => {
+      const cellIndex = row.indexOf(null);
+      if (acc.length === 0 && cellIndex !== -1) {
+        return [rowIndex, cellIndex];
       }
-    }
-    return false;
+      return acc;
+    }, []);
   }
   // END
 }
