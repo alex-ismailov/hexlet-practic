@@ -1,4 +1,4 @@
-import InputTag from '../tags/InputTag.js';
+import InputTag from '../tags/inputTag.js';
 import LabelTag from '../tags/LabelTag.js';
 
 it('test tags', () => {
