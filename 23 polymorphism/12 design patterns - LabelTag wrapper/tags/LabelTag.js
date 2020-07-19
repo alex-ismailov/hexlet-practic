@@ -6,7 +6,10 @@ export default class LabelTag {
   }
 
   render() {
-    return `<label>${this.text}${this.innerTag.render()}</label>`;
+    // у this.innerTag будет авт. вызван метод toString,
+    // так как он (объект) используется как строка
+    // https://ru.hexlet.io/courses/js-introduction-to-oop/lessons/to-string/theory_unit
+    return `<label>${this.text}${this.innerTag}</label>`;
   }
 
   toString() {
