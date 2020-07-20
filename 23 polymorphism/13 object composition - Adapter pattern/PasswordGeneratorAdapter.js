@@ -9,10 +9,15 @@ export default class PasswordGeneratorAdapter {
   };
 
   generatePassword(length, options) {
-    const normalizedOptions = options
-      .reduce((acc, option) => ({ ...acc, [option]: true }), { length, ...this.options });
+    // const normalizedOptions = options
+    //   .reduce((acc, option) => ({ ...acc, [option]: true }), { length, ...this.options });
+    // return generator.generate(normalizedOptions);
 
-    return generator.generate(normalizedOptions);
+    /* teacher solution */
+    const preparedOptions = Object.fromEntries(options.map((o) => [o, true]));
+    const finalOptions = { length, ...this.options, ...preparedOptions };
+
+    return generator.generate(finalOptions);
   }
   // END
 }
