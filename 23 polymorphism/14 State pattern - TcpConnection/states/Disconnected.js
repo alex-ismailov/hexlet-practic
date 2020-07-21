@@ -2,15 +2,15 @@
 
 export default class Disconnected {
   // BEGIN (write your solution here)
-  constructor(tcpConnection) {
-    this.tcpConnection = tcpConnection;
+  constructor(connection) {
+    this.connection = connection;
   }
 
   connect() {
-    this.tcpConnection.state = new this.tcpConnection.states.Connected(this.tcpConnection);
+    this.connection.setState('connected');
   }
 
-  getCurrentState() {
+  getName() {
     return 'disconnected';
   }
 
