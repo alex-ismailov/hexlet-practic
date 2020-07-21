@@ -2,25 +2,25 @@
 
 export default class Connected {
   // BEGIN (write your solution here)
-  constructor(tcpConnection) {
-    this.tcpConnection = tcpConnection;
+  constructor(connection) {
+    this.connection = connection;
+    this.buffer = [];
   }
 
   connect() {
     throw new Error('Connection already established');
   }
 
-  getCurrentState() {
+  getName() {
     return 'connected';
   }
 
   write(data) {
-    this.tcpConnection.data = data;
+    this.buffer.push(data);
   }
 
   disconnect() {
-    this.tcpConnection.state = new this.tcpConnection.states.Disconnected(this.tcpConnection);
+    this.connection.setState('disconnected');
   }
-
   // END
 }
