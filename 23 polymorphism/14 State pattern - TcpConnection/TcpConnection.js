@@ -7,11 +7,10 @@ export default class TcpConnection {
     this.ip = ip;
     this.port = port;
     this.states = {
-      Disconnected: DisconnectedState,
-      Connected: ConnectedState,
+      disconnected: DisconnectedState,
+      connected: ConnectedState,
     };
-    this.state = new this.states.Disconnected(this);
-    this.data = '';
+    this.setState('disconnected');
   }
 
   connect() {
@@ -19,7 +18,7 @@ export default class TcpConnection {
   }
 
   getCurrentState() {
-    return this.state.getCurrentState();
+    return this.state.getName();
   }
 
   write(data) {
@@ -28,6 +27,10 @@ export default class TcpConnection {
 
   disconnect() {
     this.state.disconnect();
+  }
+
+  setState(name) {
+    this.state = new this.states[name](this);
   }
   // END
 }
