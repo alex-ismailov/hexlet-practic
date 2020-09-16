@@ -9,11 +9,9 @@ const cloneDeep = (data) => {
 
   for (const key of keys) {
     const dataProp = data[key];
-    if (_.isObject(dataProp)) {
-      result[key] = { ...cloneDeep(dataProp) };
-    } else {
-      result[key] = dataProp;
-    }
+    result[key] = _.isObject(dataProp)
+      ? { ...cloneDeep(dataProp) }
+      : dataProp;
   }
 
   return result;
