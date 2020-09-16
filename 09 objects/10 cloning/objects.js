@@ -18,9 +18,10 @@ import _ from 'lodash';
 // };
 
 const cloneDeep = (data) => Object.entries(data)
-  .reduce((acc, [key, value]) => _.isObject(value)
+  .reduce((acc, [key, value]) => (_.isObject(value)
     ? { ...acc, [key]: cloneDeep(value) }
-    : { ...acc, [key]: value }, {});
+    : { ...acc, [key]: value }
+  ), {});
 
 export default cloneDeep;
 // END
