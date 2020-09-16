@@ -10,6 +10,13 @@ const data = {
   },
 };
 
+const emptyData = {};
+
+it('deepClone empty object', () => {
+  const clonedEmptyData = cloneDeep(emptyData);
+  expect(clonedEmptyData).not.toBe(emptyData);
+});
+
 it('deepClone', () => {
   const clonedData = cloneDeep(data);
   expect(clonedData).toEqual(data);
