@@ -8,6 +8,9 @@ export default () => {
     e.preventDefault();
     /* получаем кликнутый элемент */
     const { target } = e;
+    if (target.classList.contains('active')) {
+      return;
+    }
     /* получаем вкладку с id как href hash кликнутого */
     const newActiveTabPane = document.querySelector(`${target.hash}`);
     
