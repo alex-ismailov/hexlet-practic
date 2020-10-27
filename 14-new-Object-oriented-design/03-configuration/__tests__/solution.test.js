@@ -44,6 +44,12 @@ test('testValidateWithOptions 2', () => {
   expect(errors3).toEqual({});
 });
 
+test('testValidateWithOptions 2 should`t contain number', () => {
+  const validator = new PasswordValidator({ containNumbers: false });
+  const errors1 = validator.validate('9qwertyag');
+  expect(errors1).toEqual({});
+});
+
 test('testValidateWithIncorrectOptions', () => {
   const validator = new PasswordValidator({ containNumberz: null });
   const errors1 = validator.validate('qwertyui');
