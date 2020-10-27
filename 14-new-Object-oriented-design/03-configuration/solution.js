@@ -11,7 +11,7 @@ export default class PasswordValidator {
   validate(pass) {
     const errors = {};
 
-    if (`${pass}`.length < this.minLength) {
+    if (pass.length < this.minLength) {
       errors.minLength = 'too small';
     }
 
