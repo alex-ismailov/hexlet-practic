@@ -15,8 +15,10 @@ export default class PasswordValidator {
       errors.minLength = 'too small';
     }
 
-    if (this.containNumbers !== hasNumber(pass)) {
-      errors.containNumbers = 'should contain at least one number';
+    if (this.containNumbers) {
+      if (!hasNumber(pass)) {
+        errors.containNumbers = 'should contain at least one number';
+      }
     }
 
     return errors;
