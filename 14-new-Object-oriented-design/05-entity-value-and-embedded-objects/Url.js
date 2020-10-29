@@ -24,8 +24,12 @@ export default class Url {
     return value || defaultName;
   }
 
+  toString() {
+    return this.url.toString();
+  }
+
   equals(url) {
-    return url.url.href === this.url.href;
+    return url.toString() === this.toString();
   }
 }
 // END
