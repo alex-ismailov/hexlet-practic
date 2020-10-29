@@ -21,8 +21,9 @@ export default class Url {
   }
 
   getQueryParam(name, defaultName = null) {
-    const value = this.url.searchParams.get(name);
-    return value || defaultName;
+    return this.url.searchParams.has(name)
+      ? this.url.searchParams.get(name)
+      : defaultName;
   }
 
   toString() {
