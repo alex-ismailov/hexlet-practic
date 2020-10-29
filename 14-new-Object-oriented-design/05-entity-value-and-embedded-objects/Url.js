@@ -4,10 +4,11 @@ import { URL } from 'url';
 export default class Url {
   constructor(url) {
     this.url = new URL(url);
+    this.url.scheme = this.url.protocol.slice(0, -1);
   }
 
   getScheme() {
-    return this.url.protocol.split(':')[0];
+    return this.url.scheme;
   }
 
   getHostName() {
