@@ -5,6 +5,7 @@ export default class Url {
   constructor(url) {
     this.url = new URL(url);
     this.url.scheme = this.url.protocol.slice(0, -1);
+    this.url.queryParams = Object.fromEntries(this.url.searchParams);
   }
 
   getScheme() {
@@ -16,8 +17,7 @@ export default class Url {
   }
 
   getQueryParams() {
-    const entries = Array.from(this.url.searchParams.entries());
-    return entries.reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
+    return this.url.queryParams;
   }
 
   getQueryParam(name, defaultName = null) {
