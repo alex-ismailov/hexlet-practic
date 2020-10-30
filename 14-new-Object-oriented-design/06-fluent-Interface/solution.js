@@ -17,9 +17,9 @@ const normalize = (cities) => cities
   .sort(compareString)
   .reduce((acc, { name, country }) => {
     const citiesAcc = [...acc[country] ?? [], name];
-    const citiesAccFiltered = citiesAcc
+    const citiesAccUniques = citiesAcc
       .filter((elem, currentIndex, arr) => arr.indexOf(elem) === currentIndex);
-    return { ...acc, [country]: citiesAccFiltered.sort() };
+    return { ...acc, [country]: citiesAccUniques.sort() };
   }, {});
 
 /* teacher solution */
