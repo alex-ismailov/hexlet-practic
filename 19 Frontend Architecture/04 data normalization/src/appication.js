@@ -7,16 +7,25 @@ const renderLists = (lists, activeListId) => {
       ? `<li><b>${name}</b></li>`
       : `<li><a href="#random">${name}</a></li>`;
   });
+  
+  // TODO создать обработчик по клику на <a> для смены текущего активного листа
+  
   const listForm = document.querySelector('div[data-container="lists"]');
   listForm.innerHTML = `<ul>${listItems.join('')}</ul>`;
 };
 
-const renderTasks = () => {};
+const renderTasks = (tasks, activeListId) => {
+  const tasksFromActiveList = tasks.filter(({ listId }) => listId === activeListId);
+  const taskItems = tasksFromActiveList.map(({ content }) => `<li>${content}</li>`);
+  
+  const taskForm = document.querySelector('div[data-container="tasks"]');
+  taskForm.innerHTML = `<ul>${taskItems.join('')}</ul>`;
+};
 
 const render = (state) => {
   const { activeListId, lists, tasks } = state;
   renderLists(lists, activeListId);
-  // TODO renderTasks();
+  renderTasks(tasks, activeListId);
 };
 
 const handleNewListForm = (state) => (e) => {
