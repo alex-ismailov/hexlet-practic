@@ -1,24 +1,39 @@
 import _ from 'lodash';
 
 // BEGIN (write your solution here)
+const renderLists = (lists, activeListId) => {
+  const listItems = lists.map(({ id, name }) => {
+    return id === activeListId
+      ? `<li><b>${name}</b></li>`
+      : `<li><a href="#random">${name}</a></li>`;
+  });
+  const listForm = document.querySelector('div[data-container="lists"]');
+  listForm.innerHTML = `<ul>${listItems.join('')}</ul>`;
+};
+
+const renderTasks = () => {};
+
 const render = (state) => {
-  
+  const { activeListId, lists, tasks } = state;
+  renderLists(lists, activeListId);
+  // TODO renderTasks();
 };
 
 const handleNewListForm = (state) => (e) => {
   // TODO case для пустого поля
   e.preventDefault();
   const { target, target: elements } = e;
-  elements.name.value = '';
+  
   
   const formData = new FormData(target);
   const newList = {
     id: Number(_.uniqueId()),
     name: formData.get('name'),
   };
-
+  
   state.lists = [...state.lists, newList];
   console.log(state.lists);
+  elements.name.value = ''; // мне что это должен делать render()
   
   render(state);
 };
@@ -26,24 +41,25 @@ const handleNewListForm = (state) => (e) => {
  const handleNewTaskForm = (state) => (e) => {
    e.preventDefault();
    const { target, target: elements } = e;
-   elements.name.value = '';
+   
    
    const formData = new FormData(target);
    const newTask = {
      id: _.uniqueId(),
-     listId: state.activeList,
+     listId: state.activeListId,
      content: formData.get('name'),
    };
    
    state.tasks = [...state.tasks, newTask];
    console.log(state.tasks);
+   elements.name.value = ''; // мне что это должен делать render()
    
    render(state);
  };
 
 const app = () => {
   const state = {
-    activeList: 0,
+    activeListId: 0,
     lists: [
       {
         id: 0,
