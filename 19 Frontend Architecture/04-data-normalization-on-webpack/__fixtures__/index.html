@@ -1,0 +1,21 @@
+<div class="container m-3">
+  <div class="row">
+    <div class="col-2">
+      <h3>Lists</h3>
+      <div data-container="lists">
+      </div>
+      <form data-container="new-list-form">
+        <input type="text" aria-label="New List Name" class="form-control mb-2" name="name">
+        <button aria-label="Add List" type="submit" class="btn btn-primary btn-sm">Add List</button>
+      </form>
+    </div>
+    <div class="col-10">
+      <h3>Tasks</h3>
+      <form class="form-inline" data-container="new-task-form">
+        <input type="text" aria-label="New Task Name" class="form-control mr-2" name="name">
+        <button aria-label="Add Task" type="submit" class="btn btn-primary">Add Task</button>
+      </form>
+      <div data-container="tasks"></div>
+    </div>
+  </div>
+</div>
