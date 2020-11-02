@@ -94,22 +94,16 @@ const handleForm = (state, formType) => (e) => {
 };
 
 const app = () => {
+  const generalList = { id: _.uniqueId(), name: 'General' };
+
+  /* task example */
+  /* { id: 0, listId: 0, content: 'first task in General list' }; */
+
   const state = {
-    activeListId: 0,
-    lists: [
-      {
-        id: 0,
-        name: 'General',
-      },
-    ],
-    tasks: [
-      // {
-      //   id: 0,
-      //   listId: 0,
-      //   content: 'first task in General list'
-      // },
-    ],
-  }; // end of state
+    activeListId: generalList.id,
+    lists: [generalList],
+    tasks: [],
+  };
 
   const forms = document.querySelectorAll('form[data-container]');
   forms.forEach((form) => {
