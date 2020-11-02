@@ -3,14 +3,7 @@
 import _ from 'lodash';
 
 // BEGIN (write your solution here)
-const handleListClick = (state, id) => () => {
-  state.activeListId = id;
-
-  renderLists(state);
-  renderTasks(state);
-};
-
-const renderLists = (state) => {
+const renderLists = (state, handleListClick) => {
   const { activeListId, lists } = state;
   if (lists.length === 0) {
     return;
@@ -40,13 +33,10 @@ const renderLists = (state) => {
 
   const input = document.querySelector('form[data-container="new-list-form"]>input');
   input.value = '';
-};
+}; // end of renderLists
 
 const renderTasks = (state) => {
   const { tasks, activeListId } = state;
-  // if (tasks.length === 0) {
-  //   return;
-  // }
   const taskContainer = document.querySelector('div[data-container="tasks"]');
   const tasksFromActiveList = tasks.filter(({ listId }) => listId === activeListId);
   if (tasksFromActiveList.length === 0) {
@@ -55,58 +45,49 @@ const renderTasks = (state) => {
   }
 
   const taskItems = tasksFromActiveList.map(({ content }) => `<li>${content}</li>`);
-
-
   taskContainer.innerHTML = `<ul>${taskItems.join('')}</ul>`;
-
   const input = document.querySelector('form[data-container="new-task-form"]>input');
   input.value = '';
 };
 
-// const render = (state) => {
-//   const { activeListId, lists, tasks } = state;
-//   // renderLists(lists, activeListId);
-//   // renderLists(state);
-//   renderTasks(tasks, activeListId);
-// };
+const render = (state) => {
+  const handleListClick = (currentState, id) => (e) => {
+    e.preventDefault();
+    currentState.activeListId = id;
+    render(currentState);
+  };
+
+  renderLists(state, handleListClick);
+  renderTasks(state);
+};
 
 const handleNewListForm = (state) => (e) => {
-  // TODO case для пустого поля
   e.preventDefault();
   const { target } = e;
-
-
   const formData = new FormData(target);
   const newList = {
     id: Number(_.uniqueId()),
     name: formData.get('name'),
   };
-
   state.lists = [...state.lists, newList];
-  // console.log(state.lists);
-  // elements.name.value = ''; // мне что это должен делать render()
 
-  renderLists(state);
+  render(state);
 };
 
 const handleNewTaskForm = (state) => (e) => {
   e.preventDefault();
   const { target } = e;
-
-
   const formData = new FormData(target);
   const newTask = {
     id: _.uniqueId(),
     listId: state.activeListId,
     content: formData.get('name'),
   };
-
   state.tasks = [...state.tasks, newTask];
-  // console.log(state.tasks);
-  // elements.name.value = ''; // мне что это должен делать render()
 
-  renderTasks(state);
+  render(state);
 };
+
 
 const app = () => {
   const state = {
@@ -132,8 +113,7 @@ const app = () => {
   const newTaskForm = document.querySelector('form[data-container="new-task-form"]');
   newTaskForm.addEventListener('submit', handleNewTaskForm(state));
 
-  renderLists(state);
-  renderTasks(state);
+  render(state);
 };
 
 export default app;
