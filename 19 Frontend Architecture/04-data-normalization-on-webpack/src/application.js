@@ -27,13 +27,10 @@ const renderLists = (state, handleListClick) => {
   const ul = document.createElement('ul');
   listItems.forEach((item) => ul.append(item));
 
-  const listForm = document.querySelector('div[data-container="lists"]');
-  listForm.innerHTML = '';
-  listForm.append(ul);
-
-  const input = document.querySelector('form[data-container="new-list-form"]>input');
-  input.value = '';
-}; // end of renderLists
+  const listContainer = document.querySelector('div[data-container="lists"]');
+  listContainer.innerHTML = '';
+  listContainer.append(ul);
+};
 
 const renderTasks = (state) => {
   const { tasks, activeListId } = state;
@@ -46,8 +43,6 @@ const renderTasks = (state) => {
 
   const taskItems = tasksFromActiveList.map(({ content }) => `<li>${content}</li>`);
   taskContainer.innerHTML = `<ul>${taskItems.join('')}</ul>`;
-  const input = document.querySelector('form[data-container="new-task-form"]>input');
-  input.value = '';
 };
 
 const render = (state) => {
@@ -61,10 +56,7 @@ const render = (state) => {
   renderTasks(state);
 };
 
-const handleNewListForm = (state) => (e) => {
-  e.preventDefault();
-  const { target } = e;
-  const formData = new FormData(target);
+const handleNewList = (state, formData) => {
   const newList = {
     id: Number(_.uniqueId()),
     name: formData.get('name'),
@@ -74,10 +66,7 @@ const handleNewListForm = (state) => (e) => {
   render(state);
 };
 
-const handleNewTaskForm = (state) => (e) => {
-  e.preventDefault();
-  const { target } = e;
-  const formData = new FormData(target);
+const handleNewTask = (state, formData) => {
   const newTask = {
     id: _.uniqueId(),
     listId: state.activeListId,
@@ -88,6 +77,21 @@ const handleNewTaskForm = (state) => (e) => {
   render(state);
 };
 
+const mapping = {
+  list: handleNewList,
+  task: handleNewTask,
+};
+
+const handleForm = (state, formType) => (e) => {
+  e.preventDefault();
+  const { target } = e;
+  const formData = new FormData(target);
+
+  mapping[formType](state, formData);
+
+  const currentInput = document.querySelector(`form[data-container="new-${formType}-form"]>input`);
+  currentInput.value = '';
+};
 
 const app = () => {
   const state = {
@@ -107,11 +111,12 @@ const app = () => {
     ],
   }; // end of state
 
-  const newListForm = document.querySelector('form[data-container="new-list-form"]');
-  newListForm.addEventListener('submit', handleNewListForm(state));
-
-  const newTaskForm = document.querySelector('form[data-container="new-task-form"]');
-  newTaskForm.addEventListener('submit', handleNewTaskForm(state));
+  const forms = document.querySelectorAll('form[data-container]');
+  forms.forEach((form) => {
+    const rawFormType = form.dataset.container;
+    const [, formType] = rawFormType.split('-');
+    form.addEventListener('submit', handleForm(state, formType));
+  });
 
   render(state);
 };
