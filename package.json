@@ -19,6 +19,7 @@
     "@hexlet/points": "^1.0.9",
     "@jest/globals": "^26.1.0",
     "@testing-library/dom": "^7.14.2",
+    "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/user-event": "^11.4.2",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^26.0.1",
