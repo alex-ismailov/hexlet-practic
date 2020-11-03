@@ -56,7 +56,7 @@ const render = (state) => {
   renderTasks(state);
 };
 
-const handleNewList = (state, formData) => {
+const handleNewListContainer = (state, formData) => {
   const newList = {
     id: Number(_.uniqueId()),
     name: formData.get('name'),
@@ -66,7 +66,7 @@ const handleNewList = (state, formData) => {
   render(state);
 };
 
-const handleNewTask = (state, formData) => {
+const handleNewTaskContainer = (state, formData) => {
   const newTask = {
     id: _.uniqueId(),
     listId: state.activeListId,
@@ -77,9 +77,9 @@ const handleNewTask = (state, formData) => {
   render(state);
 };
 
-const mapping = {
-  list: handleNewList,
-  task: handleNewTask,
+const handleContainer = {
+  list: handleNewListContainer,
+  task: handleNewTaskContainer,
 };
 
 const handleForm = (state, formType) => (e) => {
@@ -87,7 +87,7 @@ const handleForm = (state, formType) => (e) => {
   const { target } = e;
   const formData = new FormData(target);
 
-  mapping[formType](state, formData);
+  handleContainer[formType](state, formData);
 
   const currentInput = document.querySelector(`form[data-container="new-${formType}-form"]>input`);
   currentInput.value = '';
