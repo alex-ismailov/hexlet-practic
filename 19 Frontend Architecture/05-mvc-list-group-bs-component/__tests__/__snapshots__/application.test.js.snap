@@ -1,0 +1,1549 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#application1 1`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`#application1 2`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`#application1 3`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`#application1 4`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`#application2 1`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`#application2 2`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`#application2 3`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`#application2 4`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
+
+exports[`#application3 1`] = `
+"<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=\\"container m-3\\">
+    <div class=\\"row\\">
+        <div class=\\"col-4\\">
+            <div class=\\"list-group\\" id=\\"list-tab2\\" role=\\"tablist\\">
+                <a
+                    class=\\"list-group-item list-group-item-action active\\"
+                    id=\\"list2-home-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-home\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"home\\"
+                >
+                    Home 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-profile-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-profile\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"profile\\"
+                >
+                    Profile 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-messages-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-messages\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"messages\\"
+                >
+                    Messages 2
+                </a>
+                <a
+                    class=\\"list-group-item list-group-item-action\\"
+                    id=\\"list2-settings-list\\"
+                    data-toggle=\\"list\\"
+                    href=\\"#list2-settings\\"
+                    role=\\"tab\\"
+                    aria-controls=\\"settings\\"
+                >
+                    Settings 2
+                </a>
+            </div>
+        </div>
+        <div class=\\"col-8\\">
+            <div class=\\"tab-content\\" id=\\"nav-tabContent2\\">
+                <div
+                    class=\\"tab-pane fade active show\\"
+                    id=\\"list2-home\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-home-list\\"
+                >
+                    Home Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-profile\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-profile-list\\"
+                >
+                    Profile Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-messages\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-messages-list\\"
+                >
+                    Messages Content
+                </div>
+                <div
+                    class=\\"tab-pane fade\\"
+                    id=\\"list2-settings\\"
+                    role=\\"tabpanel\\"
+                    aria-labelledby=\\"list2-settings-list\\"
+                >
+                    Settings Content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+"
+`;
