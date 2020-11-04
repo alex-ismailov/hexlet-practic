@@ -5,6 +5,7 @@ import onChange from 'on-change';
 // BEGIN (write your solution here)
 // => controller
 const handleListGroup = (watchedState) => (e) => {
+  e.preventDefault();
   const { target: listGroupItem } = e;
   const listGroupId = listGroupItem.parentNode.id;
   watchedState[listGroupId].activeItemId = listGroupItem.id;
