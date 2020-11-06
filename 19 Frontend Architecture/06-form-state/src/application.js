@@ -12,7 +12,6 @@ import onChange from 'on-change';
 import axios from 'axios';
 
 
-
 // Never hardcore urls
 const routes = {
   usersPath: () => '/users',
@@ -39,21 +38,16 @@ const errorMessages = {
 
 
 export default () => {
-
   // => Views
-
-
-  // TODO
   const removePrevErrors = () => {
     const errorElements = document.querySelectorAll('.invalid-feedback');
     if (errorElements.length > 0) {
       errorElements.forEach((errorElement) => errorElement.remove());
     }
 
-    const inputsWithError = document.querySelectorAll(`.is-invalid`);
+    const inputsWithError = document.querySelectorAll('.is-invalid');
     inputsWithError.forEach((input) => input.classList.remove('is-invalid'));
     // const inputParent = input.parentNode;
-    
   };
 
   const renderErrors = (errors) => {
@@ -61,7 +55,7 @@ export default () => {
 
     errors.forEach(({ path, message }) => {
       const input = document.querySelector(`input[name="${path}"]`);
-  
+
       input.classList.add('is-invalid');
       const errorElement = document.createElement('div');
       errorElement.classList.add('invalid-feedback');
@@ -75,9 +69,18 @@ export default () => {
     removePrevErrors();
   };
 
+  const changeBtnAvailability = (isDisabled) => {
+    const btn = document.querySelector('button.btn');
+    if (isDisabled) {
+      btn.setAttribute('disabled', '');
+      return;
+    }
+    btn.removeAttribute('disabled');
+  };
+
   // => Model
   const state = {
-    submitDisabled: true,
+    isDisabledBtn: true,
     data: {
       // name: '',
       // email: '',
@@ -89,19 +92,26 @@ export default () => {
   const mapping = {
     errors: (errors) => renderErrors(errors),
     data: (data) => render(data),
+    isDisabledBtn: (isDisabled) => changeBtnAvailability(isDisabled),
   };
 
-  const watchedState = onChange(state, (path, value) => mapping[path](value));
+  const watchedState = onChange(state, (path, value) => {
+    // console.log(`path: ${path}`);
+    // console.log(`value: ${value}`);
+    mapping[path](value);
+  });
 
 
   // => Controllers
   const handleFormSubmit = (e) => {
-    // e.preventDefault();
-
+    e.preventDefault();
+    console.log('SUBMIT !!!!');
+    
   };
 
   const handleFormInput = (e) => {
     const { target } = e;
+    const form = target.closest('form');
     const formData = new FormData(form);
     const inputsValues = Object.fromEntries(formData);
 
@@ -109,29 +119,32 @@ export default () => {
       watchedState.errors = [];
       return;
     }
-    
+
     try {
       schema.validateSync(inputsValues, { abortEarly: false });
       const data = _.omit(inputsValues, 'passwordConfirmation');
       watchedState.data = data;
       // watchedState.data = { ...watchedState.data, ...data };
-      
+      watchedState.isDisabledBtn = false;
     } catch ({ inner }) {
       const errors = inner.map(({ path, message }) => ({ path, message }));
       // watchedState.errors = [...watchedState.errors, ...errors];
+      watchedState.isDisabledBtn = true;
       watchedState.errors = errors;
+      
     }
   };
 
-//   (4) [ValidationError, ValidationError, ValidationError, ValidationError]
-// 0: ValidationError {name: "ValidationError", value: "", path: "email", type: "required", errors: Array(1), …}
-// 1: ValidationError {name: "ValidationError", value: "", path: "passwordConfirmation", type: "required", errors: Array(1), …}
-// 2: ValidationError {name: "ValidationError", value: "", path: "password", type: "required", errors: Array(1), …}
-// 3: ValidationError {name: "ValidationError", value: "", path: "password", type: "min", errors: Array(1), …}
+  //   (4) [ValidationError, ValidationError, ValidationError, ValidationError]
+  // 0: ValidationError {name: "ValidationError", value: "", path: "email", type: "required", errors: Array(1), …}
+  // 1: ValidationError {name: "ValidationError", value: "", path: "passwordConfirmation", type: "required", errors: Array(1), …}
+  // 2: ValidationError {name: "ValidationError", value: "", path: "password", type: "required", errors: Array(1), …}
+  // 3: ValidationError {name: "ValidationError", value: "", path: "password", type: "min", errors: Array(1), …}
 
   const form = document.querySelector('form');
   form.addEventListener('input', handleFormInput);
-};  // app end
+  form.addEventListener('submit', handleFormSubmit);
+}; // app end
 // END
 
 
@@ -140,17 +153,6 @@ export default () => {
 // https://ru.hexlet.io/topics/41272
 // https://ru.hexlet.io/topics/41272
 // https://ru.hexlet.io/topics/41272
-
-
-
-
-
-
-
-
-
-
-
 
 
 // my tests
