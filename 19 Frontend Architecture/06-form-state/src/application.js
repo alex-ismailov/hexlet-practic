@@ -44,10 +44,9 @@ export default () => {
     if (errorElements.length > 0) {
       errorElements.forEach((errorElement) => errorElement.remove());
     }
-
+    
     const inputsWithError = document.querySelectorAll('.is-invalid');
     inputsWithError.forEach((input) => input.classList.remove('is-invalid'));
-    // const inputParent = input.parentNode;
   };
 
   const renderErrors = (errors) => {
@@ -106,7 +105,7 @@ export default () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log('SUBMIT !!!!');
-    
+
   };
 
   const handleFormInput = (e) => {
@@ -114,8 +113,12 @@ export default () => {
     const form = target.closest('form');
     const formData = new FormData(form);
     const inputsValues = Object.fromEntries(formData);
+    const isEmptyInputsValues = Object.keys(inputsValues)
+      .every((key) => inputsValues[key] === '');
+    console.log(isEmptyInputsValues);
 
-    if (Object.values(inputsValues).length === 0) {
+    if (isEmptyInputsValues) {
+      console.log('EMPTY FIELDS!!!');
       watchedState.errors = [];
       return;
     }
