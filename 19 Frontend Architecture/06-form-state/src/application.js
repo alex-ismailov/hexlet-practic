@@ -41,34 +41,38 @@ const errorMessages = {
 export default () => {
 
   // => Views
-  const render = (data) => {
-    console.log(data);
-  };
 
-  const removeErrorsFromDOM = () => {
+
+  // TODO
+  const removePrevErrors = () => {
     const errorElements = document.querySelectorAll('.invalid-feedback');
-    console.log(errorElements);
-    errorElements.forEach((element) => element.remove());
+    if (errorElements.length > 0) {
+      errorElements.forEach((errorElement) => errorElement.remove());
+    }
 
-    const inputs = document.querySelectorAll(`input[name]`);
-    inputs.forEach((input) => input.classList.remove('is-invalid'))
+    const inputsWithError = document.querySelectorAll(`.is-invalid`);
+    inputsWithError.forEach((input) => input.classList.remove('is-invalid'));
+    // const inputParent = input.parentNode;
+    
   };
 
   const renderErrors = (errors) => {
+    removePrevErrors();
+
     errors.forEach(({ path, message }) => {
       const input = document.querySelector(`input[name="${path}"]`);
-      const inputParent = input.parentNode;
-      const prevErrorElement = inputParent.querySelector('.invalid-feedback');
-      if (prevErrorElement) {
-        prevErrorElement.remove();
-      }
-
+  
       input.classList.add('is-invalid');
       const errorElement = document.createElement('div');
       errorElement.classList.add('invalid-feedback');
       errorElement.textContent = message;
       input.after(errorElement);
     });
+  };
+
+  const render = (data) => {
+    console.log(data);
+    removePrevErrors();
   };
 
   // => Model
@@ -82,18 +86,19 @@ export default () => {
     errors: [],
   };
 
-  const watchedState = onChange(state, (path, value) => {
-    if (path === 'errors') {
-      renderErrors(value);
-    } else {
-      removeErrorsFromDOM();
-      // axios.post();
-      render(value);
-    }
-  });
+  const mapping = {
+    errors: (errors) => renderErrors(errors),
+    data: (data) => render(data),
+  };
+
+  const watchedState = onChange(state, (path, value) => mapping[path](value));
+
 
   // => Controllers
-  const handleFormSubmit = (e) => {};
+  const handleFormSubmit = (e) => {
+    // e.preventDefault();
+
+  };
 
   const handleFormInput = (e) => {
     const { target } = e;
