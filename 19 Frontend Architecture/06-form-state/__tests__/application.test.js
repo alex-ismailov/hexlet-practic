@@ -12,7 +12,7 @@ nock.disableNetConnect();
 let elements;
 
 beforeEach(() => {
-  const pathToFixture = path.join('__tests__', '19 Frontend Architecture/06-form-state/__tests__/__fixtures__', 'index.html');
+  const pathToFixture = path.join(path.resolve(), '__tests__/__fixtures__', 'index.html');
   const initHtml = fs.readFileSync(pathToFixture).toString();
   document.body.innerHTML = initHtml;
   run();
