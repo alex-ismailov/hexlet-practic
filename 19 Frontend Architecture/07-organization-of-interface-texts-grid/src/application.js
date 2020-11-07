@@ -16,3 +16,7 @@ i18next.init({
 /* ************ */
 
 // END
+
+// https://ru.hexlet.io/topics/40698
+// https://ru.hexlet.io/topics/39746
+
