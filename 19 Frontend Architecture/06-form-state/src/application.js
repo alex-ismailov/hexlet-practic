@@ -35,8 +35,6 @@ const errorMessages = {
 };
 
 // BEGIN (write your solution here)
-
-
 export default () => {
   // => Views
   const removePrevErrors = () => {
@@ -44,7 +42,7 @@ export default () => {
     if (errorElements.length > 0) {
       errorElements.forEach((errorElement) => errorElement.remove());
     }
-    
+
     const inputsWithError = document.querySelectorAll('.is-invalid');
     inputsWithError.forEach((input) => input.classList.remove('is-invalid'));
   };
