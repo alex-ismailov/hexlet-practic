@@ -83,6 +83,7 @@ export default () => {
 
   // => Model
   const state = {
+    status: 'filling', // processing, finished
     isDisabledBtn: true,
     data: {
       // name: '',
