@@ -1,0 +1,23 @@
+// @import '../utils/vars.scss'; 
+
+h1 {
+  color:white;
+  background: green;
+  // font-family: 'HelveticaNeueCyr-Black', Arial, sans-serif;
+  font-family: $mainFont;
+  // font-family: $lightFont;
+  // font-family: Arial, Helvetica, sans-serif;
+}
+
+.blackHelv {
+  font-family: $mainFont;
+  color: $primary-color;
+}
+.lightHelv {
+  font-family: $lightFont;
+}
+
+// #sec2 {
+//   background-image: url('/assets/img/sad-dog.jpeg'); // Грузить картинки через css плохо!!!
+//   width: 100%;
+// }

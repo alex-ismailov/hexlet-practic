@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <% for (css in htmlWebpackPlugin.files.css) { %>
+    <link 
+    href="<%= htmlWebpackPlugin.files.css[css] %>"
+    rel="stylesheet">
+  <% } %>
+  <title>Form state</title>
+</head>
+<body>
+  <div class="container m-3">
+  </div>
+  
+  <% for (index in htmlWebpackPlugin.files.js) { %>
+    <script src="<%= htmlWebpackPlugin.files.js[index] %>" type="text/javascript"></script>
+  <% } %>
+</body>
+</html>
