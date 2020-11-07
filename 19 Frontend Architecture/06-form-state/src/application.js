@@ -93,24 +93,50 @@ export default () => {
     errors: [],
   };
 
+  const handleStatus = (status) => {
+    switch (status) {
+      case 'processing':
+        watchedState.isDisabledBtn = true;
+        return;
+      case 'finished':
+        renderSuccess();
+
+      default:
+        // TODO new Exception;
+    }
+  };
+
   const mapping = {
     errors: (errors) => renderErrors(errors),
-    data: (data) => render(data),
+    data: () => removePrevErrors(),
     isDisabledBtn: (isDisabled) => changeBtnAvailability(isDisabled),
+    status: (value) => handleStatus(value),
   };
 
   const watchedState = onChange(state, (path, value) => {
-    // console.log(`path: ${path}`);
-    // console.log(`value: ${value}`);
     mapping[path](value);
   });
 
 
   // => Controllers
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log('SUBMIT !!!!');
+    const { target } = e;
+    const formData = new FormData(target);
+    const inputsValues = Object.fromEntries(formData);
+    const data = _.omit(inputsValues, 'passwordConfirmation');
 
+
+    watchedState.status = 'processing';
+
+    const response = await axios.post(routes.usersPath(), data);
+    console.log(response);
+    if (response.status === 200) {
+      watchedState.status = 'finished';
+      return;
+    }
+    watchedState.status = 'filling';
+    watchedState.errors = errorMessages.network.error;
   };
 
   const handleFormInput = (e) => {
