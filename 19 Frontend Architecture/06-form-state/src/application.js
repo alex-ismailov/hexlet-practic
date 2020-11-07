@@ -76,6 +76,11 @@ export default () => {
     btn.removeAttribute('disabled');
   };
 
+  const renderSuccess = () => {
+    const container = document.querySelector('[data-container="sign-up"]');
+    container.innerHTML = 'User Created!';
+  };
+
   // => Model
   const state = {
     isDisabledBtn: true,
