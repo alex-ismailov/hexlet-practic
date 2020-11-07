@@ -146,10 +146,8 @@ export default () => {
     const inputsValues = Object.fromEntries(formData);
     const isEmptyInputsValues = Object.keys(inputsValues)
       .every((key) => inputsValues[key] === '');
-    console.log(isEmptyInputsValues);
 
     if (isEmptyInputsValues) {
-      console.log('EMPTY FIELDS!!!');
       watchedState.errors = [];
       return;
     }
