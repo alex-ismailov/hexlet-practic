@@ -63,10 +63,9 @@ export default () => {
     });
   };
 
-  const render = (data) => {
-    console.log(data);
-    removePrevErrors();
-  };
+  // const render = () => {
+  //   removePrevErrors();
+  // };
 
   const changeBtnAvailability = (isDisabled) => {
     const btn = document.querySelector('button.btn');
