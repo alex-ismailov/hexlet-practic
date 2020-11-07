@@ -7,5 +7,12 @@ import onChange from 'on-change';
 import resources from './locales';
 
 // BEGIN (write your solution here)
+/* init i18next without Async*/
+i18next.init({
+  lng: 'en', // Текущий язык
+  debug: true,
+  resources,
+});
+/* ************ */
 
 // END
