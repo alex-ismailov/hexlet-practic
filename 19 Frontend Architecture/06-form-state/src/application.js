@@ -156,22 +156,13 @@ export default () => {
       schema.validateSync(inputsValues, { abortEarly: false });
       const data = _.omit(inputsValues, 'passwordConfirmation');
       watchedState.data = data;
-      // watchedState.data = { ...watchedState.data, ...data };
       watchedState.isDisabledBtn = false;
     } catch ({ inner }) {
       const errors = inner.map(({ path, message }) => ({ path, message }));
-      // watchedState.errors = [...watchedState.errors, ...errors];
       watchedState.isDisabledBtn = true;
       watchedState.errors = errors;
-      
     }
   };
-
-  //   (4) [ValidationError, ValidationError, ValidationError, ValidationError]
-  // 0: ValidationError {name: "ValidationError", value: "", path: "email", type: "required", errors: Array(1), …}
-  // 1: ValidationError {name: "ValidationError", value: "", path: "passwordConfirmation", type: "required", errors: Array(1), …}
-  // 2: ValidationError {name: "ValidationError", value: "", path: "password", type: "required", errors: Array(1), …}
-  // 3: ValidationError {name: "ValidationError", value: "", path: "password", type: "min", errors: Array(1), …}
 
   const form = document.querySelector('form');
   form.addEventListener('input', handleFormInput);
