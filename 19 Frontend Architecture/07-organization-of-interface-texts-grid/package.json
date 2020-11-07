@@ -42,6 +42,8 @@
     "webpack-merge": "^5.1.4"
   },
   "dependencies": {
+    "bootstrap": "^4.5.3",
+    "i18next": "^19.8.3",
     "on-change": "^2.2.0"
   }
 }
