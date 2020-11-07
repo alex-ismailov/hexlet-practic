@@ -5,24 +5,23 @@
 В качестве данных нужно взять объект `document.location`, который содержит в себе информацию о браузере. Пример неполного вывода:
 
 // см. таблицу на [github](https://github.com/alex-ismailov/hexlet-practic/blob/master/19%20Frontend%20Architecture/07-organization-of-interface-texts-grid/readme.md)
-div class="container m-3">
-    <table class="table">
-        <tbody>
-        	  <tr>
-                <th><a href="">Name (Asc)</a></th>
-                <th><a href="">Value (Unsorted)</a></th>
-            </tr>
-            <tr>
-                <td>host</td>
-                <td>localhost</td>
-            </tr>
-            <tr>
-                <td>pathname</td>
-                <td>/</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+
+<table class="table">
+    <tbody>
+          <tr>
+            <th><a href="">Name (Asc)</a></th>
+            <th><a href="">Value (Unsorted)</a></th>
+        </tr>
+        <tr>
+            <td>host</td>
+            <td>localhost</td>
+        </tr>
+        <tr>
+            <td>pathname</td>
+            <td>/</td>
+        </tr>
+    </tbody>
+</table>
 
 
 Вывести нужно только те свойства, которые удовлетворяют условиям:
