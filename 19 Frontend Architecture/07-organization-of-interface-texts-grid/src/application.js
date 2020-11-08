@@ -83,6 +83,20 @@ const render = (watchedState) => {
 };
 
 
+export default () => {
+  const state = {
+    grid: {
+      nameOrder: 'asc',
+      valueOrder: 'unsorted',
+    },
+  };
+
+  const watchedState = onChange(state, (path, value, prevValue) => {
+    // ...
+  });
+
+  render(watchedState);
+};
 // END
 
 // https://ru.hexlet.io/topics/40698
