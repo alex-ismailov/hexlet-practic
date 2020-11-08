@@ -16,6 +16,40 @@ i18next.init({
 /* ************ */
 
 
+const getLocationProps = () => {
+  const { location } = document;
+  let locationProps = {};
+  for (const key in location) {
+    if (location.hasOwnProperty(key)) {
+      const element = location[key];
+      // рассмотреть instanceof Object Function ....
+      if ((typeof element !== 'function') && (typeof element !== 'object') && (element !== '')) {
+        locationProps = { ...locationProps, [key]: location[key] };
+      }
+    }
+  }
+
+  return locationProps;
+
+  /* *** alternative ways *** */
+  // const locationProps2 = Object.keys(location)
+  //   .filter((key) => (typeof location[key] !== 'function') && (typeof location[key] !== 'object') && (location[key] !== '') )
+  //   .reduce((acc, key) => ({ ...acc, [key]: location[key] }), {});
+  // return locationProps2;
+
+  // const locationProps3 = Object.keys(location)
+  //   .filter((key) => (typeof location[key] === 'string') && (location[key] !== ''))
+  //   .reduce((acc, key) => ({ ...acc, [key]: location[key] }), {});
+
+  // console.log(locationProps);
+  // console.log(locationProps2);
+  // console.log(locationProps3);
+  // console.log(typeof (() => {}));
+  // console.log(typeof {});
+  // console.log(typeof 'str');
+  /* ******************** */
+};
+
 const render = (watchedState) => {
   const container = document.querySelector('.container');
   const table = document.createElement('table');
