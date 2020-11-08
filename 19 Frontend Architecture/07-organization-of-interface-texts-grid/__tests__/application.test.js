@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
-// import testingLibrary from '@testing-library/dom';
-import userEventHelpers from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
 import run from '../src/application.js';
@@ -10,8 +8,7 @@ import run from '../src/application.js';
 // const within = testingLibrary.within;
 import { within } from '@testing-library/dom';
 import { getNodeText } from '@testing-library/dom';
-// const getNodeText = testingLibrary.getNodeText;
-// const userEvent = userEventHelpers.default;
+import userEvent from '@testing-library/user-event';
 
 const getFixture = (filename) => fs.readFileSync(path.join('__fixtures__', filename)).toString();
 const isEven = (int) => int % 2 === 0;
