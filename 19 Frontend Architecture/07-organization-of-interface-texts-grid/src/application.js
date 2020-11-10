@@ -90,16 +90,14 @@ const render = (watchedState) => {
 
   if (activeColumnName === 'name') {
     if (order === 'asc') {
-      locationPropsEntries.sort(([aKey], [bKey]) => aKey.localeCompare(bKey), 'en-US', { numeric: true });
+      locationPropsEntries.sort(([aKey], [bKey]) => aKey.localeCompare(bKey, 'en', { numeric: true }));
     } else {
-      locationPropsEntries.sort(([aKey], [bKey]) => bKey.localeCompare(aKey), 'en-US', { numeric: true });
+      locationPropsEntries.sort(([aKey], [bKey]) => bKey.localeCompare(aKey, 'en', { numeric: true }));
     }
+  } else if (order === 'asc') {
+    locationPropsEntries.sort(([, aValue], [, bValue]) => aValue.localeCompare(bValue, 'en', { numeric: true }));
   } else {
-    if (order === 'asc') {
-      locationPropsEntries.sort(([, aValue], [, bValue]) => aValue.localeCompare(bValue), 'en-US', { numeric: true });
-    } else {
-      locationPropsEntries.sort(([, aValue], [, bValue]) => bValue.localeCompare(aValue), 'en-US', { numeric: true });
-    }
+    locationPropsEntries.sort(([, aValue], [, bValue]) => bValue.localeCompare(aValue, 'en', { numeric: true }));
   }
 
   const trRows = locationPropsEntries
