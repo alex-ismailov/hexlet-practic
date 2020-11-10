@@ -50,29 +50,20 @@ const getLocationProps = () => {
   /* ******************** */
 };
 
-// const handleTabHeadClick = (e) => {
-//   e.preventDefault();
-// };
-
 const handleTabHeadClick = (watchedState) => (e) => {
   e.preventDefault();
   const { target } = e;
   const { activeColumnName, order } = watchedState.grid;
 
-  // определить тип кликнутого name || value
   const targetColumnName = target.textContent.toLowerCase().includes('name')
     ? 'name'
     : 'value';
 
-  if (activeColumnName !== targetColumnName) {
-    watchedState.grid.activeColumnName = targetColumnName;
-  }
+  watchedState.grid.activeColumnName = targetColumnName;
 
   const oppositeOrder = order === 'asc' ? 'desc' : 'asc';
-
-  watchedState.grid.order = oppositeOrder;
+  watchedState.grid.order = activeColumnName !== targetColumnName ? 'asc' : oppositeOrder;
 };
-
 
 const render = (watchedState) => {
   const { activeColumnName, order } = watchedState.grid;
