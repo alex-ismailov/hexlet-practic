@@ -79,13 +79,12 @@ const render = (watchedState) => {
   const valueOrderKey = nameOrderKey === 'unsorted' ? order : 'unsorted';
 
   const trFirst = `<th><a href="">${i18next.t('name')} (${i18next.t(nameOrderKey)})</a></th>
-                   <th><a href="">${i18next.t('value')} (${i18next.t(valueOrderKey)})</a></th>`;  
+                   <th><a href="">${i18next.t('value')} (${i18next.t(valueOrderKey)})</a></th>`;
   tbody.innerHTML = trFirst;
 
-  const thLinks = tbody.querySelectorAll('a');
-  thLinks.forEach((thLink) => thLink.addEventListener('click', handleTabHeadClick(watchedState)));
+  const aLinks = tbody.querySelectorAll('a');
+  aLinks.forEach((thLink) => thLink.addEventListener('click', handleTabHeadClick(watchedState)));
 
-  
   const locationProps = getLocationProps();
   const locationPropsEntries = Object.entries(locationProps);
 
