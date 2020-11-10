@@ -88,17 +88,46 @@ const render = (watchedState) => {
   const locationProps = getLocationProps();
   const locationPropsEntries = Object.entries(locationProps);
 
-  if (activeColumnName === 'name') {
-    if (order === 'asc') {
-      locationPropsEntries.sort(([aKey], [bKey]) => aKey.localeCompare(bKey, 'en', { numeric: true }));
-    } else {
-      locationPropsEntries.sort(([aKey], [bKey]) => bKey.localeCompare(aKey, 'en', { numeric: true }));
+  /* ******************* sorting ************************** */
+  const orderMapping = {
+    asc: (a, b) => a.localeCompare(b, 'en', { numeric: true }),
+    desc: (a, b) => b.localeCompare(a, 'en', { numeric: true }),
+  };
+
+  const compareEntries = (sortingBy, order) => (aEntry, bEntry) => {
+    const [aKey, aValue] = aEntry;
+    const [bKey, bValue] = bEntry;
+
+    switch (sortingBy) {
+      case 'name':
+        return orderMapping[order](aKey, bKey) === 0
+          ? orderMapping[order](aValue, bValue)
+          : orderMapping[order](aKey, bKey);
+      case 'value':
+        return orderMapping[order](aValue, bValue) === 0
+          ? orderMapping[order](aKey, bKey)
+          : orderMapping[order](aValue, bValue)
+
+      default:
+        return "Exception";
     }
-  } else if (order === 'asc') {
-    locationPropsEntries.sort(([, aValue], [, bValue]) => aValue.localeCompare(bValue, 'en', { numeric: true }));
-  } else {
-    locationPropsEntries.sort(([, aValue], [, bValue]) => bValue.localeCompare(aValue, 'en', { numeric: true }));
-  }
+  };
+
+  const sortMapping = {
+    name: {
+      asc: (array) => array.sort(compareEntries('name', 'asc')),
+      desc: (array) => array.sort(compareEntries('name', 'desc')),
+    },
+    value: {
+      asc: (array) => array.sort(compareEntries('value', 'asc')),
+      desc: (array) => array.sort(compareEntries('value', 'desc')),
+    }
+  };
+
+  /* start sorting */
+  sortMapping[activeColumnName][order](locationPropsEntries);
+
+  /* **************** end of sorting ********************** */
 
   const trRows = locationPropsEntries
     .map(([key, value]) => {
