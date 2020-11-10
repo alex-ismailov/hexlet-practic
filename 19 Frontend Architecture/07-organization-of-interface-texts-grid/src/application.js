@@ -78,9 +78,6 @@ const render = (watchedState) => {
   const nameOrderKey = activeColumnName === 'name' ? order : 'unsorted';
   const valueOrderKey = nameOrderKey === 'unsorted' ? order : 'unsorted';
 
-  // console.log(nameOrderKey);
-  // console.log(valueOrderKey);
-
   const trFirst = `<th><a href="">${i18next.t('name')} (${i18next.t(nameOrderKey)})</a></th>
                    <th><a href="">${i18next.t('value')} (${i18next.t(valueOrderKey)})</a></th>`;  
   tbody.innerHTML = trFirst;
@@ -134,26 +131,9 @@ export default () => {
   };
 
   const watchedState = onChange(state, (path, value, prevValue) => {
-    switch (path) {
-      case 'grid.activeColumnName':
-        break;
-      
-      case 'grid.order':
-        render(watchedState);
-        break;
-      
-      default:
-        break; // throw new Exception
-    }
+    // ...
+    render(watchedState);
   });
-
-  // const oppositeOrder = watchedState.grid.order === 'asc' ? 'desc' : 'asc';
-  // render(watchedState.grid.order, oppositeOrder);
-  // render(
-  //   watchedState.grid.activeColumnName,
-  //   watchedState.grid.order,
-  //   oppositeOrder
-  // );
 
   render(watchedState);
 };
