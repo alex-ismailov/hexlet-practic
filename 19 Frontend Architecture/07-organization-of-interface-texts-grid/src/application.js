@@ -156,7 +156,7 @@ export default () => {
     },
   };
 
-  const watchedState = onChange(state, (path, value, prevValue) => {
+  const watchedState = onChange(state, () => {
     // ...
     render(watchedState);
   });
