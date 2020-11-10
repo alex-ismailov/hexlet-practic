@@ -65,6 +65,46 @@ const handleTabHeadClick = (watchedState) => (e) => {
   watchedState.grid.order = activeColumnName !== targetColumnName ? 'asc' : oppositeOrder;
 };
 
+const sortLocationPropsEntries = (locationPropsEntries, byColumn, direction) => {
+  const orderMapping = {
+    asc: (a, b) => a.localeCompare(b, 'en', { numeric: true }),
+    desc: (a, b) => b.localeCompare(a, 'en', { numeric: true }),
+  };
+
+  const compareEntries = (sortingBy, order) => (aEntry, bEntry) => {
+    const [aKey, aValue] = aEntry;
+    const [bKey, bValue] = bEntry;
+
+    switch (sortingBy) {
+      case 'name':
+        return orderMapping[order](aKey, bKey) === 0
+          ? orderMapping[order](aValue, bValue)
+          : orderMapping[order](aKey, bKey);
+      case 'value':
+        return orderMapping[order](aValue, bValue) === 0
+          ? orderMapping[order](aKey, bKey)
+          : orderMapping[order](aValue, bValue);
+
+      default:
+        return 'Exception';
+    }
+  };
+
+  const sortMapping = {
+    name: {
+      asc: (array) => array.sort(compareEntries('name', 'asc')),
+      desc: (array) => array.sort(compareEntries('name', 'desc')),
+    },
+    value: {
+      asc: (array) => array.sort(compareEntries('value', 'asc')),
+      desc: (array) => array.sort(compareEntries('value', 'desc')),
+    },
+  };
+
+  /* start sorting */
+  sortMapping[byColumn][direction](locationPropsEntries);
+};
+
 const render = (watchedState) => {
   const { activeColumnName, order } = watchedState.grid;
 
@@ -88,46 +128,7 @@ const render = (watchedState) => {
   const locationProps = getLocationProps();
   const locationPropsEntries = Object.entries(locationProps);
 
-  /* ******************* sorting ************************** */
-  const orderMapping = {
-    asc: (a, b) => a.localeCompare(b, 'en', { numeric: true }),
-    desc: (a, b) => b.localeCompare(a, 'en', { numeric: true }),
-  };
-
-  const compareEntries = (sortingBy, order) => (aEntry, bEntry) => {
-    const [aKey, aValue] = aEntry;
-    const [bKey, bValue] = bEntry;
-
-    switch (sortingBy) {
-      case 'name':
-        return orderMapping[order](aKey, bKey) === 0
-          ? orderMapping[order](aValue, bValue)
-          : orderMapping[order](aKey, bKey);
-      case 'value':
-        return orderMapping[order](aValue, bValue) === 0
-          ? orderMapping[order](aKey, bKey)
-          : orderMapping[order](aValue, bValue)
-
-      default:
-        return "Exception";
-    }
-  };
-
-  const sortMapping = {
-    name: {
-      asc: (array) => array.sort(compareEntries('name', 'asc')),
-      desc: (array) => array.sort(compareEntries('name', 'desc')),
-    },
-    value: {
-      asc: (array) => array.sort(compareEntries('value', 'asc')),
-      desc: (array) => array.sort(compareEntries('value', 'desc')),
-    }
-  };
-
-  /* start sorting */
-  sortMapping[activeColumnName][order](locationPropsEntries);
-
-  /* **************** end of sorting ********************** */
+  sortLocationPropsEntries(locationPropsEntries, activeColumnName, order);
 
   const trRows = locationPropsEntries
     .map(([key, value]) => {
