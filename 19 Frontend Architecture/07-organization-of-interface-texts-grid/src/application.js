@@ -114,12 +114,11 @@ const render = (watchedState) => {
 
       tdName.textContent = i18next.t(key);
       tdValue.textContent = value;
-      tr.append(tdName);
-      tr.append(tdValue);
+      tr.append(tdName, tdValue);
 
       return tr;
     });
-  
+
   tbody.append(...trRows);
   table.append(tbody);
   container.append(table);
