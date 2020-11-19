@@ -3,7 +3,6 @@
 export default class Base {
   // BEGIN (write your solution here)
   isInstanceOf(className) {
-
     if (className === this.constructor.name) {
       return true;
     }
