@@ -11,7 +11,7 @@ class HTMLPairElement extends HTMLElement {
   }
 
   getTextContent() {
-    return this.body;
+    return this.body ?? '';
   }
 
   setTextContent(body) {
