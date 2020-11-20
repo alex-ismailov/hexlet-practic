@@ -4,14 +4,8 @@ import HTMLPairElement from './HTMLPairElement.js';
 
 // BEGIN (write your solution here)
 class HTMLDivElement extends HTMLPairElement {
-  constructor(attributes) {
-    super(attributes);
-    this.tagName = 'div';
-    this.body = '';
-  }
-
   getTagName() {
-    return this.tagName;
+    return 'div';
   }
 }
 // END
