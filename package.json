@@ -35,7 +35,7 @@
     "papaparse": "^5.2.0",
     "power-assert": "^1.6.1",
     "prettier": "^2.0.5",
-    "random-words": "^1.1.1",
+    "random-words": "^1.2.0",
     "regenerator-runtime": "^0.13.3",
     "supertest": "^4.0.2",
     "suppressor": "^1.0.0"
